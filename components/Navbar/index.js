@@ -70,26 +70,26 @@ function NavBar() {
             </Link>
           </li>
           <li key="1">
-            <Link href="/reserva" className="nav-link hover:text-blue-600">
+            <Link href="/paciente" className="nav-link hover:text-blue-600">
               Paciente
             </Link>
           </li>
           <li key="2">
-            <Link href="/menullorona" className="nav-link hover:text-blue-600">
+            <Link href="/doctor" className="nav-link hover:text-blue-600">
               Doctor
             </Link>
           </li>
           <li key="3">
-            <Link href="/mezcal" className="nav-link hover:text-blue-600">
+            <Link href="/blog" className="nav-link hover:text-blue-600">
               Blog
             </Link>
           </li>
           <li key="4">
-            <Link href="/premios" className="nav-link hover:text-blue-600">
+            <Link href="/reserva" className="nav-link hover:text-blue-600">
               Reserva
             </Link>
           </li>
-          
+
         </div>
         <div className='header-icons'>
           <a key="0" href="https://www.facebook.com/people/Laboratorios-San-Mateo/100071824794370/" target="_blank" rel="noopener noreferrer">

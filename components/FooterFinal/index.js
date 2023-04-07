@@ -5,31 +5,31 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 function FooterFinal() {
     return (
-        <footer className=" fondo2 py-12">
+        <footer className="footerSanmateo py-12">
 
             <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
                 <nav className="-my-2 flex flex-wrap justify-center" style={{ width: "100%" }}>
                     <div className="px-5 py-2">
-                        <Link href="/reserva">
+                        <Link href="/paciente">
                             <p className="text-white hover:text-green-200">Paciente</p>
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link href="/menullorona">
+                        <Link href="/doctor">
                             <p className="text-white hover:text-green-200">Doctor</p>
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link href="/mezcal">
+                        <Link href="/blog">
                             <p className="text-white hover:text-green-200">Blog</p>
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link href="/premios">
+                        <Link href="/reserva">
                             <p className="text-white hover:text-green-200">Reserva</p>
                         </Link>
                     </div>
-                   
+
                 </nav>
                 <div className="mt-8 flex justify-center space-x-6">
 

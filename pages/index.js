@@ -2,6 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Banner from '@/components/Banner'
+import ContentInfo from '@/components/ContentInfo'
+import ContentPruebas from '@/components/ContentPruebas'
+import ReservaCalendario from '@/components/ReservaCalendario'
+import PasosCitas from '@/components/PasosCitas'
+import ContentTrabajo from '@/components/ContentTrabajo/ContentTrabajo'
 
 export default function Home() {
   return (
@@ -27,11 +33,12 @@ export default function Home() {
 
 
       </Head>
-      <main className={styles.main}>
-        <div>
-          <p>hola</p>
-        </div>
-      </main>
+      <Banner />
+      <ContentInfo />
+      <ContentPruebas />
+      <ReservaCalendario />
+      <PasosCitas />
+      <ContentTrabajo />
     </>
   )
 }
