@@ -45,9 +45,10 @@ h3,
 p,
 a,
 button {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  ;
+  /* font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  ; */
   /* font-family: "Gagalin-Regular"; */
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -59,8 +60,19 @@ button {
 }
 
 .title1Model {
-  font-size: 40px;
+  font-size: 37px;
   font-weight: 600 !important;
+}
+
+.title2Model {
+  font-size: 60px;
+  font-weight: 600 !important;
+}
+
+.title3Model {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 70px;
 }
 
 /* banner css */
@@ -80,7 +92,8 @@ button {
 }
 
 .contentModel {
-  font-size: 22px;
+  font-size: 18px;
+  color: #646464;
   font-weight: 400;
 }
 
@@ -93,6 +106,14 @@ button {
   font-size: 18px;
   font-weight: 400;
   color: #5b5b5b;
+}
+
+.contentModel4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #02a4d0;
 }
 
 .buttonModel {
@@ -136,6 +157,75 @@ button {
     width: 48%;
   }
 } */
+.posRelative {
+  position: relative;
+}
+
+.ovHidden {
+  overflow: hidden;
+}
+
+.heroFloatImg {
+  position: absolute;
+  left: 54px;
+  top: 20%;
+}
+
+.heroFloatImg2 {
+  position: absolute;
+  top: 71%;
+  right: -25%;
+}
+
+.hero-single-shape1 {
+  position: absolute;
+  top: 18%;
+  left: 40%;
+}
+
+.hero-single-shape2 {
+  position: absolute;
+  left: 39%;
+  bottom: 21%;
+}
+
+.hero-single-shape3 {
+  position: absolute;
+  left: 10%;
+  bottom: 13%;
+}
+
+.dance {
+  animation: dance 2s alternate infinite;
+}
+
+.rotateme {
+  animation-name: rotateme;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotateme {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dance {
+  0% {
+    -webkit-transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+  }
+}
+
 @media (max-width: 500px) {
   .stepper1 {
     flex-direction: column !important;
@@ -160,17 +250,26 @@ button {
     font-size: 30px;
   }
 
+  .title3Model {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
   .contentModel {
     font-size: 20px;
     font-weight: 400;
   }
 
   .contentModel2 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .contentModel3 {
-    font-size: 12px;
+    font-size: 16px;
+  }
+
+  .thumbImg {
+    display: none;
   }
 }
 

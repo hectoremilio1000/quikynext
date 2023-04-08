@@ -2,7 +2,7 @@ import React from 'react'
 
 function ContentPruebas() {
     return (
-        <div className='contentInfo' style={{ backgroundColor: "#ececec" }}>
+        <div className='contentInfo' style={{ backgroundColor: "#F8F8FF" }}>
             <div className="rowQh">
                 <h1 className="title1Model text-center">
                     ¿Qué pruebas tienen disponibles?
