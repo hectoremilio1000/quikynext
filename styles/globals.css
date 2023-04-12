@@ -80,7 +80,6 @@ button {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #0286aa;
 }
 
 .titlePortada {
@@ -145,6 +144,47 @@ button {
   background-color: #0286aa;
 }
 
+/* css formulario enferemera */
+.formSan {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formSan .duoGroupItem {
+  display: flex;
+  gap: 15px;
+
+}
+
+.formSan .groupItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.formSan .groupItem .splaceItem {
+  width: 100%;
+
+}
+
+.groupItem input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ececec;
+
+}
+
+.submitForm {
+  background-color: #0286aa;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* css fin de  formulario enferemera */
 
 /* @media screen and (min-width: 780px) {
   .blockElement {
