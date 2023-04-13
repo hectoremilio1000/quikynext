@@ -1,7 +1,29 @@
+import { BLOG } from '@/src/models';
+import { API, DataStore, graphqlOperation } from 'aws-amplify';
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import awsExports from '../src/aws-exports';
+import { Amplify } from 'aws-amplify'
+
+Amplify.configure(awsExports);
+
 
 function Blog() {
+    const [blog, setBlog] = useState([]);
+
+    const fetchBlog = async () => {
+        const blogs = await DataStore.query(BLOG);
+        setBlog(blogs)
+    }
+
+    useEffect(() => {
+        fetchBlog();
+    }, [])
+
+    console.log(blog)
+    
+
   return (
       <>
           <div className="banner d-flex justify-content-start">
