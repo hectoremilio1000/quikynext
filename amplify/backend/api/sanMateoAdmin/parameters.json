@@ -2,7 +2,7 @@
   "AppSyncApiName": "sanMateoAdmin",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-04-13T01:26:57.341Z",
+  "AuthModeLastUpdated": "2023-04-13T17:20:56.620Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
       "authsanMateoAdmin",

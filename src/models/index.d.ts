@@ -442,6 +442,7 @@ type EagerBLOG = {
   readonly url2?: string | null;
   readonly url3?: string | null;
   readonly autor?: string | null;
+  readonly slug?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -465,6 +466,7 @@ type LazyBLOG = {
   readonly url2?: string | null;
   readonly url3?: string | null;
   readonly autor?: string | null;
+  readonly slug?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

@@ -143,5 +143,6 @@ type BLOG @model @auth(rules: [{allow: public}]) {
   url2: String
   url3: String
   autor: String
+  slug: String
 }
  

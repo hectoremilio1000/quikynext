@@ -37,6 +37,7 @@ export default function BLOGUpdateForm(props) {
     url2: "",
     url3: "",
     autor: "",
+    slug: "",
   };
   const [titulo, setTitulo] = React.useState(initialValues.titulo);
   const [subtitulo, setSubtitulo] = React.useState(initialValues.subtitulo);
@@ -51,6 +52,7 @@ export default function BLOGUpdateForm(props) {
   const [url2, setUrl2] = React.useState(initialValues.url2);
   const [url3, setUrl3] = React.useState(initialValues.url3);
   const [autor, setAutor] = React.useState(initialValues.autor);
+  const [slug, setSlug] = React.useState(initialValues.slug);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = bLOGRecord
@@ -69,6 +71,7 @@ export default function BLOGUpdateForm(props) {
     setUrl2(cleanValues.url2);
     setUrl3(cleanValues.url3);
     setAutor(cleanValues.autor);
+    setSlug(cleanValues.slug);
     setErrors({});
   };
   const [bLOGRecord, setBLOGRecord] = React.useState(bLOGModelProp);
@@ -96,6 +99,7 @@ export default function BLOGUpdateForm(props) {
     url2: [],
     url3: [],
     autor: [],
+    slug: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -136,6 +140,7 @@ export default function BLOGUpdateForm(props) {
           url2,
           url3,
           autor,
+          slug,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -204,6 +209,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.titulo ?? value;
@@ -240,6 +246,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.subtitulo ?? value;
@@ -276,6 +283,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.texto1 ?? value;
@@ -312,6 +320,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.texto2 ?? value;
@@ -348,6 +357,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.texto3 ?? value;
@@ -384,6 +394,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.imagen1 ?? value;
@@ -420,6 +431,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.imagen2 ?? value;
@@ -456,6 +468,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.imagen3 ?? value;
@@ -492,6 +505,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.fecha ?? value;
@@ -528,6 +542,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.url1 ?? value;
@@ -564,6 +579,7 @@ export default function BLOGUpdateForm(props) {
               url2: value,
               url3,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.url2 ?? value;
@@ -600,6 +616,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3: value,
               autor,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.url3 ?? value;
@@ -636,6 +653,7 @@ export default function BLOGUpdateForm(props) {
               url2,
               url3,
               autor: value,
+              slug,
             };
             const result = onChange(modelFields);
             value = result?.autor ?? value;
@@ -649,6 +667,43 @@ export default function BLOGUpdateForm(props) {
         errorMessage={errors.autor?.errorMessage}
         hasError={errors.autor?.hasError}
         {...getOverrideProps(overrides, "autor")}
+      ></TextField>
+      <TextField
+        label="Slug"
+        isRequired={false}
+        isReadOnly={false}
+        value={slug}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              titulo,
+              subtitulo,
+              texto1,
+              texto2,
+              texto3,
+              imagen1,
+              imagen2,
+              imagen3,
+              fecha,
+              url1,
+              url2,
+              url3,
+              autor,
+              slug: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.slug ?? value;
+          }
+          if (errors.slug?.hasError) {
+            runValidationTasks("slug", value);
+          }
+          setSlug(value);
+        }}
+        onBlur={() => runValidationTasks("slug", slug)}
+        errorMessage={errors.slug?.errorMessage}
+        hasError={errors.slug?.hasError}
+        {...getOverrideProps(overrides, "slug")}
       ></TextField>
       <Flex
         justifyContent="space-between"
