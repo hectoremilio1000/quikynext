@@ -57,20 +57,22 @@ function Blog() {
                 <div className="rowQh dGrig3cm" style={{ gap: "40px" }}>
                     {blog.map((blogs) => {
                         return (
-                            <div className="blockElement" key={blogs.id} style={{ borderBottom: "1px solid #5b5b5b", paddingBottom: "20px" }}>
-                                <p className="" style={{ fontSize: "20px", color: "#000" }}>{blogs.titulo}</p>
-                                <p className="contentModel2" style={{ fontSize: "15px", color: "#000" }}>{blogs.fecha}</p>
-                                <p className="contentModel" style={{ textTransform: "capitalize" }}>by: {blogs.autor}</p>
-                                <p className="title1Model mt-4" style={{ fontSize: "20px", color: "#000" }}>{blogs.subtitulo}</p>
-                                <img style={{ width: "100%", height: "250px", objectFit: "cover" }} src={blogs.url1} alt={blogs.imagen1} />
-                                <p className="contentModel" style={{ height: "150px", overflow: "hidden" }}>{blogs.texto1}</p> <br />
+                            <div className="blockElement" key={blogs.id} style={{ paddingBottom: "20px" }}>
                                 <Link href={`/blog/${blogs.slug}`} className="logo">
-                                    Leer mas
+                                    <img style={{ width: "100%", objectFit: "cover", height: "250px", borderRadius: ".25rem" }} src={blogs.url1} alt={blogs.imagen1} /> <br />
+
+                                    <h1 style={{ color: "#18181b !important", textTransform: "capitalize", fontWeight: "600", fontSize: "20px" }} className="text-start">
+                                        {blogs.titulo}
+                                    </h1>
+                                    <p className="mt-4" style={{ fontSize: "15px", fontWeight: "400", color: "#757575" }}>{blogs.subtitulo}</p> <br />
                                 </Link>
-                                {/* <img src={blogs.url2} alt={blogs.imagen2} />
-                                    <p className="contentModel">{blogs.texto2}</p> <br />
-                                    <img src={blogs.url3} alt={blogs.imagen3} /> <br />
-                                    <p className="contentModel">{blogs.texto3}</p> */}
+                                <div className="authorBlog dFlex" style={{ gap: "20px" }}>
+                                    <img style={{ width: "40px", height: "40px", borderRadius: "50%" }} src="https://img.freepik.com/free-icon/user_318-159711.jpg" alt="" />
+                                    <div className="contentInfoauthor">
+                                        <p style={{ textTransform: "capitalize", fontSize: "12px", color: "#18181b", fontWeight: "600" }}>{blogs.autor}</p>
+                                        <p className="contentModel2" style={{ fontSize: "15px", color: "#000" }}>{blogs.fecha}</p>
+                                    </div>
+                                </div>
                             </div >
                         );
                     }).sort((a, b) => {

@@ -60,19 +60,21 @@ button {
 }
 
 .title1Model {
+  line-height: 1.25;
   font-size: 37px;
   font-weight: 600 !important;
 }
 
 .title2Model {
+  line-height: 1.25;
   font-size: 60px;
   font-weight: 600 !important;
 }
 
 .title3Model {
+  line-height: 1.25;
   font-size: 50px;
   font-weight: 700;
-  line-height: 70px;
 }
 
 /* banner css */
@@ -91,23 +93,27 @@ button {
 }
 
 .contentModel {
+  line-height: 1.5;
   font-size: 18px;
   color: #646464;
   font-weight: 400;
 }
 
 .contentModel2 {
+  line-height: 1.5;
   font-size: 22px;
   font-weight: 500;
 }
 
 .contentModel3 {
+  line-height: 1.5;
   font-size: 18px;
   font-weight: 400;
   color: #5b5b5b;
 }
 
 .contentModel4 {
+  line-height: 1.5;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
@@ -136,6 +142,13 @@ button {
 .rowQh {
   width: 100%;
   max-width: 1300px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.rowQhBlog {
+  width: 100%;
+  max-width: 46.25rem;
   padding: 20px;
   margin: 0 auto;
 }
