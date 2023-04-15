@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function ContentTrabajo() {
     return (
-        <div className='contentInfo' style={{ backgroundColor: "#ececec" }}>
+        <div className='contentInfo' style={{ backgroundColor: "#f3f5f9" }}>
             <div className="rowQh">
                 <h1 className="title1Model text-center">
                     ¿Buscas trabajo?

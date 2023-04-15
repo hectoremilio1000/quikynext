@@ -26,10 +26,10 @@ function Blog() {
 
     return (
         <>
-            <div className="bannerSanmateo posRelative ovHidden" style={{ height: "50vh", backgroundImage: `url("https://blog.fpmaragall.org/hubfs/ana%CC%81lisis%20sangre.jpg")`, backgroundPosition: "top center", backgroundRepeat: "repeat", backgroundSize: "cover" }}>
+            <div className="bannerSanmateo afterBanner posRelative ovHidden" style={{ height: "60vh", backgroundImage: `url("https://blog.fpmaragall.org/hubfs/ana%CC%81lisis%20sangre.jpg")`, backgroundPosition: "top center", backgroundRepeat: "repeat", backgroundSize: "cover" }}>
                 {/* <video autoPlay muted loop src={videoPort} /> */}
 
-                <div className="titlePortada rowQh dFlex" style={{ gap: "20px" }}>
+                <div className="titlePortada rowQh dFlex" style={{ gap: "20px", zIndex: "2000" }}>
                     <div className="blockElement">
 
                         {/* <h1 className="contentModel4">
