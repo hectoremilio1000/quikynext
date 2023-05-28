@@ -6,21 +6,14 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  SelectField,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { EncuestaServicio } from "../models";
+import { LABORATORIO } from "../models";
 import { fetchByPath, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
-export default function EncuestaServicioUpdateForm(props) {
+export default function LABORATORIOCreateForm(props) {
   const {
-    id: idProp,
-    encuestaServicio,
+    clearOnSuccess = true,
     onSuccess,
     onError,
     onSubmit,
@@ -30,35 +23,20 @@ export default function EncuestaServicioUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    encuesta: undefined,
-    usuario: "",
+    nombre: "",
+    createdBy: "",
   };
-  const [encuesta, setEncuesta] = React.useState(initialValues.encuesta);
-  const [usuario, setUsuario] = React.useState(initialValues.usuario);
+  const [nombre, setNombre] = React.useState(initialValues.nombre);
+  const [createdBy, setCreatedBy] = React.useState(initialValues.createdBy);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    const cleanValues = encuestaServicioRecord
-      ? { ...initialValues, ...encuestaServicioRecord }
-      : initialValues;
-    setEncuesta(cleanValues.encuesta);
-    setUsuario(cleanValues.usuario);
+    setNombre(initialValues.nombre);
+    setCreatedBy(initialValues.createdBy);
     setErrors({});
   };
-  const [encuestaServicioRecord, setEncuestaServicioRecord] =
-    React.useState(encuestaServicio);
-  React.useEffect(() => {
-    const queryData = async () => {
-      const record = idProp
-        ? await DataStore.query(EncuestaServicio, idProp)
-        : encuestaServicio;
-      setEncuestaServicioRecord(record);
-    };
-    queryData();
-  }, [idProp, encuestaServicio]);
-  React.useEffect(resetStateValues, [encuestaServicioRecord]);
   const validations = {
-    encuesta: [],
-    usuario: [],
+    nombre: [{ type: "Required" }],
+    createdBy: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -85,8 +63,8 @@ export default function EncuestaServicioUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          encuesta,
-          usuario,
+          nombre,
+          createdBy,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -116,13 +94,12 @@ export default function EncuestaServicioUpdateForm(props) {
               modelFields[key] = undefined;
             }
           });
-          await DataStore.save(
-            EncuestaServicio.copyOf(encuestaServicioRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await DataStore.save(new LABORATORIO(modelFields));
           if (onSuccess) {
             onSuccess(modelFields);
+          }
+          if (clearOnSuccess) {
+            resetStateValues();
           }
         } catch (err) {
           if (onError) {
@@ -130,88 +107,71 @@ export default function EncuestaServicioUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "EncuestaServicioUpdateForm")}
+      {...getOverrideProps(overrides, "LABORATORIOCreateForm")}
       {...rest}
     >
-      <SelectField
-        label="Encuesta"
-        placeholder="Please select an option"
-        isDisabled={false}
-        value={encuesta}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              encuesta: value,
-              usuario,
-            };
-            const result = onChange(modelFields);
-            value = result?.encuesta ?? value;
-          }
-          if (errors.encuesta?.hasError) {
-            runValidationTasks("encuesta", value);
-          }
-          setEncuesta(value);
-        }}
-        onBlur={() => runValidationTasks("encuesta", encuesta)}
-        errorMessage={errors.encuesta?.errorMessage}
-        hasError={errors.encuesta?.hasError}
-        {...getOverrideProps(overrides, "encuesta")}
-      >
-        <option
-          children="Excelente"
-          value="EXCELENTE"
-          {...getOverrideProps(overrides, "encuestaoption0")}
-        ></option>
-        <option
-          children="Regular"
-          value="REGULAR"
-          {...getOverrideProps(overrides, "encuestaoption1")}
-        ></option>
-        <option
-          children="Malo"
-          value="MALO"
-          {...getOverrideProps(overrides, "encuestaoption2")}
-        ></option>
-      </SelectField>
       <TextField
-        label="Usuario"
-        isRequired={false}
+        label="Nombre"
+        isRequired={true}
         isReadOnly={false}
-        value={usuario}
+        value={nombre}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              encuesta,
-              usuario: value,
+              nombre: value,
+              createdBy,
             };
             const result = onChange(modelFields);
-            value = result?.usuario ?? value;
+            value = result?.nombre ?? value;
           }
-          if (errors.usuario?.hasError) {
-            runValidationTasks("usuario", value);
+          if (errors.nombre?.hasError) {
+            runValidationTasks("nombre", value);
           }
-          setUsuario(value);
+          setNombre(value);
         }}
-        onBlur={() => runValidationTasks("usuario", usuario)}
-        errorMessage={errors.usuario?.errorMessage}
-        hasError={errors.usuario?.hasError}
-        {...getOverrideProps(overrides, "usuario")}
+        onBlur={() => runValidationTasks("nombre", nombre)}
+        errorMessage={errors.nombre?.errorMessage}
+        hasError={errors.nombre?.hasError}
+        {...getOverrideProps(overrides, "nombre")}
+      ></TextField>
+      <TextField
+        label="Created by"
+        isRequired={true}
+        isReadOnly={false}
+        value={createdBy}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              createdBy: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.createdBy ?? value;
+          }
+          if (errors.createdBy?.hasError) {
+            runValidationTasks("createdBy", value);
+          }
+          setCreatedBy(value);
+        }}
+        onBlur={() => runValidationTasks("createdBy", createdBy)}
+        errorMessage={errors.createdBy?.errorMessage}
+        hasError={errors.createdBy?.hasError}
+        {...getOverrideProps(overrides, "createdBy")}
       ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
-          children="Reset"
+          children="Clear"
           type="reset"
           onClick={(event) => {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || encuestaServicio)}
-          {...getOverrideProps(overrides, "ResetButton")}
+          {...getOverrideProps(overrides, "ClearButton")}
         ></Button>
         <Flex
           gap="15px"
@@ -221,10 +181,7 @@ export default function EncuestaServicioUpdateForm(props) {
             children="Submit"
             type="submit"
             variation="primary"
-            isDisabled={
-              !(idProp || encuestaServicio) ||
-              Object.values(errors).some((e) => e?.hasError)
-            }
+            isDisabled={Object.values(errors).some((e) => e?.hasError)}
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
         </Flex>

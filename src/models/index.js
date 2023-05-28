@@ -2,10 +2,16 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
-const Servicio = {
-  "EXCELENTE": "EXCELENTE",
-  "REGULAR": "REGULAR",
-  "MALO": "MALO"
+const Statusorder = {
+  "CREATED": "CREATED",
+  "PUBLISHED": "PUBLISHED",
+  "VERIFIED": "VERIFIED",
+  "SENT": "SENT"
+};
+
+const Typeorder = {
+  "QUOTE": "QUOTE",
+  "ORDER": "ORDER"
 };
 
 const Sexotipo = {
@@ -13,19 +19,30 @@ const Sexotipo = {
   "FEMENINO": "FEMENINO"
 };
 
-const { RESULTADOGENERAL, RESULTADOORDEN, EncuestaServicio, ORDENPRUEBA, ORDEN, PARAMETROS, PRUEBA, DOCTOR, PACIENTE, BLOG } = initSchema(schema);
+const Servicio = {
+  "EXCELENTE": "EXCELENTE",
+  "REGULAR": "REGULAR",
+  "MALO": "MALO"
+};
+
+const { REFERENCE, RESULTPARAMITEM, PARAMETROSTEST, ORDENPRUEBAITEM, REPRESENTANTE, LABORATORIO, GERENTE, DOCTOR, ORDEN, PACIENTE, PRUEBA, EncuestaServicio, BLOG } = initSchema(schema);
 
 export {
-  RESULTADOGENERAL,
-  RESULTADOORDEN,
-  EncuestaServicio,
-  ORDENPRUEBA,
-  ORDEN,
-  PARAMETROS,
-  PRUEBA,
+  REFERENCE,
+  RESULTPARAMITEM,
+  PARAMETROSTEST,
+  ORDENPRUEBAITEM,
+  REPRESENTANTE,
+  LABORATORIO,
+  GERENTE,
   DOCTOR,
+  ORDEN,
   PACIENTE,
+  PRUEBA,
+  EncuestaServicio,
   BLOG,
-  Servicio,
-  Sexotipo
+  Statusorder,
+  Typeorder,
+  Sexotipo,
+  Servicio
 };

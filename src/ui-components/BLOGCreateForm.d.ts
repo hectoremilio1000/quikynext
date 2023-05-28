@@ -26,7 +26,6 @@ export declare type BLOGCreateFormInputValues = {
     url2?: string;
     url3?: string;
     autor?: string;
-    slug?: string;
 };
 export declare type BLOGCreateFormValidationValues = {
     titulo?: ValidationFunction<string>;
@@ -42,7 +41,6 @@ export declare type BLOGCreateFormValidationValues = {
     url2?: ValidationFunction<string>;
     url3?: ValidationFunction<string>;
     autor?: ValidationFunction<string>;
-    slug?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type BLOGCreateFormOverridesProps = {
@@ -60,7 +58,6 @@ export declare type BLOGCreateFormOverridesProps = {
     url2?: PrimitiveOverrideProps<TextFieldProps>;
     url3?: PrimitiveOverrideProps<TextFieldProps>;
     autor?: PrimitiveOverrideProps<TextFieldProps>;
-    slug?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type BLOGCreateFormProps = React.PropsWithChildren<{
     overrides?: BLOGCreateFormOverridesProps | undefined | null;

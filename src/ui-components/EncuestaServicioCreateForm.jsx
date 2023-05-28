@@ -29,7 +29,7 @@ export default function EncuestaServicioCreateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    encuesta: "",
+    encuesta: undefined,
     usuario: "",
   };
   const [encuesta, setEncuesta] = React.useState(initialValues.encuesta);
@@ -49,10 +49,9 @@ export default function EncuestaServicioCreateForm(props) {
     currentValue,
     getDisplayValue
   ) => {
-    const value =
-      currentValue && getDisplayValue
-        ? getDisplayValue(currentValue)
-        : currentValue;
+    const value = getDisplayValue
+      ? getDisplayValue(currentValue)
+      : currentValue;
     let validationResponse = validateField(value, validations[fieldName]);
     const customValidator = fetchByPath(onValidate, fieldName);
     if (customValidator) {
