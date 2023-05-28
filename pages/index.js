@@ -14,12 +14,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Laboratorios San Mateo</title>
         <meta name="description" content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-
-        <title>Laboratorios San Mateo</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="of:title" content="San Mateo" />
         <meta name="of:description" content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios" />
@@ -30,9 +27,6 @@ export default function Home() {
         <meta property="og:image" content="https://imagenesrutalab.s3.amazonaws.com/sanmateo/logo+nuevo/SAN-MATEO.png" />
         {/* <link rel="apple-touch-icon" href="../logo192.png" />
         <link rel="manifest" href="../manifest.json" /> */}
-
-
-
       </Head>
       <Banner />
       <ContentInfo />

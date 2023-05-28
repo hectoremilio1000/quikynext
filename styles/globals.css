@@ -353,3 +353,7 @@ button {
     grid-template-columns: repeat(1, 1fr) !important;
   }
 }
+
+.MuiBackdrop-root{
+  z-index: 50000000;
+}
