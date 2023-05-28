@@ -1023,6 +1023,10 @@ export const listORDENS = /* GraphQL */ `
         status
         groups
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+        }
         pdfReceipt
         urlReceipt
         pdfResul
