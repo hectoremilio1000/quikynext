@@ -40,7 +40,7 @@ function Banner() {
                 <div className="hero-single-shape2 rotateme">
                     <img src="https://dreamthemebd.dreamitsolution.net/html/dreamhub/medical/assets/images/single-shape2.png" alt="shape" />
                 </div>
-                <div class="hero-single-shape3 dance">
+                <div className="hero-single-shape3 dance">
                     <img src="https://dreamthemebd.dreamitsolution.net/html/dreamhub/medical/assets/images/single-shape3.png" alt="shape" />
                 </div>
             </div>

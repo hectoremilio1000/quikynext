@@ -1,6 +1,7 @@
 import GROUPS from "@/constants/groups";
 import { useAuthContext } from "@/context/AuthContext";
 import OrdenDetailsContextProvider from "@/context/OrdenDetailsContext";
+import { Typeorder } from "@/src/models";
 import { Statusorder } from "@/src/models";
 import { CircularProgress, Grid } from "@mui/material";
 import { API, graphqlOperation } from "aws-amplify";
@@ -59,7 +60,7 @@ function Results({signOut,user}) {
             const listDOCTORS = await API.graphql(graphqlOperation(queries.listDOCTORS, {filter:{email: {eq: user.attributes.email}}}))
             const doctor = listDOCTORS?.data?.listDOCTORS?.items[0];
             setObserver(doctor);
-            const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {filter:{...filter, doctorID: {eq: doctor.id}}}))
+            const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {filter:{...filter, doctorID: {eq: doctor.id}, type:{eq: Typeorder.ORDER}}}))
             const ordens = listORDENS?.data?.listORDENS?.items;
             const listPACIENTES = await API.graphql(graphqlOperation(queries.listPACIENTES, {filter:{or:(ordens||[]).map(orden=>({id: {eq: orden.pacienteID}}))}}))
             const patients = listPACIENTES?.data?.listPACIENTES?.items.reduce((all, patient) => {all[patient.id] = patient; return all},{});
@@ -70,7 +71,7 @@ function Results({signOut,user}) {
             const listPACIENTES = await API.graphql(graphqlOperation(queries.listPACIENTES, {filter:{email: {eq: user.attributes.email}}}))
             const patient = listPACIENTES?.data?.listPACIENTES?.items[0];
             setObserver(patient);
-            const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {filter:{...filter, pacienteID: {eq: patient.id}}}))
+            const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {filter:{...filter, pacienteID: {eq: patient.id}, type:{eq: Typeorder.ORDER}}}))
             const ordens = listORDENS?.data?.listORDENS?.items;
             const listDOCTORS = await API.graphql(graphqlOperation(queries.listDOCTORS, {filter:{or:(ordens||[]).map(orden=>({id: {eq: orden.doctorID}}))}}))
             const doctors = listDOCTORS?.data?.listDOCTORS?.items.reduce((all, doctor) => {all[doctor.id] = doctor; return all},{});
@@ -121,7 +122,7 @@ function Results({signOut,user}) {
       };
 
     return (
-            <div className="bannerSanmateo afterBanner posRelative ovHidden" style={{ height: "60vh", backgroundImage: `url("https://Doctor.fpmaragall.org/hubfs/ana%CC%81lisis%20sangre.jpg")`, backgroundPosition: "top center", backgroundRepeat: "repeat", backgroundSize: "cover" }}>
+            <div className="bannerSanmateo afterBanner posRelative" style={{marginTop:'4rem'}}>
                 {/* <video autoPlay muted loop src={videoPort} /> */}
 
                 <div className="titlePortada rowQh dFlex" style={{ gap: "20px", zIndex: "200" }}>
@@ -181,7 +182,6 @@ function Results({signOut,user}) {
                                                 </div>
                                               </Grid>
                                               <Grid item xs={12} md={6}>
-                                                <div className="text-gray-600 text-sm">{orden.id}</div>
                                                 <div className="text-gray-600 text-sm"><b>Total Pruebas: </b>{orden.totalPruebas}</div>                                            
                                                 <div className="text-gray-600 text-sm"><b>Sucursal Muestra: </b>{orden.sucursalMuestra}</div>                                            
                                                 <div className="text-gray-600 text-sm">
