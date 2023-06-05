@@ -6,6 +6,7 @@ import { Statusorder } from "@/src/models";
 import { CircularProgress, Grid } from "@mui/material";
 import { API, graphqlOperation } from "aws-amplify";
 import { useEffect, useState } from "react";
+import { ChevronsLeft, ChevronsRight } from "react-feather";
 import { toast } from "react-toastify";
 import * as queries from '../../src/graphql/queries';
 import OrdenDetails from "./OrdenDetails";
@@ -17,6 +18,32 @@ function Results({signOut,user}) {
     const [selectedOrder, setSelectedOrder] = useState({});
     const {name, groupName, loading: atuhLoading, sub} = useAuthContext();
 
+    const [nextToken, setNextToken] = useState(undefined)
+    const [nextNextToken, setNextNextToken] = useState()
+    const [previousTokens, setPreviousTokens] = useState([])
+    const hasNext = !!nextNextToken
+    const hasPrev = previousTokens.length
+    const disabledPrev = !hasPrev || loading
+    const disabledNext = !hasNext || loading
+    const next = () => {
+      setPreviousTokens((prev) => [...prev, nextToken])
+      setNextToken(nextNextToken)
+      setNextNextToken(null)
+    }
+  
+    const prev = () => {
+      setNextToken(previousTokens.pop())
+      setPreviousTokens([...previousTokens])
+      setNextNextToken(null)
+    }
+  
+    const reset = () => {
+      setNextToken(undefined)
+      setPreviousTokens([])
+      setNextNextToken(null)
+    }
+  
+
     const [filters, setFilters] = useState({
         type: "ALL",
         status: 'ALL',
@@ -25,22 +52,31 @@ function Results({signOut,user}) {
         fechaOrdenLe: '',
         fechaOrdenGe: '',
       });
+    const getOrdens = async (filter) =>{
+      const limit = 5;
+      const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {
+        limit,
+        nextToken,
+        filter:{
+          ...filter,
+          type:{eq: Typeorder.ORDER},
+          or:[{status: {eq: Statusorder.VERIFIED}}, {status: {eq: Statusorder.SENT}}]
+        }
+      }))
+      const items = listORDENS?.data?.listORDENS?.items;
+      if(items.length===limit) {
+        setNextNextToken(listORDENS?.data?.listORDENS?.nextToken);
+      }
+      return items;
+    }
     const fetchOrdenes = async () => {
         if(!loading) {
           setLoading(true);
           const filter = {
-            type: {eq:filters.type},
-            status: {eq:filters.status},
             totalPruebas: {eq:filters.totalPruebas},
             costoTotal: {eq:filters.costoTotal},
             fechaOrden:{ge:filters.fechaOrdenGe, le:filters.fechaOrdenLe}
           };
-          if(filters.type==="ALL"){
-            delete filter.type
-          }
-          if(filters.status==="ALL"){
-            delete filter.status
-          }
           if(!filters.totalPruebas || Number(filters.totalPruebas)===0){
             delete filter.totalPruebas
           }
@@ -60,8 +96,7 @@ function Results({signOut,user}) {
             const listDOCTORS = await API.graphql(graphqlOperation(queries.listDOCTORS, {filter:{email: {eq: user.attributes.email}}}))
             const doctor = listDOCTORS?.data?.listDOCTORS?.items[0];
             setObserver(doctor);
-            const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {filter:{...filter, doctorID: {eq: doctor.id}, type:{eq: Typeorder.ORDER}}}))
-            const ordens = listORDENS?.data?.listORDENS?.items;
+            const ordens = await getOrdens({...filter, doctorID: {eq: doctor.id}}) || [];
             const listPACIENTES = await API.graphql(graphqlOperation(queries.listPACIENTES, {filter:{or:(ordens||[]).map(orden=>({id: {eq: orden.pacienteID}}))}}))
             const patients = listPACIENTES?.data?.listPACIENTES?.items.reduce((all, patient) => {all[patient.id] = patient; return all},{});
             setOrdens(ordens.map(orden=>({...orden, contestant:patients[orden.pacienteID]})));
@@ -71,8 +106,7 @@ function Results({signOut,user}) {
             const listPACIENTES = await API.graphql(graphqlOperation(queries.listPACIENTES, {filter:{email: {eq: user.attributes.email}}}))
             const patient = listPACIENTES?.data?.listPACIENTES?.items[0];
             setObserver(patient);
-            const listORDENS = await API.graphql(graphqlOperation(queries.listORDENS, {filter:{...filter, pacienteID: {eq: patient.id}, type:{eq: Typeorder.ORDER}}}))
-            const ordens = listORDENS?.data?.listORDENS?.items;
+            const ordens = await getOrdens({...filter, pacienteID: {eq: patient.id}}) || [];
             const listDOCTORS = await API.graphql(graphqlOperation(queries.listDOCTORS, {filter:{or:(ordens||[]).map(orden=>({id: {eq: orden.doctorID}}))}}))
             const doctors = listDOCTORS?.data?.listDOCTORS?.items.reduce((all, doctor) => {all[doctor.id] = doctor; return all},{});
             setOrdens(ordens.map(orden=>({...orden, contestant:doctors[orden.doctorID]})));
@@ -81,7 +115,7 @@ function Results({signOut,user}) {
         }
       };
 
-    console.log(user, ordens);
+    // console.log(user, ordens);
       useEffect(() => {
         if(!atuhLoading && (groupName!==GROUPS.DOCTOR || groupName!==GROUPS.PATIENT)){
           toast("No eres doctora ni paciente", {
@@ -93,6 +127,7 @@ function Results({signOut,user}) {
           fetchOrdenes();
         }
       }, [
+          nextToken,
           groupName,
           filters.type, 
           filters.status,
@@ -209,7 +244,35 @@ function Results({signOut,user}) {
                                         </div>
                                       </li>
                                     ))
-                                }
+                                  }
+                                {!disabledNext && !disabledPrev &&(
+                                    <div className="flex justify-between px-4 py-2 mb-4 text-sm bg-white rounded shadow-md lg:py-4 lg:px-8">
+                                      <button
+                                        className={`${
+                                          disabledPrev
+                                            ? 'bg-blue-500 opacity-50 cursor-not-allowed'
+                                            : 'bg-blue-500 hover:bg-blue-400'
+                                        } shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded`}
+                                        disabled={disabledPrev}
+                                        onClick={prev}
+                                      >
+                                        <ChevronsLeft size="1rem" className="inline-block mr-2" />
+                                        <span>Previous</span>
+                                      </button>
+                                      <button
+                                        className={`${
+                                          disabledNext
+                                            ? 'bg-blue-500 opacity-50 cursor-not-allowed'
+                                            : 'bg-blue-500 hover:bg-blue-400'
+                                        } shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded`}
+                                        disabled={disabledNext}
+                                        onClick={next}
+                                      >
+                                        <span>Next</span>
+                                        <ChevronsRight size="1rem" className="inline-block ml-2" />
+                                      </button>
+                                    </div>
+                                )}
                                 {ordens.length<1&&(
                                   <div className="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
                                     Parece que no tienes ningún resultado.
