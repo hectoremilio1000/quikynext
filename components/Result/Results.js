@@ -121,7 +121,7 @@ function Results({signOut,user}) {
           toast("No eres doctora ni paciente", {
               position: toast.POSITION.TOP_RIGHT,autoClose: 2000, type: 'error'
           });
-          // signOut();
+          signOut();
         }
         if(groupName===GROUPS.DOCTOR || groupName===GROUPS.PATIENT){
           fetchOrdenes();
