@@ -118,10 +118,10 @@ function Results({signOut,user}) {
     // console.log(user, ordens);
       useEffect(() => {
         if(!atuhLoading && (groupName!==GROUPS.DOCTOR || groupName!==GROUPS.PATIENT)){
-          toast("No eres doctora ni paciente", {
-              position: toast.POSITION.TOP_RIGHT,autoClose: 2000, type: 'error'
-          });
-          signOut();
+          // toast("No eres doctora ni paciente", {
+          //     position: toast.POSITION.TOP_RIGHT,autoClose: 2000, type: 'error'
+          // });
+          // signOut();
         }
         if(groupName===GROUPS.DOCTOR || groupName===GROUPS.PATIENT){
           fetchOrdenes();
@@ -245,7 +245,7 @@ function Results({signOut,user}) {
                                       </li>
                                     ))
                                   }
-                                {!disabledNext && !disabledPrev &&(
+                                {(!disabledNext || !disabledPrev) &&(
                                     <div className="flex justify-between px-4 py-2 mb-4 text-sm bg-white rounded shadow-md lg:py-4 lg:px-8">
                                       <button
                                         className={`${
