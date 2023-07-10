@@ -9,7 +9,7 @@ import { listBLOGS } from "@/src/graphql/queries";
 
 Amplify.configure(awsExports);
 
-function blog1() {
+function Blog1() {
   const [blog, setBlog] = useState([]);
 
   const fetchBlog = async () => {
@@ -125,4 +125,4 @@ function blog1() {
   );
 }
 
-export default blog1;
+export default Blog1;
