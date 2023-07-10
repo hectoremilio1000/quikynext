@@ -3,11 +3,11 @@ import { API, graphqlOperation } from "aws-amplify";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
-import awsExports from "../../src/aws-exports";
+// import awsExports from "../../src/aws-exports";
 import { Amplify } from "aws-amplify";
 import { listBLOGS } from "@/src/graphql/queries";
 
-Amplify.configure(awsExports);
+// Amplify.configure(awsExports);
 
 function Blog1() {
   const [blog, setBlog] = useState([]);
