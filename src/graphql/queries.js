@@ -1,6 +1,961 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getCONFIGURACIONDOCUMENTO = /* GraphQL */ `
+  query GetCONFIGURACIONDOCUMENTO($id: ID!) {
+    getCONFIGURACIONDOCUMENTO(id: $id) {
+      id
+      tipoDocumento
+      serieActual
+      numeroSecuencialActual
+      laboratorioID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listCONFIGURACIONDOCUMENTOS = /* GraphQL */ `
+  query ListCONFIGURACIONDOCUMENTOS(
+    $filter: ModelCONFIGURACIONDOCUMENTOFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCONFIGURACIONDOCUMENTOS(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tipoDocumento
+        serieActual
+        numeroSecuencialActual
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCONFIGURACIONDOCUMENTOS = /* GraphQL */ `
+  query SyncCONFIGURACIONDOCUMENTOS(
+    $filter: ModelCONFIGURACIONDOCUMENTOFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCONFIGURACIONDOCUMENTOS(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        tipoDocumento
+        serieActual
+        numeroSecuencialActual
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const cONFIGURACIONDOCUMENTOSByLaboratorioID = /* GraphQL */ `
+  query CONFIGURACIONDOCUMENTOSByLaboratorioID(
+    $laboratorioID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCONFIGURACIONDOCUMENTOFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cONFIGURACIONDOCUMENTOSByLaboratorioID(
+      laboratorioID: $laboratorioID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tipoDocumento
+        serieActual
+        numeroSecuencialActual
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getDOCUMENTOS = /* GraphQL */ `
+  query GetDOCUMENTOS($id: ID!) {
+    getDOCUMENTOS(id: $id) {
+      id
+      tipoDocumento
+      serie
+      numeroSecuencial
+      laboratorioID
+      ordenID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listDOCUMENTOS = /* GraphQL */ `
+  query ListDOCUMENTOS(
+    $filter: ModelDOCUMENTOSFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDOCUMENTOS(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        tipoDocumento
+        serie
+        numeroSecuencial
+        laboratorioID
+        ordenID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncDOCUMENTOS = /* GraphQL */ `
+  query SyncDOCUMENTOS(
+    $filter: ModelDOCUMENTOSFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncDOCUMENTOS(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        tipoDocumento
+        serie
+        numeroSecuencial
+        laboratorioID
+        ordenID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const dOCUMENTOSByLaboratorioID = /* GraphQL */ `
+  query DOCUMENTOSByLaboratorioID(
+    $laboratorioID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelDOCUMENTOSFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    dOCUMENTOSByLaboratorioID(
+      laboratorioID: $laboratorioID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tipoDocumento
+        serie
+        numeroSecuencial
+        laboratorioID
+        ordenID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const dOCUMENTOSByOrdenID = /* GraphQL */ `
+  query DOCUMENTOSByOrdenID(
+    $ordenID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelDOCUMENTOSFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    dOCUMENTOSByOrdenID(
+      ordenID: $ordenID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tipoDocumento
+        serie
+        numeroSecuencial
+        laboratorioID
+        ordenID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getCaja = /* GraphQL */ `
+  query GetCaja($id: ID!) {
+    getCaja(id: $id) {
+      id
+      nombre
+      laboratorioID
+      Turnos {
+        items {
+          id
+          montoInicial
+          fechaApertura
+          montoCierre
+          fechaCierre
+          usuario
+          estado
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          cajaID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listCajas = /* GraphQL */ `
+  query ListCajas(
+    $filter: ModelCajaFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCajas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        nombre
+        laboratorioID
+        Turnos {
+          items {
+            id
+            montoInicial
+            fechaApertura
+            montoCierre
+            fechaCierre
+            usuario
+            estado
+            cajaID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCajas = /* GraphQL */ `
+  query SyncCajas(
+    $filter: ModelCajaFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCajas(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        nombre
+        laboratorioID
+        Turnos {
+          items {
+            id
+            montoInicial
+            fechaApertura
+            montoCierre
+            fechaCierre
+            usuario
+            estado
+            cajaID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const cajasByLaboratorioID = /* GraphQL */ `
+  query CajasByLaboratorioID(
+    $laboratorioID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCajaFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cajasByLaboratorioID(
+      laboratorioID: $laboratorioID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        nombre
+        laboratorioID
+        Turnos {
+          items {
+            id
+            montoInicial
+            fechaApertura
+            montoCierre
+            fechaCierre
+            usuario
+            estado
+            cajaID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTurno = /* GraphQL */ `
+  query GetTurno($id: ID!) {
+    getTurno(id: $id) {
+      id
+      montoInicial
+      fechaApertura
+      montoCierre
+      fechaCierre
+      usuario
+      estado
+      ORDENS {
+        items {
+          id
+          type
+          fechaOrden
+          horaOrden
+          formatoPago
+          envioPaciente
+          totalPruebas
+          sucursalMuestra
+          tratamiento
+          capturaOrden
+          diabetico
+          hipertenso
+          padecimientos
+          medicamentos
+          diagnostico
+          envioDoctor
+          altura
+          peso
+          indiceMasaCorporal
+          temperatura
+          costoTotal
+          saturacion
+          frecuenciaCardiaca
+          pacienteID
+          datePublishingResult
+          hourPublishingResult
+          ORDENPRUEBAITEMS {
+            nextToken
+            startedAt
+          }
+          doctorID
+          status
+          groups
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          pdfReceipt
+          urlReceipt
+          pdfResul
+          urlResult
+          presion
+          turnoID
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      GASTOS {
+        items {
+          id
+          montoGasto
+          descripcion
+          fecha
+          turnoID
+          laboratorioID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      cajaID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTurnos = /* GraphQL */ `
+  query ListTurnos(
+    $filter: ModelTurnoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTurnos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        montoInicial
+        fechaApertura
+        montoCierre
+        fechaCierre
+        usuario
+        estado
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        cajaID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTurnos = /* GraphQL */ `
+  query SyncTurnos(
+    $filter: ModelTurnoFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTurnos(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        montoInicial
+        fechaApertura
+        montoCierre
+        fechaCierre
+        usuario
+        estado
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        cajaID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const turnosByCajaID = /* GraphQL */ `
+  query TurnosByCajaID(
+    $cajaID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelTurnoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    turnosByCajaID(
+      cajaID: $cajaID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        montoInicial
+        fechaApertura
+        montoCierre
+        fechaCierre
+        usuario
+        estado
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        cajaID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getGASTOS = /* GraphQL */ `
+  query GetGASTOS($id: ID!) {
+    getGASTOS(id: $id) {
+      id
+      montoGasto
+      descripcion
+      fecha
+      turnoID
+      laboratorioID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listGASTOS = /* GraphQL */ `
+  query ListGASTOS(
+    $filter: ModelGASTOSFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGASTOS(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        montoGasto
+        descripcion
+        fecha
+        turnoID
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncGASTOS = /* GraphQL */ `
+  query SyncGASTOS(
+    $filter: ModelGASTOSFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncGASTOS(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        montoGasto
+        descripcion
+        fecha
+        turnoID
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const gASTOSByTurnoID = /* GraphQL */ `
+  query GASTOSByTurnoID(
+    $turnoID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelGASTOSFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    gASTOSByTurnoID(
+      turnoID: $turnoID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        montoGasto
+        descripcion
+        fecha
+        turnoID
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const gASTOSByLaboratorioID = /* GraphQL */ `
+  query GASTOSByLaboratorioID(
+    $laboratorioID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelGASTOSFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    gASTOSByLaboratorioID(
+      laboratorioID: $laboratorioID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        montoGasto
+        descripcion
+        fecha
+        turnoID
+        laboratorioID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getREFERENCE = /* GraphQL */ `
   query GetREFERENCE($id: ID!) {
     getREFERENCE(id: $id) {
@@ -9,6 +964,7 @@ export const getREFERENCE = /* GraphQL */ `
       maxReferencia
       nombre
       parametrostestID
+      isValueNormal
       createdAt
       updatedAt
       _version
@@ -30,6 +986,7 @@ export const listREFERENCES = /* GraphQL */ `
         maxReferencia
         nombre
         parametrostestID
+        isValueNormal
         createdAt
         updatedAt
         _version
@@ -60,6 +1017,7 @@ export const syncREFERENCES = /* GraphQL */ `
         maxReferencia
         nombre
         parametrostestID
+        isValueNormal
         createdAt
         updatedAt
         _version
@@ -92,6 +1050,7 @@ export const rEFERENCESByParametrostestID = /* GraphQL */ `
         maxReferencia
         nombre
         parametrostestID
+        isValueNormal
         createdAt
         updatedAt
         _version
@@ -113,7 +1072,40 @@ export const getRESULTPARAMITEM = /* GraphQL */ `
         nombre
         unidad
         pruebaID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         category
+        REFERENCES {
+          items {
+            id
+            minReferencia
+            maxReferencia
+            nombre
+            parametrostestID
+            isValueNormal
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -145,6 +1137,26 @@ export const listRESULTPARAMITEMS = /* GraphQL */ `
       items {
         id
         parametrostestID
+        PARAMETROSTEST {
+          id
+          nombre
+          unidad
+          pruebaID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          category
+          REFERENCES {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         ordenpruebaitemID
         resultParam
         selectedReference
@@ -175,6 +1187,26 @@ export const syncRESULTPARAMITEMS = /* GraphQL */ `
       items {
         id
         parametrostestID
+        PARAMETROSTEST {
+          id
+          nombre
+          unidad
+          pruebaID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          category
+          REFERENCES {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         ordenpruebaitemID
         resultParam
         selectedReference
@@ -207,6 +1239,26 @@ export const rESULTPARAMITEMSByParametrostestID = /* GraphQL */ `
       items {
         id
         parametrostestID
+        PARAMETROSTEST {
+          id
+          nombre
+          unidad
+          pruebaID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          category
+          REFERENCES {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         ordenpruebaitemID
         resultParam
         selectedReference
@@ -239,6 +1291,26 @@ export const rESULTPARAMITEMSByOrdenpruebaitemID = /* GraphQL */ `
       items {
         id
         parametrostestID
+        PARAMETROSTEST {
+          id
+          nombre
+          unidad
+          pruebaID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          category
+          REFERENCES {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         ordenpruebaitemID
         resultParam
         selectedReference
@@ -260,6 +1332,30 @@ export const getORDENPRUEBAITEM = /* GraphQL */ `
       pruebaID
       ordenID
       RESULTPARAMITEMS {
+        items {
+          id
+          parametrostestID
+          PARAMETROSTEST {
+            id
+            nombre
+            unidad
+            pruebaID
+            category
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          ordenpruebaitemID
+          resultParam
+          selectedReference
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -288,6 +1384,22 @@ export const listORDENPRUEBAITEMS = /* GraphQL */ `
         id
         pruebaID
         ordenID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         resultInsight
         costo
         createdAt
@@ -318,6 +1430,22 @@ export const syncORDENPRUEBAITEMS = /* GraphQL */ `
         id
         pruebaID
         ordenID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         resultInsight
         costo
         createdAt
@@ -350,6 +1478,22 @@ export const oRDENPRUEBAITEMSByPruebaID = /* GraphQL */ `
         id
         pruebaID
         ordenID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         resultInsight
         costo
         createdAt
@@ -382,6 +1526,22 @@ export const oRDENPRUEBAITEMSByOrdenID = /* GraphQL */ `
         id
         pruebaID
         ordenID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         resultInsight
         costo
         createdAt
@@ -406,6 +1566,252 @@ export const getREPRESENTANTE = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -438,6 +1844,61 @@ export const listREPRESENTANTES = /* GraphQL */ `
         nombres
         userName
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         email
         phoneNumber
         confirmed
@@ -473,6 +1934,61 @@ export const syncREPRESENTANTES = /* GraphQL */ `
         nombres
         userName
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         email
         phoneNumber
         confirmed
@@ -510,6 +2026,61 @@ export const rEPRESENTANTESByLaboratorioID = /* GraphQL */ `
         nombres
         userName
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         email
         phoneNumber
         confirmed
@@ -538,6 +2109,252 @@ export const getGERENTE = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -570,6 +2387,61 @@ export const listGERENTES = /* GraphQL */ `
         nombres
         userName
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         email
         phoneNumber
         confirmed
@@ -605,6 +2477,61 @@ export const syncGERENTES = /* GraphQL */ `
         nombres
         userName
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         email
         phoneNumber
         confirmed
@@ -642,6 +2569,61 @@ export const gERENTESByLaboratorioID = /* GraphQL */ `
         nombres
         userName
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         email
         phoneNumber
         confirmed
@@ -666,26 +2648,366 @@ export const getLABORATORIO = /* GraphQL */ `
       nombre
       createdBy
       REPRESENTANTES {
+        items {
+          id
+          nombres
+          userName
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          email
+          phoneNumber
+          confirmed
+          blocked
+          createdBy
+          groups
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
       GERENTES {
+        items {
+          id
+          nombres
+          userName
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          email
+          phoneNumber
+          confirmed
+          blocked
+          createdBy
+          groups
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
       DOCTORS {
+        items {
+          id
+          nombres
+          apellidoPaterno
+          apellidoMaterno
+          especialidad
+          calle
+          numeroExterior
+          numeroInterior
+          colonia
+          cp
+          municipio
+          estado
+          pais
+          email
+          whatsapp
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          createdBy
+          groups
+          userName
+          confirmed
+          blocked
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
       PACIENTES {
+        items {
+          id
+          nombres
+          apellidoPaterno
+          apellidoMaterno
+          sexo
+          fechaNacimiento
+          edad
+          direccion
+          colonia
+          cp
+          municipio
+          estado
+          pais
+          email
+          whatsapp
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          createdBy
+          groups
+          userName
+          confirmed
+          blocked
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
       PRUEBAS {
+        items {
+          id
+          nombre
+          categoria
+          precio
+          precioDescuento
+          descripcionCorta
+          tiempoEntrega
+          indicaciones
+          tipoMuestra
+          tipoContenedor
+          PARAMETROSTESTS {
+            nextToken
+            startedAt
+          }
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          groups
+          ORDENPRUEBAITEMS {
+            nextToken
+            startedAt
+          }
+          grupoPersona
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
       ORDENS {
+        items {
+          id
+          type
+          fechaOrden
+          horaOrden
+          formatoPago
+          envioPaciente
+          totalPruebas
+          sucursalMuestra
+          tratamiento
+          capturaOrden
+          diabetico
+          hipertenso
+          padecimientos
+          medicamentos
+          diagnostico
+          envioDoctor
+          altura
+          peso
+          indiceMasaCorporal
+          temperatura
+          costoTotal
+          saturacion
+          frecuenciaCardiaca
+          pacienteID
+          datePublishingResult
+          hourPublishingResult
+          ORDENPRUEBAITEMS {
+            nextToken
+            startedAt
+          }
+          doctorID
+          status
+          groups
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          pdfReceipt
+          urlReceipt
+          pdfResul
+          urlResult
+          presion
+          turnoID
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      Cajas {
+        items {
+          id
+          nombre
+          laboratorioID
+          Turnos {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      GASTOS {
+        items {
+          id
+          montoGasto
+          descripcion
+          fecha
+          turnoID
+          laboratorioID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      direction
+      cp
+      rfc
+      contactPhone
+      codSerial
+      DOCUMENTOS {
+        items {
+          id
+          tipoDocumento
+          serie
+          numeroSecuencial
+          laboratorioID
+          ordenID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      CONFIGURACIONDOCUMENTOS {
+        items {
+          id
+          tipoDocumento
+          serieActual
+          numeroSecuencialActual
+          laboratorioID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -708,6 +3030,252 @@ export const listLABORATORIOS = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -736,6 +3304,252 @@ export const syncLABORATORIOS = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -755,11 +3569,48 @@ export const getPARAMETROSTEST = /* GraphQL */ `
       unidad
       pruebaID
       RESULTPARAMITEMS {
+        items {
+          id
+          parametrostestID
+          PARAMETROSTEST {
+            id
+            nombre
+            unidad
+            pruebaID
+            category
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          ordenpruebaitemID
+          resultParam
+          selectedReference
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
       category
       REFERENCES {
+        items {
+          id
+          minReferencia
+          maxReferencia
+          nombre
+          parametrostestID
+          isValueNormal
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -783,7 +3634,40 @@ export const listPARAMETROSTESTS = /* GraphQL */ `
         nombre
         unidad
         pruebaID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         category
+        REFERENCES {
+          items {
+            id
+            minReferencia
+            maxReferencia
+            nombre
+            parametrostestID
+            isValueNormal
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -813,7 +3697,40 @@ export const syncPARAMETROSTESTS = /* GraphQL */ `
         nombre
         unidad
         pruebaID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         category
+        REFERENCES {
+          items {
+            id
+            minReferencia
+            maxReferencia
+            nombre
+            parametrostestID
+            isValueNormal
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -845,7 +3762,40 @@ export const pARAMETROSTESTSByPruebaID = /* GraphQL */ `
         nombre
         unidad
         pruebaID
+        RESULTPARAMITEMS {
+          items {
+            id
+            parametrostestID
+            ordenpruebaitemID
+            resultParam
+            selectedReference
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         category
+        REFERENCES {
+          items {
+            id
+            minReferencia
+            maxReferencia
+            nombre
+            parametrostestID
+            isValueNormal
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -955,6 +3905,22 @@ export const getORDEN = /* GraphQL */ `
       datePublishingResult
       hourPublishingResult
       ORDENPRUEBAITEMS {
+        items {
+          id
+          pruebaID
+          ordenID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          resultInsight
+          costo
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -966,6 +3932,252 @@ export const getORDEN = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -977,6 +4189,24 @@ export const getORDEN = /* GraphQL */ `
       pdfResul
       urlResult
       presion
+      turnoID
+      DOCUMENTOS {
+        items {
+          id
+          tipoDocumento
+          serie
+          numeroSecuencial
+          laboratorioID
+          ordenID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -1019,6 +4249,22 @@ export const listORDENS = /* GraphQL */ `
         pacienteID
         datePublishingResult
         hourPublishingResult
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         doctorID
         status
         groups
@@ -1026,12 +4272,81 @@ export const listORDENS = /* GraphQL */ `
         LABORATORIO {
           id
           nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         pdfReceipt
         urlReceipt
         pdfResul
         urlResult
         presion
+        turnoID
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1083,15 +4398,104 @@ export const syncORDENS = /* GraphQL */ `
         pacienteID
         datePublishingResult
         hourPublishingResult
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         doctorID
         status
         groups
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         pdfReceipt
         urlReceipt
         pdfResul
         urlResult
         presion
+        turnoID
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1145,15 +4549,104 @@ export const oRDENSByPacienteID = /* GraphQL */ `
         pacienteID
         datePublishingResult
         hourPublishingResult
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         doctorID
         status
         groups
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         pdfReceipt
         urlReceipt
         pdfResul
         urlResult
         presion
+        turnoID
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1207,15 +4700,104 @@ export const oRDENSByDoctorID = /* GraphQL */ `
         pacienteID
         datePublishingResult
         hourPublishingResult
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         doctorID
         status
         groups
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         pdfReceipt
         urlReceipt
         pdfResul
         urlResult
         presion
+        turnoID
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1269,15 +4851,255 @@ export const oRDENSByLaboratorioID = /* GraphQL */ `
         pacienteID
         datePublishingResult
         hourPublishingResult
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         doctorID
         status
         groups
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         pdfReceipt
         urlReceipt
         pdfResul
         urlResult
         presion
+        turnoID
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const oRDENSByTurnoID = /* GraphQL */ `
+  query ORDENSByTurnoID(
+    $turnoID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelORDENFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    oRDENSByTurnoID(
+      turnoID: $turnoID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        type
+        fechaOrden
+        horaOrden
+        formatoPago
+        envioPaciente
+        totalPruebas
+        sucursalMuestra
+        tratamiento
+        capturaOrden
+        diabetico
+        hipertenso
+        padecimientos
+        medicamentos
+        diagnostico
+        envioDoctor
+        altura
+        peso
+        indiceMasaCorporal
+        temperatura
+        costoTotal
+        saturacion
+        frecuenciaCardiaca
+        pacienteID
+        datePublishingResult
+        hourPublishingResult
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        doctorID
+        status
+        groups
+        laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        pdfReceipt
+        urlReceipt
+        pdfResul
+        urlResult
+        presion
+        turnoID
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1303,6 +5125,26 @@ export const getPRUEBA = /* GraphQL */ `
       tipoMuestra
       tipoContenedor
       PARAMETROSTESTS {
+        items {
+          id
+          nombre
+          unidad
+          pruebaID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          category
+          REFERENCES {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -1311,6 +5153,252 @@ export const getPRUEBA = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1319,9 +5407,26 @@ export const getPRUEBA = /* GraphQL */ `
       }
       groups
       ORDENPRUEBAITEMS {
+        items {
+          id
+          pruebaID
+          ordenID
+          RESULTPARAMITEMS {
+            nextToken
+            startedAt
+          }
+          resultInsight
+          costo
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
+      grupoPersona
       createdAt
       updatedAt
       _version
@@ -1348,8 +5453,96 @@ export const listPRUEBAS = /* GraphQL */ `
         indicaciones
         tipoMuestra
         tipoContenedor
+        PARAMETROSTESTS {
+          items {
+            id
+            nombre
+            unidad
+            pruebaID
+            category
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         groups
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        grupoPersona
         createdAt
         updatedAt
         _version
@@ -1385,8 +5578,96 @@ export const syncPRUEBAS = /* GraphQL */ `
         indicaciones
         tipoMuestra
         tipoContenedor
+        PARAMETROSTESTS {
+          items {
+            id
+            nombre
+            unidad
+            pruebaID
+            category
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         groups
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        grupoPersona
         createdAt
         updatedAt
         _version
@@ -1424,8 +5705,96 @@ export const pRUEBASByLaboratorioID = /* GraphQL */ `
         indicaciones
         tipoMuestra
         tipoContenedor
+        PARAMETROSTESTS {
+          items {
+            id
+            nombre
+            unidad
+            pruebaID
+            category
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         groups
+        ORDENPRUEBAITEMS {
+          items {
+            id
+            pruebaID
+            ordenID
+            resultInsight
+            costo
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        grupoPersona
         createdAt
         updatedAt
         _version
@@ -1460,6 +5829,252 @@ export const getDOCTOR = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1467,6 +6082,72 @@ export const getDOCTOR = /* GraphQL */ `
         _lastChangedAt
       }
       ORDENS {
+        items {
+          id
+          type
+          fechaOrden
+          horaOrden
+          formatoPago
+          envioPaciente
+          totalPruebas
+          sucursalMuestra
+          tratamiento
+          capturaOrden
+          diabetico
+          hipertenso
+          padecimientos
+          medicamentos
+          diagnostico
+          envioDoctor
+          altura
+          peso
+          indiceMasaCorporal
+          temperatura
+          costoTotal
+          saturacion
+          frecuenciaCardiaca
+          pacienteID
+          datePublishingResult
+          hourPublishingResult
+          ORDENPRUEBAITEMS {
+            nextToken
+            startedAt
+          }
+          doctorID
+          status
+          groups
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          pdfReceipt
+          urlReceipt
+          pdfResul
+          urlResult
+          presion
+          turnoID
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -1507,6 +6188,108 @@ export const listDOCTORS = /* GraphQL */ `
         email
         whatsapp
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdBy
         groups
         userName
@@ -1553,6 +6336,108 @@ export const syncDOCTORS = /* GraphQL */ `
         email
         whatsapp
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdBy
         groups
         userName
@@ -1601,6 +6486,108 @@ export const dOCTORSByLaboratorioID = /* GraphQL */ `
         email
         whatsapp
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdBy
         groups
         userName
@@ -1636,6 +6623,72 @@ export const getPACIENTE = /* GraphQL */ `
       email
       whatsapp
       ORDENS {
+        items {
+          id
+          type
+          fechaOrden
+          horaOrden
+          formatoPago
+          envioPaciente
+          totalPruebas
+          sucursalMuestra
+          tratamiento
+          capturaOrden
+          diabetico
+          hipertenso
+          padecimientos
+          medicamentos
+          diagnostico
+          envioDoctor
+          altura
+          peso
+          indiceMasaCorporal
+          temperatura
+          costoTotal
+          saturacion
+          frecuenciaCardiaca
+          pacienteID
+          datePublishingResult
+          hourPublishingResult
+          ORDENPRUEBAITEMS {
+            nextToken
+            startedAt
+          }
+          doctorID
+          status
+          groups
+          laboratorioID
+          LABORATORIO {
+            id
+            nombre
+            createdBy
+            direction
+            cp
+            rfc
+            contactPhone
+            codSerial
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          pdfReceipt
+          urlReceipt
+          pdfResul
+          urlResult
+          presion
+          turnoID
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         nextToken
         startedAt
       }
@@ -1644,6 +6697,252 @@ export const getPACIENTE = /* GraphQL */ `
         id
         nombre
         createdBy
+        REPRESENTANTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GERENTES {
+          items {
+            id
+            nombres
+            userName
+            laboratorioID
+            email
+            phoneNumber
+            confirmed
+            blocked
+            createdBy
+            groups
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        DOCTORS {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            especialidad
+            calle
+            numeroExterior
+            numeroInterior
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PACIENTES {
+          items {
+            id
+            nombres
+            apellidoPaterno
+            apellidoMaterno
+            sexo
+            fechaNacimiento
+            edad
+            direccion
+            colonia
+            cp
+            municipio
+            estado
+            pais
+            email
+            whatsapp
+            laboratorioID
+            createdBy
+            groups
+            userName
+            confirmed
+            blocked
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        PRUEBAS {
+          items {
+            id
+            nombre
+            categoria
+            precio
+            precioDescuento
+            descripcionCorta
+            tiempoEntrega
+            indicaciones
+            tipoMuestra
+            tipoContenedor
+            laboratorioID
+            groups
+            grupoPersona
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        Cajas {
+          items {
+            id
+            nombre
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        GASTOS {
+          items {
+            id
+            montoGasto
+            descripcion
+            fecha
+            turnoID
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        direction
+        cp
+        rfc
+        contactPhone
+        codSerial
+        DOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serie
+            numeroSecuencial
+            laboratorioID
+            ordenID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
+        CONFIGURACIONDOCUMENTOS {
+          items {
+            id
+            tipoDocumento
+            serieActual
+            numeroSecuencialActual
+            laboratorioID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version
@@ -1686,7 +6985,109 @@ export const listPACIENTES = /* GraphQL */ `
         pais
         email
         whatsapp
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdBy
         groups
         userName
@@ -1732,7 +7133,109 @@ export const syncPACIENTES = /* GraphQL */ `
         pais
         email
         whatsapp
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdBy
         groups
         userName
@@ -1780,7 +7283,109 @@ export const pACIENTESByLaboratorioID = /* GraphQL */ `
         pais
         email
         whatsapp
+        ORDENS {
+          items {
+            id
+            type
+            fechaOrden
+            horaOrden
+            formatoPago
+            envioPaciente
+            totalPruebas
+            sucursalMuestra
+            tratamiento
+            capturaOrden
+            diabetico
+            hipertenso
+            padecimientos
+            medicamentos
+            diagnostico
+            envioDoctor
+            altura
+            peso
+            indiceMasaCorporal
+            temperatura
+            costoTotal
+            saturacion
+            frecuenciaCardiaca
+            pacienteID
+            datePublishingResult
+            hourPublishingResult
+            doctorID
+            status
+            groups
+            laboratorioID
+            pdfReceipt
+            urlReceipt
+            pdfResul
+            urlResult
+            presion
+            turnoID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          nextToken
+          startedAt
+        }
         laboratorioID
+        LABORATORIO {
+          id
+          nombre
+          createdBy
+          REPRESENTANTES {
+            nextToken
+            startedAt
+          }
+          GERENTES {
+            nextToken
+            startedAt
+          }
+          DOCTORS {
+            nextToken
+            startedAt
+          }
+          PACIENTES {
+            nextToken
+            startedAt
+          }
+          PRUEBAS {
+            nextToken
+            startedAt
+          }
+          ORDENS {
+            nextToken
+            startedAt
+          }
+          Cajas {
+            nextToken
+            startedAt
+          }
+          GASTOS {
+            nextToken
+            startedAt
+          }
+          direction
+          cp
+          rfc
+          contactPhone
+          codSerial
+          DOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          CONFIGURACIONDOCUMENTOS {
+            nextToken
+            startedAt
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdBy
         groups
         userName
@@ -1814,6 +7419,7 @@ export const getBLOG = /* GraphQL */ `
       url2
       url3
       autor
+      slug
       createdAt
       updatedAt
       _version
@@ -1844,6 +7450,7 @@ export const listBLOGS = /* GraphQL */ `
         url2
         url3
         autor
+        slug
         createdAt
         updatedAt
         _version
@@ -1883,6 +7490,7 @@ export const syncBLOGS = /* GraphQL */ `
         url2
         url3
         autor
+        slug
         createdAt
         updatedAt
         _version

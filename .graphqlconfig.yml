@@ -1,6 +1,6 @@
 projects:
-  sanmateoadmin-develop:
-    schemaPath: src/graphql/schema.json
+  apidevsanmateo:
+    schemaPath: amplify/backend/api/apidevsanmateo/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:
@@ -11,8 +11,8 @@ projects:
         generatedFileName: ''
         docsFilePath: src/graphql
         region: us-east-1
-        apiId: 4nm5hf2xsjeypjkmz7sq7nlal4
-        maxDepth: 2
+        apiId: null
+        maxDepth: 4
 extensions:
   amplify:
     version: 3

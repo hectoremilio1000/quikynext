@@ -7,7 +7,10 @@ import Image from "next/image";
 function FooterFinal() {
   return (
     <footer className="footerSanmateo py-4">
-      <div className="rowQh" style={{display: "flex", alignItems: "flex-start !important"}}>
+      <div
+        className="rowQh"
+        style={{ display: "flex", alignItems: "flex-start !important" }}
+      >
         <div className="blockElement">
           <Image style={{ width: "200px" }} src={logo} />
           <p
@@ -20,7 +23,9 @@ function FooterFinal() {
         </div>
         <div className="blockElement">
           <h2 className="text-white">
-            <b style={{textDecoration: "underline", paddingBottom: "5px"}}>Menu</b>
+            <b style={{ textDecoration: "underline", paddingBottom: "5px" }}>
+              Menu
+            </b>
           </h2>
           <nav className="mt-4" style={{ width: "100%" }}>
             <div className="py-2">
@@ -28,30 +33,30 @@ function FooterFinal() {
                 <p className="text-white hover:text-green-200">Inicio</p>
               </Link>
             </div>
-            <div className="py-2">
+            {/* <div className="py-2">
               <Link href="/paciente">
                 <p className="text-white hover:text-green-200">Paciente</p>
               </Link>
-            </div>
-            <div className="py-2">
+            </div> */}
+            {/* <div className="py-2">
               <Link href="/doctor">
                 <p className="text-white hover:text-green-200">Doctor</p>
               </Link>
-            </div>
+            </div> */}
             <div className="py-2">
               <Link href="/blog">
                 <p className="text-white hover:text-green-200">Blog</p>
               </Link>
             </div>
             <div className="py-2">
-              <Link href="/reserva">
-                <p className="text-white hover:text-green-200">Reserva</p>
+              <Link href="/results">
+                <p className="text-white hover:text-green-200">Results</p>
               </Link>
             </div>
           </nav>
         </div>
       </div>
-      <div className="rowQh" >
+      <div className="rowQh">
         <div className="blockElement">
           <p className="text-center text-white">
             © Todos los derechos reservados de Laboratorios San Mateo 2020

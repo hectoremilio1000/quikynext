@@ -1,9 +1,60 @@
+type CONFIGURACIONDOCUMENTO @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  tipoDocumento: TIPODOCUMENTO
+  serieActual: String
+  numeroSecuencialActual: Int
+  laboratorioID: ID! @index(name: "byLABORATORIO")
+}
+
+enum TIPODOCUMENTO {
+  NOTADEVENTA
+}
+
+type DOCUMENTOS @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  tipoDocumento: TIPODOCUMENTO
+  serie: String
+  numeroSecuencial: Int
+  laboratorioID: ID! @index(name: "byLABORATORIO")
+  ordenID: ID! @index(name: "byORDEN")
+}
+
+type Caja @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  nombre: String
+  laboratorioID: ID! @index(name: "byLABORATORIO")
+  Turnos: [Turno] @hasMany(indexName: "byCaja", fields: ["id"])
+}
+
+type Turno @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  montoInicial: Float
+  fechaApertura: String
+  montoCierre: Float
+  fechaCierre: String
+  usuario: ID
+  estado: String
+  ORDENS: [ORDEN] @hasMany(indexName: "byTurno", fields: ["id"])
+  GASTOS: [GASTOS] @hasMany(indexName: "byTurno", fields: ["id"])
+  cajaID: ID! @index(name: "byCaja")
+}
+
+type GASTOS @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  montoGasto: Float
+  descripcion: String
+  fecha: String
+  turnoID: ID! @index(name: "byTurno")
+  laboratorioID: ID! @index(name: "byLABORATORIO")
+}
+
 type REFERENCE @model @auth(rules: [{allow: private}]) {
   id: ID!
   minReferencia: String!
   maxReferencia: String
   nombre: String
   parametrostestID: ID! @index(name: "byPARAMETROSTEST")
+  isValueNormal: Boolean
 }
 
 enum STATUSORDER {
@@ -74,6 +125,15 @@ type LABORATORIO @model @auth(rules: [{allow: private}]) {
   PACIENTES: [PACIENTE] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
   PRUEBAS: [PRUEBA] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
   ORDENS: [ORDEN] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
+  Cajas: [Caja] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
+  GASTOS: [GASTOS] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
+  direction: String
+  cp: String
+  rfc: String
+  contactPhone: String
+  codSerial: String
+  DOCUMENTOS: [DOCUMENTOS] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
+  CONFIGURACIONDOCUMENTOS: [CONFIGURACIONDOCUMENTO] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
 }
 
 type PARAMETROSTEST @model @auth(rules: [{allow: private}]) {
@@ -136,6 +196,8 @@ type ORDEN @model @auth(rules: [{allow: private}]) {
   pdfResul: String
   urlResult: String
   presion: String
+  turnoID: ID! @index(name: "byTurno")
+  DOCUMENTOS: [DOCUMENTOS] @hasMany(indexName: "byORDEN", fields: ["id"])
 }
 
 type PRUEBA @model @auth(rules: [{allow: private}]) {
@@ -154,6 +216,7 @@ type PRUEBA @model @auth(rules: [{allow: private}]) {
   LABORATORIO: LABORATORIO @belongsTo(fields: ["laboratorioID"])
   groups: [String]
   ORDENPRUEBAITEMS: [ORDENPRUEBAITEM] @hasMany(indexName: "byPRUEBA", fields: ["id"])
+  grupoPersona: String
 }
 
 type DOCTOR @model @auth(rules: [{allow: private}]) {
@@ -228,5 +291,6 @@ type BLOG @model @auth(rules: [{allow: private}]) {
   url2: String
   url3: String
   autor: String
+  slug: String
 }
  

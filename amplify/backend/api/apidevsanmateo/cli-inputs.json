@@ -1,21 +1,21 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "sanmateoadmin",
+    "apiName": "apidevsanmateo",
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authsanmateoadmina3eeaf4c"
     },
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "AUTOMERGE"
-      }
-    },
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
       }
-    ]
+    ],
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
   }
 }

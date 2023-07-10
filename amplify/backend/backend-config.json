@@ -1,6 +1,6 @@
 {
   "api": {
-    "sanmateoadmin": {
+    "apidevsanmateo": {
       "dependsOn": [
         {
           "attributes": [

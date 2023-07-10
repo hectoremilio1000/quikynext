@@ -2,6 +2,10 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
+const Tipodocumento = {
+  "NOTADEVENTA": "NOTADEVENTA"
+};
+
 const Statusorder = {
   "CREATED": "CREATED",
   "PUBLISHED": "PUBLISHED",
@@ -14,35 +18,41 @@ const Typeorder = {
   "ORDER": "ORDER"
 };
 
-const Sexotipo = {
-  "MASCULINO": "MASCULINO",
-  "FEMENINO": "FEMENINO"
-};
-
 const Servicio = {
   "EXCELENTE": "EXCELENTE",
   "REGULAR": "REGULAR",
   "MALO": "MALO"
 };
 
-const { REFERENCE, RESULTPARAMITEM, PARAMETROSTEST, ORDENPRUEBAITEM, REPRESENTANTE, LABORATORIO, GERENTE, DOCTOR, ORDEN, PACIENTE, PRUEBA, EncuestaServicio, BLOG } = initSchema(schema);
+const Sexotipo = {
+  "MASCULINO": "MASCULINO",
+  "FEMENINO": "FEMENINO"
+};
+
+const { CONFIGURACIONDOCUMENTO, DOCUMENTOS, Caja, Turno, GASTOS, REFERENCE, RESULTPARAMITEM, ORDENPRUEBAITEM, REPRESENTANTE, GERENTE, LABORATORIO, PARAMETROSTEST, EncuestaServicio, ORDEN, PRUEBA, DOCTOR, PACIENTE, BLOG } = initSchema(schema);
 
 export {
+  CONFIGURACIONDOCUMENTO,
+  DOCUMENTOS,
+  Caja,
+  Turno,
+  GASTOS,
   REFERENCE,
   RESULTPARAMITEM,
-  PARAMETROSTEST,
   ORDENPRUEBAITEM,
   REPRESENTANTE,
-  LABORATORIO,
   GERENTE,
-  DOCTOR,
-  ORDEN,
-  PACIENTE,
-  PRUEBA,
+  LABORATORIO,
+  PARAMETROSTEST,
   EncuestaServicio,
+  ORDEN,
+  PRUEBA,
+  DOCTOR,
+  PACIENTE,
   BLOG,
+  Tipodocumento,
   Statusorder,
   Typeorder,
-  Sexotipo,
-  Servicio
+  Servicio,
+  Sexotipo
 };

@@ -1,5 +1,541 @@
 export const schema = {
     "models": {
+        "CONFIGURACIONDOCUMENTO": {
+            "name": "CONFIGURACIONDOCUMENTO",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "tipoDocumento": {
+                    "name": "tipoDocumento",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Tipodocumento"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "serieActual": {
+                    "name": "serieActual",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "numeroSecuencialActual": {
+                    "name": "numeroSecuencialActual",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "laboratorioID": {
+                    "name": "laboratorioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "CONFIGURACIONDOCUMENTOS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byLABORATORIO",
+                        "fields": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "DOCUMENTOS": {
+            "name": "DOCUMENTOS",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "tipoDocumento": {
+                    "name": "tipoDocumento",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Tipodocumento"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "serie": {
+                    "name": "serie",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "numeroSecuencial": {
+                    "name": "numeroSecuencial",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "laboratorioID": {
+                    "name": "laboratorioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "ordenID": {
+                    "name": "ordenID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "DOCUMENTOS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byLABORATORIO",
+                        "fields": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byORDEN",
+                        "fields": [
+                            "ordenID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Caja": {
+            "name": "Caja",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "nombre": {
+                    "name": "nombre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "laboratorioID": {
+                    "name": "laboratorioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Turnos": {
+                    "name": "Turnos",
+                    "isArray": true,
+                    "type": {
+                        "model": "Turno"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "cajaID"
+                        ]
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Cajas",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byLABORATORIO",
+                        "fields": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Turno": {
+            "name": "Turno",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "montoInicial": {
+                    "name": "montoInicial",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "fechaApertura": {
+                    "name": "fechaApertura",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "montoCierre": {
+                    "name": "montoCierre",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "fechaCierre": {
+                    "name": "fechaCierre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "usuario": {
+                    "name": "usuario",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "estado": {
+                    "name": "estado",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ORDENS": {
+                    "name": "ORDENS",
+                    "isArray": true,
+                    "type": {
+                        "model": "ORDEN"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "turnoID"
+                        ]
+                    }
+                },
+                "GASTOS": {
+                    "name": "GASTOS",
+                    "isArray": true,
+                    "type": {
+                        "model": "GASTOS"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "turnoID"
+                        ]
+                    }
+                },
+                "cajaID": {
+                    "name": "cajaID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Turnos",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byCaja",
+                        "fields": [
+                            "cajaID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "GASTOS": {
+            "name": "GASTOS",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "montoGasto": {
+                    "name": "montoGasto",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "descripcion": {
+                    "name": "descripcion",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "fecha": {
+                    "name": "fecha",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "turnoID": {
+                    "name": "turnoID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "laboratorioID": {
+                    "name": "laboratorioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "GASTOS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTurno",
+                        "fields": [
+                            "turnoID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byLABORATORIO",
+                        "fields": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "REFERENCE": {
             "name": "REFERENCE",
             "fields": {
@@ -36,6 +572,13 @@ export const schema = {
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
+                    "attributes": []
+                },
+                "isValueNormal": {
+                    "name": "isValueNormal",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
                     "attributes": []
                 },
                 "createdAt": {
@@ -181,127 +724,6 @@ export const schema = {
                         "name": "byORDENPRUEBAITEM",
                         "fields": [
                             "ordenpruebaitemID"
-                        ]
-                    }
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "private",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "PARAMETROSTEST": {
-            "name": "PARAMETROSTEST",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "nombre": {
-                    "name": "nombre",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "unidad": {
-                    "name": "unidad",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "pruebaID": {
-                    "name": "pruebaID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "RESULTPARAMITEMS": {
-                    "name": "RESULTPARAMITEMS",
-                    "isArray": true,
-                    "type": {
-                        "model": "RESULTPARAMITEM"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "PARAMETROSTEST"
-                        ]
-                    }
-                },
-                "category": {
-                    "name": "category",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "REFERENCES": {
-                    "name": "REFERENCES",
-                    "isArray": true,
-                    "type": {
-                        "model": "REFERENCE"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "parametrostestID"
-                        ]
-                    }
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                }
-            },
-            "syncable": true,
-            "pluralName": "PARAMETROSTESTS",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byPRUEBA",
-                        "fields": [
-                            "pruebaID"
                         ]
                     }
                 },
@@ -577,168 +999,6 @@ export const schema = {
                 }
             ]
         },
-        "LABORATORIO": {
-            "name": "LABORATORIO",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "nombre": {
-                    "name": "nombre",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "createdBy": {
-                    "name": "createdBy",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "REPRESENTANTES": {
-                    "name": "REPRESENTANTES",
-                    "isArray": true,
-                    "type": {
-                        "model": "REPRESENTANTE"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "LABORATORIO"
-                        ]
-                    }
-                },
-                "GERENTES": {
-                    "name": "GERENTES",
-                    "isArray": true,
-                    "type": {
-                        "model": "GERENTE"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "LABORATORIO"
-                        ]
-                    }
-                },
-                "DOCTORS": {
-                    "name": "DOCTORS",
-                    "isArray": true,
-                    "type": {
-                        "model": "DOCTOR"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "LABORATORIO"
-                        ]
-                    }
-                },
-                "PACIENTES": {
-                    "name": "PACIENTES",
-                    "isArray": true,
-                    "type": {
-                        "model": "PACIENTE"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "LABORATORIO"
-                        ]
-                    }
-                },
-                "PRUEBAS": {
-                    "name": "PRUEBAS",
-                    "isArray": true,
-                    "type": {
-                        "model": "PRUEBA"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "LABORATORIO"
-                        ]
-                    }
-                },
-                "ORDENS": {
-                    "name": "ORDENS",
-                    "isArray": true,
-                    "type": {
-                        "model": "ORDEN"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "LABORATORIO"
-                        ]
-                    }
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                }
-            },
-            "syncable": true,
-            "pluralName": "LABORATORIOS",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "private",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "GERENTE": {
             "name": "GERENTE",
             "fields": {
@@ -879,8 +1139,8 @@ export const schema = {
                 }
             ]
         },
-        "DOCTOR": {
-            "name": "DOCTOR",
+        "LABORATORIO": {
+            "name": "LABORATORIO",
             "fields": {
                 "id": {
                     "name": "id",
@@ -889,123 +1149,97 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "nombres": {
-                    "name": "nombres",
+                "nombre": {
+                    "name": "nombre",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "apellidoPaterno": {
-                    "name": "apellidoPaterno",
+                "createdBy": {
+                    "name": "createdBy",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "apellidoMaterno": {
-                    "name": "apellidoMaterno",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "especialidad": {
-                    "name": "especialidad",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "calle": {
-                    "name": "calle",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "numeroExterior": {
-                    "name": "numeroExterior",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "numeroInterior": {
-                    "name": "numeroInterior",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "colonia": {
-                    "name": "colonia",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "cp": {
-                    "name": "cp",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "municipio": {
-                    "name": "municipio",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "estado": {
-                    "name": "estado",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "pais": {
-                    "name": "pais",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "email": {
-                    "name": "email",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "whatsapp": {
-                    "name": "whatsapp",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "laboratorioID": {
-                    "name": "laboratorioID",
-                    "isArray": false,
-                    "type": "ID",
                     "isRequired": true,
                     "attributes": []
                 },
-                "LABORATORIO": {
-                    "name": "LABORATORIO",
-                    "isArray": false,
+                "REPRESENTANTES": {
+                    "name": "REPRESENTANTES",
+                    "isArray": true,
                     "type": {
-                        "model": "LABORATORIO"
+                        "model": "REPRESENTANTE"
                     },
                     "isRequired": false,
                     "attributes": [],
+                    "isArrayNullable": true,
                     "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetNames": [
-                            "laboratorioID"
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "LABORATORIO"
+                        ]
+                    }
+                },
+                "GERENTES": {
+                    "name": "GERENTES",
+                    "isArray": true,
+                    "type": {
+                        "model": "GERENTE"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "LABORATORIO"
+                        ]
+                    }
+                },
+                "DOCTORS": {
+                    "name": "DOCTORS",
+                    "isArray": true,
+                    "type": {
+                        "model": "DOCTOR"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "LABORATORIO"
+                        ]
+                    }
+                },
+                "PACIENTES": {
+                    "name": "PACIENTES",
+                    "isArray": true,
+                    "type": {
+                        "model": "PACIENTE"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "LABORATORIO"
+                        ]
+                    }
+                },
+                "PRUEBAS": {
+                    "name": "PRUEBAS",
+                    "isArray": true,
+                    "type": {
+                        "model": "PRUEBA"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "LABORATORIO"
                         ]
                     }
                 },
@@ -1021,43 +1255,295 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": [
-                            "doctorID"
+                            "LABORATORIO"
                         ]
                     }
                 },
-                "createdBy": {
-                    "name": "createdBy",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "groups": {
-                    "name": "groups",
+                "Cajas": {
+                    "name": "Cajas",
                     "isArray": true,
-                    "type": "String",
+                    "type": {
+                        "model": "Caja"
+                    },
                     "isRequired": false,
                     "attributes": [],
-                    "isArrayNullable": true
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "laboratorioID"
+                        ]
+                    }
                 },
-                "userName": {
-                    "name": "userName",
+                "GASTOS": {
+                    "name": "GASTOS",
+                    "isArray": true,
+                    "type": {
+                        "model": "GASTOS"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                "direction": {
+                    "name": "direction",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "confirmed": {
-                    "name": "confirmed",
+                "cp": {
+                    "name": "cp",
                     "isArray": false,
-                    "type": "Boolean",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "blocked": {
-                    "name": "blocked",
+                "rfc": {
+                    "name": "rfc",
                     "isArray": false,
-                    "type": "Boolean",
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "contactPhone": {
+                    "name": "contactPhone",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "codSerial": {
+                    "name": "codSerial",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "DOCUMENTOS": {
+                    "name": "DOCUMENTOS",
+                    "isArray": true,
+                    "type": {
+                        "model": "DOCUMENTOS"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                "CONFIGURACIONDOCUMENTOS": {
+                    "name": "CONFIGURACIONDOCUMENTOS",
+                    "isArray": true,
+                    "type": {
+                        "model": "CONFIGURACIONDOCUMENTO"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "LABORATORIOS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PARAMETROSTEST": {
+            "name": "PARAMETROSTEST",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "nombre": {
+                    "name": "nombre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "unidad": {
+                    "name": "unidad",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "pruebaID": {
+                    "name": "pruebaID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "RESULTPARAMITEMS": {
+                    "name": "RESULTPARAMITEMS",
+                    "isArray": true,
+                    "type": {
+                        "model": "RESULTPARAMITEM"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "PARAMETROSTEST"
+                        ]
+                    }
+                },
+                "category": {
+                    "name": "category",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "REFERENCES": {
+                    "name": "REFERENCES",
+                    "isArray": true,
+                    "type": {
+                        "model": "REFERENCE"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "parametrostestID"
+                        ]
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PARAMETROSTESTS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPRUEBA",
+                        "fields": [
+                            "pruebaID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "EncuestaServicio": {
+            "name": "EncuestaServicio",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "encuesta": {
+                    "name": "encuesta",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Servicio"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "usuario": {
+                    "name": "usuario",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -1079,20 +1565,11 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "DOCTORS",
+            "pluralName": "EncuestaServicios",
             "attributes": [
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byLABORATORIO",
-                        "fields": [
-                            "laboratorioID"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -1396,6 +1873,29 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "turnoID": {
+                    "name": "turnoID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "DOCUMENTOS": {
+                    "name": "DOCUMENTOS",
+                    "isArray": true,
+                    "type": {
+                        "model": "DOCUMENTOS"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "ordenID"
+                        ]
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -1437,6 +1937,441 @@ export const schema = {
                             "doctorID"
                         ]
                     }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byLABORATORIO",
+                        "fields": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTurno",
+                        "fields": [
+                            "turnoID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PRUEBA": {
+            "name": "PRUEBA",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "nombre": {
+                    "name": "nombre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "categoria": {
+                    "name": "categoria",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "precio": {
+                    "name": "precio",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "precioDescuento": {
+                    "name": "precioDescuento",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "descripcionCorta": {
+                    "name": "descripcionCorta",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tiempoEntrega": {
+                    "name": "tiempoEntrega",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "indicaciones": {
+                    "name": "indicaciones",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tipoMuestra": {
+                    "name": "tipoMuestra",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tipoContenedor": {
+                    "name": "tipoContenedor",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "PARAMETROSTESTS": {
+                    "name": "PARAMETROSTESTS",
+                    "isArray": true,
+                    "type": {
+                        "model": "PARAMETROSTEST"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "pruebaID"
+                        ]
+                    }
+                },
+                "laboratorioID": {
+                    "name": "laboratorioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "LABORATORIO": {
+                    "name": "LABORATORIO",
+                    "isArray": false,
+                    "type": {
+                        "model": "LABORATORIO"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                "groups": {
+                    "name": "groups",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "ORDENPRUEBAITEMS": {
+                    "name": "ORDENPRUEBAITEMS",
+                    "isArray": true,
+                    "type": {
+                        "model": "ORDENPRUEBAITEM"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "pruebaID"
+                        ]
+                    }
+                },
+                "grupoPersona": {
+                    "name": "grupoPersona",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PRUEBAS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byLABORATORIO",
+                        "fields": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "DOCTOR": {
+            "name": "DOCTOR",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "nombres": {
+                    "name": "nombres",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "apellidoPaterno": {
+                    "name": "apellidoPaterno",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "apellidoMaterno": {
+                    "name": "apellidoMaterno",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "especialidad": {
+                    "name": "especialidad",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "calle": {
+                    "name": "calle",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "numeroExterior": {
+                    "name": "numeroExterior",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "numeroInterior": {
+                    "name": "numeroInterior",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "colonia": {
+                    "name": "colonia",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cp": {
+                    "name": "cp",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "municipio": {
+                    "name": "municipio",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "estado": {
+                    "name": "estado",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "pais": {
+                    "name": "pais",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "whatsapp": {
+                    "name": "whatsapp",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "laboratorioID": {
+                    "name": "laboratorioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "LABORATORIO": {
+                    "name": "LABORATORIO",
+                    "isArray": false,
+                    "type": {
+                        "model": "LABORATORIO"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "laboratorioID"
+                        ]
+                    }
+                },
+                "ORDENS": {
+                    "name": "ORDENS",
+                    "isArray": true,
+                    "type": {
+                        "model": "ORDEN"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "doctorID"
+                        ]
+                    }
+                },
+                "createdBy": {
+                    "name": "createdBy",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "groups": {
+                    "name": "groups",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "userName": {
+                    "name": "userName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "confirmed": {
+                    "name": "confirmed",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "blocked": {
+                    "name": "blocked",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "DOCTORS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
                 },
                 {
                     "type": "key",
@@ -1700,260 +2635,6 @@ export const schema = {
                 }
             ]
         },
-        "PRUEBA": {
-            "name": "PRUEBA",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "nombre": {
-                    "name": "nombre",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "categoria": {
-                    "name": "categoria",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "precio": {
-                    "name": "precio",
-                    "isArray": false,
-                    "type": "Float",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "precioDescuento": {
-                    "name": "precioDescuento",
-                    "isArray": false,
-                    "type": "Float",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "descripcionCorta": {
-                    "name": "descripcionCorta",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "tiempoEntrega": {
-                    "name": "tiempoEntrega",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "indicaciones": {
-                    "name": "indicaciones",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "tipoMuestra": {
-                    "name": "tipoMuestra",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "tipoContenedor": {
-                    "name": "tipoContenedor",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "PARAMETROSTESTS": {
-                    "name": "PARAMETROSTESTS",
-                    "isArray": true,
-                    "type": {
-                        "model": "PARAMETROSTEST"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "pruebaID"
-                        ]
-                    }
-                },
-                "laboratorioID": {
-                    "name": "laboratorioID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "LABORATORIO": {
-                    "name": "LABORATORIO",
-                    "isArray": false,
-                    "type": {
-                        "model": "LABORATORIO"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetNames": [
-                            "laboratorioID"
-                        ]
-                    }
-                },
-                "groups": {
-                    "name": "groups",
-                    "isArray": true,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
-                },
-                "ORDENPRUEBAITEMS": {
-                    "name": "ORDENPRUEBAITEMS",
-                    "isArray": true,
-                    "type": {
-                        "model": "ORDENPRUEBAITEM"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "pruebaID"
-                        ]
-                    }
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                }
-            },
-            "syncable": true,
-            "pluralName": "PRUEBAS",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byLABORATORIO",
-                        "fields": [
-                            "laboratorioID"
-                        ]
-                    }
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "private",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "EncuestaServicio": {
-            "name": "EncuestaServicio",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "encuesta": {
-                    "name": "encuesta",
-                    "isArray": false,
-                    "type": {
-                        "enum": "Servicio"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "usuario": {
-                    "name": "usuario",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                }
-            },
-            "syncable": true,
-            "pluralName": "EncuestaServicios",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "private",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "BLOG": {
             "name": "BLOG",
             "fields": {
@@ -2055,6 +2736,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "slug": {
+                    "name": "slug",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -2099,6 +2787,12 @@ export const schema = {
         }
     },
     "enums": {
+        "Tipodocumento": {
+            "name": "Tipodocumento",
+            "values": [
+                "NOTADEVENTA"
+            ]
+        },
         "Statusorder": {
             "name": "Statusorder",
             "values": [
@@ -2115,13 +2809,6 @@ export const schema = {
                 "ORDER"
             ]
         },
-        "Sexotipo": {
-            "name": "Sexotipo",
-            "values": [
-                "MASCULINO",
-                "FEMENINO"
-            ]
-        },
         "Servicio": {
             "name": "Servicio",
             "values": [
@@ -2129,9 +2816,16 @@ export const schema = {
                 "REGULAR",
                 "MALO"
             ]
+        },
+        "Sexotipo": {
+            "name": "Sexotipo",
+            "values": [
+                "MASCULINO",
+                "FEMENINO"
+            ]
         }
     },
     "nonModels": {},
-    "codegenVersion": "3.3.5",
-    "version": "fe6bdb743ab7596d6c02edd5d3f00e44"
+    "codegenVersion": "3.4.2",
+    "version": "bfc44a1b5c4a61dc709b7edb8feee35b"
 };

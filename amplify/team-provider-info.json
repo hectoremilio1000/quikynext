@@ -1,29 +1,29 @@
 {
   "develop": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-sanmateoadmin-develop-161803-authRole",
-      "UnauthRoleArn": "arn:aws:iam::648055517850:role/amplify-sanmateoadmin-develop-161803-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::648055517850:role/amplify-sanmateoadmin-develop-161803-authRole",
+      "AuthRoleName": "amplify-sanmateoadmin-develop-140527-authRole",
+      "UnauthRoleArn": "arn:aws:iam::648055517850:role/amplify-sanmateoadmin-develop-140527-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::648055517850:role/amplify-sanmateoadmin-develop-140527-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-sanmateoadmin-develop-161803-deployment",
-      "UnauthRoleName": "amplify-sanmateoadmin-develop-161803-unauthRole",
-      "StackName": "amplify-sanmateoadmin-develop-161803",
-      "StackId": "arn:aws:cloudformation:us-east-1:648055517850:stack/amplify-sanmateoadmin-develop-161803/ea516fe0-e904-11ed-833a-0e7a9ef8dd29",
+      "DeploymentBucketName": "amplify-sanmateoadmin-develop-140527-deployment",
+      "UnauthRoleName": "amplify-sanmateoadmin-develop-140527-unauthRole",
+      "StackName": "amplify-sanmateoadmin-develop-140527",
+      "StackId": "arn:aws:cloudformation:us-east-1:648055517850:stack/amplify-sanmateoadmin-develop-140527/ab3c2c80-14f3-11ee-aa76-0e0820eb2815",
       "AmplifyAppId": "d35nfmh1qjaunj",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-sanmateoadmin-develop-161803-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-sanmateoadmin-develop-140527-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
         "sanmateoadmina3eeaf4c": {}
       },
-      "storage": {
-        "s3sanmateoadminstorage4b293137": {}
-      },
       "function": {
         "sanmateoadmina3eeaf4cPostConfirmation": {
-          "deploymentBucketName": "amplify-sanmateoadmin-develop-161803-deployment",
-          "s3Key": "amplify-builds/sanmateoadmina3eeaf4cPostConfirmation-4c57533961556a436249-build.zip"
+          "deploymentBucketName": "amplify-sanmateoadmin-develop-140527-deployment",
+          "s3Key": "amplify-builds/sanmateoadmina3eeaf4cPostConfirmation-4b7261634b4271394968-build.zip"
         }
+      },
+      "storage": {
+        "s3sanmateoadminstorage4b293137": {}
       }
     }
   }

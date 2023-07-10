@@ -20,7 +20,7 @@ import { DataStore } from "aws-amplify";
 export default function EncuestaServicioUpdateForm(props) {
   const {
     id: idProp,
-    encuestaServicio,
+    encuestaServicio: encuestaServicioModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -30,7 +30,7 @@ export default function EncuestaServicioUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    encuesta: undefined,
+    encuesta: "",
     usuario: "",
   };
   const [encuesta, setEncuesta] = React.useState(initialValues.encuesta);
@@ -44,17 +44,18 @@ export default function EncuestaServicioUpdateForm(props) {
     setUsuario(cleanValues.usuario);
     setErrors({});
   };
-  const [encuestaServicioRecord, setEncuestaServicioRecord] =
-    React.useState(encuestaServicio);
+  const [encuestaServicioRecord, setEncuestaServicioRecord] = React.useState(
+    encuestaServicioModelProp
+  );
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
         ? await DataStore.query(EncuestaServicio, idProp)
-        : encuestaServicio;
+        : encuestaServicioModelProp;
       setEncuestaServicioRecord(record);
     };
     queryData();
-  }, [idProp, encuestaServicio]);
+  }, [idProp, encuestaServicioModelProp]);
   React.useEffect(resetStateValues, [encuestaServicioRecord]);
   const validations = {
     encuesta: [],
@@ -65,9 +66,10 @@ export default function EncuestaServicioUpdateForm(props) {
     currentValue,
     getDisplayValue
   ) => {
-    const value = getDisplayValue
-      ? getDisplayValue(currentValue)
-      : currentValue;
+    const value =
+      currentValue && getDisplayValue
+        ? getDisplayValue(currentValue)
+        : currentValue;
     let validationResponse = validateField(value, validations[fieldName]);
     const customValidator = fetchByPath(onValidate, fieldName);
     if (customValidator) {
@@ -210,7 +212,7 @@ export default function EncuestaServicioUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || encuestaServicio)}
+          isDisabled={!(idProp || encuestaServicioModelProp)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -222,7 +224,7 @@ export default function EncuestaServicioUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || encuestaServicio) ||
+              !(idProp || encuestaServicioModelProp) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}

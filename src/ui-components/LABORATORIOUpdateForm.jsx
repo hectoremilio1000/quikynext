@@ -14,7 +14,7 @@ import { DataStore } from "aws-amplify";
 export default function LABORATORIOUpdateForm(props) {
   const {
     id: idProp,
-    lABORATORIO,
+    lABORATORIO: lABORATORIOModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -26,9 +26,21 @@ export default function LABORATORIOUpdateForm(props) {
   const initialValues = {
     nombre: "",
     createdBy: "",
+    direction: "",
+    cp: "",
+    rfc: "",
+    contactPhone: "",
+    codSerial: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
   const [createdBy, setCreatedBy] = React.useState(initialValues.createdBy);
+  const [direction, setDirection] = React.useState(initialValues.direction);
+  const [cp, setCp] = React.useState(initialValues.cp);
+  const [rfc, setRfc] = React.useState(initialValues.rfc);
+  const [contactPhone, setContactPhone] = React.useState(
+    initialValues.contactPhone
+  );
+  const [codSerial, setCodSerial] = React.useState(initialValues.codSerial);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = lABORATORIORecord
@@ -36,31 +48,43 @@ export default function LABORATORIOUpdateForm(props) {
       : initialValues;
     setNombre(cleanValues.nombre);
     setCreatedBy(cleanValues.createdBy);
+    setDirection(cleanValues.direction);
+    setCp(cleanValues.cp);
+    setRfc(cleanValues.rfc);
+    setContactPhone(cleanValues.contactPhone);
+    setCodSerial(cleanValues.codSerial);
     setErrors({});
   };
-  const [lABORATORIORecord, setLABORATORIORecord] = React.useState(lABORATORIO);
+  const [lABORATORIORecord, setLABORATORIORecord] =
+    React.useState(lABORATORIOModelProp);
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
         ? await DataStore.query(LABORATORIO, idProp)
-        : lABORATORIO;
+        : lABORATORIOModelProp;
       setLABORATORIORecord(record);
     };
     queryData();
-  }, [idProp, lABORATORIO]);
+  }, [idProp, lABORATORIOModelProp]);
   React.useEffect(resetStateValues, [lABORATORIORecord]);
   const validations = {
     nombre: [{ type: "Required" }],
     createdBy: [{ type: "Required" }],
+    direction: [],
+    cp: [],
+    rfc: [],
+    contactPhone: [],
+    codSerial: [],
   };
   const runValidationTasks = async (
     fieldName,
     currentValue,
     getDisplayValue
   ) => {
-    const value = getDisplayValue
-      ? getDisplayValue(currentValue)
-      : currentValue;
+    const value =
+      currentValue && getDisplayValue
+        ? getDisplayValue(currentValue)
+        : currentValue;
     let validationResponse = validateField(value, validations[fieldName]);
     const customValidator = fetchByPath(onValidate, fieldName);
     if (customValidator) {
@@ -80,6 +104,11 @@ export default function LABORATORIOUpdateForm(props) {
         let modelFields = {
           nombre,
           createdBy,
+          direction,
+          cp,
+          rfc,
+          contactPhone,
+          codSerial,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -137,6 +166,11 @@ export default function LABORATORIOUpdateForm(props) {
             const modelFields = {
               nombre: value,
               createdBy,
+              direction,
+              cp,
+              rfc,
+              contactPhone,
+              codSerial,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -162,6 +196,11 @@ export default function LABORATORIOUpdateForm(props) {
             const modelFields = {
               nombre,
               createdBy: value,
+              direction,
+              cp,
+              rfc,
+              contactPhone,
+              codSerial,
             };
             const result = onChange(modelFields);
             value = result?.createdBy ?? value;
@@ -176,6 +215,156 @@ export default function LABORATORIOUpdateForm(props) {
         hasError={errors.createdBy?.hasError}
         {...getOverrideProps(overrides, "createdBy")}
       ></TextField>
+      <TextField
+        label="Direction"
+        isRequired={false}
+        isReadOnly={false}
+        value={direction}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              createdBy,
+              direction: value,
+              cp,
+              rfc,
+              contactPhone,
+              codSerial,
+            };
+            const result = onChange(modelFields);
+            value = result?.direction ?? value;
+          }
+          if (errors.direction?.hasError) {
+            runValidationTasks("direction", value);
+          }
+          setDirection(value);
+        }}
+        onBlur={() => runValidationTasks("direction", direction)}
+        errorMessage={errors.direction?.errorMessage}
+        hasError={errors.direction?.hasError}
+        {...getOverrideProps(overrides, "direction")}
+      ></TextField>
+      <TextField
+        label="Cp"
+        isRequired={false}
+        isReadOnly={false}
+        value={cp}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              createdBy,
+              direction,
+              cp: value,
+              rfc,
+              contactPhone,
+              codSerial,
+            };
+            const result = onChange(modelFields);
+            value = result?.cp ?? value;
+          }
+          if (errors.cp?.hasError) {
+            runValidationTasks("cp", value);
+          }
+          setCp(value);
+        }}
+        onBlur={() => runValidationTasks("cp", cp)}
+        errorMessage={errors.cp?.errorMessage}
+        hasError={errors.cp?.hasError}
+        {...getOverrideProps(overrides, "cp")}
+      ></TextField>
+      <TextField
+        label="Rfc"
+        isRequired={false}
+        isReadOnly={false}
+        value={rfc}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              createdBy,
+              direction,
+              cp,
+              rfc: value,
+              contactPhone,
+              codSerial,
+            };
+            const result = onChange(modelFields);
+            value = result?.rfc ?? value;
+          }
+          if (errors.rfc?.hasError) {
+            runValidationTasks("rfc", value);
+          }
+          setRfc(value);
+        }}
+        onBlur={() => runValidationTasks("rfc", rfc)}
+        errorMessage={errors.rfc?.errorMessage}
+        hasError={errors.rfc?.hasError}
+        {...getOverrideProps(overrides, "rfc")}
+      ></TextField>
+      <TextField
+        label="Contact phone"
+        isRequired={false}
+        isReadOnly={false}
+        value={contactPhone}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              createdBy,
+              direction,
+              cp,
+              rfc,
+              contactPhone: value,
+              codSerial,
+            };
+            const result = onChange(modelFields);
+            value = result?.contactPhone ?? value;
+          }
+          if (errors.contactPhone?.hasError) {
+            runValidationTasks("contactPhone", value);
+          }
+          setContactPhone(value);
+        }}
+        onBlur={() => runValidationTasks("contactPhone", contactPhone)}
+        errorMessage={errors.contactPhone?.errorMessage}
+        hasError={errors.contactPhone?.hasError}
+        {...getOverrideProps(overrides, "contactPhone")}
+      ></TextField>
+      <TextField
+        label="Cod serial"
+        isRequired={false}
+        isReadOnly={false}
+        value={codSerial}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              createdBy,
+              direction,
+              cp,
+              rfc,
+              contactPhone,
+              codSerial: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.codSerial ?? value;
+          }
+          if (errors.codSerial?.hasError) {
+            runValidationTasks("codSerial", value);
+          }
+          setCodSerial(value);
+        }}
+        onBlur={() => runValidationTasks("codSerial", codSerial)}
+        errorMessage={errors.codSerial?.errorMessage}
+        hasError={errors.codSerial?.hasError}
+        {...getOverrideProps(overrides, "codSerial")}
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
@@ -187,7 +376,7 @@ export default function LABORATORIOUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || lABORATORIO)}
+          isDisabled={!(idProp || lABORATORIOModelProp)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -199,7 +388,7 @@ export default function LABORATORIOUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || lABORATORIO) ||
+              !(idProp || lABORATORIOModelProp) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}
