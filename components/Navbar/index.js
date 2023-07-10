@@ -80,9 +80,14 @@ function NavBar() {
               Reserva
             </Link>
           </li> */}
+          <li key="5">
+            <Link href="/bolsatrabajo" className="nav-link hover:text-blue-600">
+              Bolsa de Trabajo
+            </Link>
+          </li>
           <li key="3">
             <Link href="/results" className="nav-link hover:text-blue-600">
-              Results
+              Resultados
             </Link>
           </li>
         </div>
