@@ -14,6 +14,7 @@ export const getCONFIGURACIONDOCUMENTO = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -39,9 +40,11 @@ export const listCONFIGURACIONDOCUMENTOS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -69,9 +72,11 @@ export const syncCONFIGURACIONDOCUMENTOS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -101,9 +106,11 @@ export const cONFIGURACIONDOCUMENTOSByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -121,6 +128,7 @@ export const getDOCUMENTOS = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -143,9 +151,11 @@ export const listDOCUMENTOS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -174,9 +184,11 @@ export const syncDOCUMENTOS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -207,9 +219,11 @@ export const dOCUMENTOSByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -240,9 +254,11 @@ export const dOCUMENTOSByOrdenID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -264,10 +280,12 @@ export const getCaja = /* GraphQL */ `
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           cajaID
           createdAt
@@ -275,15 +293,18 @@ export const getCaja = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -313,18 +334,22 @@ export const listCajas = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -360,18 +385,22 @@ export const syncCajas = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -409,18 +438,22 @@ export const cajasByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -465,6 +498,7 @@ export const getTurno = /* GraphQL */ `
           ORDENPRUEBAITEMS {
             nextToken
             startedAt
+            __typename
           }
           doctorID
           status
@@ -484,6 +518,7 @@ export const getTurno = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           pdfReceipt
           urlReceipt
@@ -494,15 +529,18 @@ export const getTurno = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       GASTOS {
         items {
@@ -517,9 +555,11 @@ export const getTurno = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       cajaID
       createdAt
@@ -527,6 +567,7 @@ export const getTurno = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -588,9 +629,11 @@ export const listTurnos = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -605,9 +648,11 @@ export const listTurnos = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         cajaID
         createdAt
@@ -615,9 +660,11 @@ export const listTurnos = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -685,9 +732,11 @@ export const syncTurnos = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -702,9 +751,11 @@ export const syncTurnos = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         cajaID
         createdAt
@@ -712,9 +763,11 @@ export const syncTurnos = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -784,9 +837,11 @@ export const turnosByCajaID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -801,9 +856,11 @@ export const turnosByCajaID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         cajaID
         createdAt
@@ -811,9 +868,11 @@ export const turnosByCajaID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -831,6 +890,7 @@ export const getGASTOS = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -853,9 +913,11 @@ export const listGASTOS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -884,9 +946,11 @@ export const syncGASTOS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -917,9 +981,11 @@ export const gASTOSByTurnoID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -950,9 +1016,11 @@ export const gASTOSByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -970,6 +1038,7 @@ export const getREFERENCE = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -992,9 +1061,11 @@ export const listREFERENCES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1023,9 +1094,11 @@ export const syncREFERENCES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1056,9 +1129,11 @@ export const rEFERENCESByParametrostestID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1084,9 +1159,11 @@ export const getRESULTPARAMITEM = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         category
         REFERENCES {
@@ -1102,15 +1179,18 @@ export const getRESULTPARAMITEM = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       ordenpruebaitemID
       resultParam
@@ -1120,6 +1200,7 @@ export const getRESULTPARAMITEM = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -1145,17 +1226,20 @@ export const listRESULTPARAMITEMS = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           category
           REFERENCES {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ordenpruebaitemID
         resultParam
@@ -1165,9 +1249,11 @@ export const listRESULTPARAMITEMS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1195,17 +1281,20 @@ export const syncRESULTPARAMITEMS = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           category
           REFERENCES {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ordenpruebaitemID
         resultParam
@@ -1215,9 +1304,11 @@ export const syncRESULTPARAMITEMS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1247,17 +1338,20 @@ export const rESULTPARAMITEMSByParametrostestID = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           category
           REFERENCES {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ordenpruebaitemID
         resultParam
@@ -1267,9 +1361,11 @@ export const rESULTPARAMITEMSByParametrostestID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1299,17 +1395,20 @@ export const rESULTPARAMITEMSByOrdenpruebaitemID = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           category
           REFERENCES {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ordenpruebaitemID
         resultParam
@@ -1319,9 +1418,11 @@ export const rESULTPARAMITEMSByOrdenpruebaitemID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1346,6 +1447,7 @@ export const getORDENPRUEBAITEM = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           ordenpruebaitemID
           resultParam
@@ -1355,9 +1457,11 @@ export const getORDENPRUEBAITEM = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       resultInsight
       costo
@@ -1366,6 +1470,7 @@ export const getORDENPRUEBAITEM = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -1396,9 +1501,11 @@ export const listORDENPRUEBAITEMS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         resultInsight
         costo
@@ -1407,9 +1514,11 @@ export const listORDENPRUEBAITEMS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1442,9 +1551,11 @@ export const syncORDENPRUEBAITEMS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         resultInsight
         costo
@@ -1453,9 +1564,11 @@ export const syncORDENPRUEBAITEMS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1490,9 +1603,11 @@ export const oRDENPRUEBAITEMSByPruebaID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         resultInsight
         costo
@@ -1501,9 +1616,11 @@ export const oRDENPRUEBAITEMSByPruebaID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1538,9 +1655,11 @@ export const oRDENPRUEBAITEMSByOrdenID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         resultInsight
         costo
@@ -1549,9 +1668,11 @@ export const oRDENPRUEBAITEMSByOrdenID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1583,9 +1704,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -1604,9 +1727,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -1636,9 +1761,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -1668,9 +1795,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -1692,9 +1821,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -1739,9 +1870,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -1753,9 +1886,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -1770,9 +1905,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -1792,9 +1929,11 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -1808,15 +1947,18 @@ export const getREPRESENTANTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       email
       phoneNumber
@@ -1829,6 +1971,7 @@ export const getREPRESENTANTE = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -1851,34 +1994,42 @@ export const listREPRESENTANTES = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -1888,16 +2039,19 @@ export const listREPRESENTANTES = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         email
         phoneNumber
@@ -1910,9 +2064,11 @@ export const listREPRESENTANTES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -1941,34 +2097,42 @@ export const syncREPRESENTANTES = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -1978,16 +2142,19 @@ export const syncREPRESENTANTES = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         email
         phoneNumber
@@ -2000,9 +2167,11 @@ export const syncREPRESENTANTES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -2033,34 +2202,42 @@ export const rEPRESENTANTESByLaboratorioID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -2070,16 +2247,19 @@ export const rEPRESENTANTESByLaboratorioID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         email
         phoneNumber
@@ -2092,9 +2272,11 @@ export const rEPRESENTANTESByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -2126,9 +2308,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -2147,9 +2331,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -2179,9 +2365,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -2211,9 +2399,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -2235,9 +2425,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -2282,9 +2474,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -2296,9 +2490,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -2313,9 +2509,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -2335,9 +2533,11 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -2351,15 +2551,18 @@ export const getGERENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       email
       phoneNumber
@@ -2372,6 +2575,7 @@ export const getGERENTE = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -2394,34 +2598,42 @@ export const listGERENTES = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -2431,16 +2643,19 @@ export const listGERENTES = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         email
         phoneNumber
@@ -2453,9 +2668,11 @@ export const listGERENTES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -2484,34 +2701,42 @@ export const syncGERENTES = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -2521,16 +2746,19 @@ export const syncGERENTES = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         email
         phoneNumber
@@ -2543,9 +2771,11 @@ export const syncGERENTES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -2576,34 +2806,42 @@ export const gERENTESByLaboratorioID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -2613,16 +2851,19 @@ export const gERENTESByLaboratorioID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         email
         phoneNumber
@@ -2635,9 +2876,11 @@ export const gERENTESByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -2667,6 +2910,7 @@ export const getLABORATORIO = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           email
           phoneNumber
@@ -2679,9 +2923,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       GERENTES {
         items {
@@ -2703,6 +2949,7 @@ export const getLABORATORIO = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           email
           phoneNumber
@@ -2715,9 +2962,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       DOCTORS {
         items {
@@ -2751,10 +3000,12 @@ export const getLABORATORIO = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           createdBy
           groups
@@ -2766,9 +3017,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       PACIENTES {
         items {
@@ -2790,6 +3043,7 @@ export const getLABORATORIO = /* GraphQL */ `
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           laboratorioID
           LABORATORIO {
@@ -2806,6 +3060,7 @@ export const getLABORATORIO = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           createdBy
           groups
@@ -2817,9 +3072,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       PRUEBAS {
         items {
@@ -2836,6 +3093,7 @@ export const getLABORATORIO = /* GraphQL */ `
           PARAMETROSTESTS {
             nextToken
             startedAt
+            __typename
           }
           laboratorioID
           LABORATORIO {
@@ -2852,11 +3110,13 @@ export const getLABORATORIO = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           groups
           ORDENPRUEBAITEMS {
             nextToken
             startedAt
+            __typename
           }
           grupoPersona
           createdAt
@@ -2864,9 +3124,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       ORDENS {
         items {
@@ -2899,6 +3161,7 @@ export const getLABORATORIO = /* GraphQL */ `
           ORDENPRUEBAITEMS {
             nextToken
             startedAt
+            __typename
           }
           doctorID
           status
@@ -2918,6 +3181,7 @@ export const getLABORATORIO = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           pdfReceipt
           urlReceipt
@@ -2928,15 +3192,18 @@ export const getLABORATORIO = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       Cajas {
         items {
@@ -2946,15 +3213,18 @@ export const getLABORATORIO = /* GraphQL */ `
           Turnos {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       GASTOS {
         items {
@@ -2969,9 +3239,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       direction
       cp
@@ -2991,9 +3263,11 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       CONFIGURACIONDOCUMENTOS {
         items {
@@ -3007,15 +3281,18 @@ export const getLABORATORIO = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -3047,9 +3324,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -3068,9 +3347,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -3100,9 +3381,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -3132,9 +3415,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -3156,9 +3441,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -3203,9 +3490,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -3217,9 +3506,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -3234,9 +3525,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -3256,9 +3549,11 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -3272,18 +3567,22 @@ export const listLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3321,9 +3620,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -3342,9 +3643,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -3374,9 +3677,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -3406,9 +3711,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -3430,9 +3737,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -3477,9 +3786,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -3491,9 +3802,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -3508,9 +3821,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -3530,9 +3845,11 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -3546,18 +3863,22 @@ export const syncLABORATORIOS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3583,6 +3904,7 @@ export const getPARAMETROSTEST = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           ordenpruebaitemID
           resultParam
@@ -3592,9 +3914,11 @@ export const getPARAMETROSTEST = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       category
       REFERENCES {
@@ -3610,15 +3934,18 @@ export const getPARAMETROSTEST = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -3646,9 +3973,11 @@ export const listPARAMETROSTESTS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         category
         REFERENCES {
@@ -3664,18 +3993,22 @@ export const listPARAMETROSTESTS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3709,9 +4042,11 @@ export const syncPARAMETROSTESTS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         category
         REFERENCES {
@@ -3727,18 +4062,22 @@ export const syncPARAMETROSTESTS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3774,9 +4113,11 @@ export const pARAMETROSTESTSByPruebaID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         category
         REFERENCES {
@@ -3792,18 +4133,22 @@ export const pARAMETROSTESTSByPruebaID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3818,6 +4163,7 @@ export const getEncuestaServicio = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -3841,9 +4187,11 @@ export const listEncuestaServicios = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3869,9 +4217,11 @@ export const syncEncuestaServicios = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -3912,6 +4262,7 @@ export const getORDEN = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           resultInsight
           costo
@@ -3920,9 +4271,11 @@ export const getORDEN = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       doctorID
       status
@@ -3949,9 +4302,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -3970,9 +4325,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -4002,9 +4359,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -4034,9 +4393,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -4058,9 +4419,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -4105,9 +4468,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -4119,9 +4484,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -4136,9 +4503,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -4158,9 +4527,11 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -4174,15 +4545,18 @@ export const getORDEN = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       pdfReceipt
       urlReceipt
@@ -4203,15 +4577,18 @@ export const getORDEN = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -4261,9 +4638,11 @@ export const listORDENS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         doctorID
         status
@@ -4276,34 +4655,42 @@ export const listORDENS = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -4313,16 +4700,19 @@ export const listORDENS = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         pdfReceipt
         urlReceipt
@@ -4343,18 +4733,22 @@ export const listORDENS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -4410,9 +4804,11 @@ export const syncORDENS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         doctorID
         status
@@ -4425,34 +4821,42 @@ export const syncORDENS = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -4462,16 +4866,19 @@ export const syncORDENS = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         pdfReceipt
         urlReceipt
@@ -4492,18 +4899,22 @@ export const syncORDENS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -4561,9 +4972,11 @@ export const oRDENSByPacienteID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         doctorID
         status
@@ -4576,34 +4989,42 @@ export const oRDENSByPacienteID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -4613,16 +5034,19 @@ export const oRDENSByPacienteID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         pdfReceipt
         urlReceipt
@@ -4643,18 +5067,22 @@ export const oRDENSByPacienteID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -4712,9 +5140,11 @@ export const oRDENSByDoctorID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         doctorID
         status
@@ -4727,34 +5157,42 @@ export const oRDENSByDoctorID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -4764,16 +5202,19 @@ export const oRDENSByDoctorID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         pdfReceipt
         urlReceipt
@@ -4794,18 +5235,22 @@ export const oRDENSByDoctorID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -4863,9 +5308,11 @@ export const oRDENSByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         doctorID
         status
@@ -4878,34 +5325,42 @@ export const oRDENSByLaboratorioID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -4915,16 +5370,19 @@ export const oRDENSByLaboratorioID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         pdfReceipt
         urlReceipt
@@ -4945,18 +5403,22 @@ export const oRDENSByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -5014,9 +5476,11 @@ export const oRDENSByTurnoID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         doctorID
         status
@@ -5029,34 +5493,42 @@ export const oRDENSByTurnoID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -5066,16 +5538,19 @@ export const oRDENSByTurnoID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         pdfReceipt
         urlReceipt
@@ -5096,18 +5571,22 @@ export const oRDENSByTurnoID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -5133,20 +5612,24 @@ export const getPRUEBA = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           category
           REFERENCES {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       laboratorioID
       LABORATORIO {
@@ -5170,9 +5653,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -5191,9 +5676,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -5223,9 +5710,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -5255,9 +5744,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -5279,9 +5770,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -5326,9 +5819,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -5340,9 +5835,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -5357,9 +5854,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -5379,9 +5878,11 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -5395,15 +5896,18 @@ export const getPRUEBA = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       groups
       ORDENPRUEBAITEMS {
@@ -5414,6 +5918,7 @@ export const getPRUEBA = /* GraphQL */ `
           RESULTPARAMITEMS {
             nextToken
             startedAt
+            __typename
           }
           resultInsight
           costo
@@ -5422,9 +5927,11 @@ export const getPRUEBA = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       grupoPersona
       createdAt
@@ -5432,6 +5939,7 @@ export const getPRUEBA = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -5465,9 +5973,11 @@ export const listPRUEBAS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         laboratorioID
         LABORATORIO {
@@ -5477,34 +5987,42 @@ export const listPRUEBAS = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -5514,16 +6032,19 @@ export const listPRUEBAS = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         groups
         ORDENPRUEBAITEMS {
@@ -5538,9 +6059,11 @@ export const listPRUEBAS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         grupoPersona
         createdAt
@@ -5548,9 +6071,11 @@ export const listPRUEBAS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -5590,9 +6115,11 @@ export const syncPRUEBAS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         laboratorioID
         LABORATORIO {
@@ -5602,34 +6129,42 @@ export const syncPRUEBAS = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -5639,16 +6174,19 @@ export const syncPRUEBAS = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         groups
         ORDENPRUEBAITEMS {
@@ -5663,9 +6201,11 @@ export const syncPRUEBAS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         grupoPersona
         createdAt
@@ -5673,9 +6213,11 @@ export const syncPRUEBAS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -5717,9 +6259,11 @@ export const pRUEBASByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         laboratorioID
         LABORATORIO {
@@ -5729,34 +6273,42 @@ export const pRUEBASByLaboratorioID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -5766,16 +6318,19 @@ export const pRUEBASByLaboratorioID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         groups
         ORDENPRUEBAITEMS {
@@ -5790,9 +6345,11 @@ export const pRUEBASByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         grupoPersona
         createdAt
@@ -5800,9 +6357,11 @@ export const pRUEBASByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -5846,9 +6405,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -5867,9 +6428,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -5899,9 +6462,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -5931,9 +6496,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -5955,9 +6522,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -6002,9 +6571,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -6016,9 +6587,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -6033,9 +6606,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -6055,9 +6630,11 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -6071,15 +6648,18 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       ORDENS {
         items {
@@ -6112,6 +6692,7 @@ export const getDOCTOR = /* GraphQL */ `
           ORDENPRUEBAITEMS {
             nextToken
             startedAt
+            __typename
           }
           doctorID
           status
@@ -6131,6 +6712,7 @@ export const getDOCTOR = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           pdfReceipt
           urlReceipt
@@ -6141,15 +6723,18 @@ export const getDOCTOR = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       createdBy
       groups
@@ -6161,6 +6746,7 @@ export const getDOCTOR = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -6195,34 +6781,42 @@ export const listDOCTORS = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -6232,16 +6826,19 @@ export const listDOCTORS = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ORDENS {
           items {
@@ -6286,9 +6883,11 @@ export const listDOCTORS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdBy
         groups
@@ -6300,9 +6899,11 @@ export const listDOCTORS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -6343,34 +6944,42 @@ export const syncDOCTORS = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -6380,16 +6989,19 @@ export const syncDOCTORS = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ORDENS {
           items {
@@ -6434,9 +7046,11 @@ export const syncDOCTORS = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdBy
         groups
@@ -6448,9 +7062,11 @@ export const syncDOCTORS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -6493,34 +7109,42 @@ export const dOCTORSByLaboratorioID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -6530,16 +7154,19 @@ export const dOCTORSByLaboratorioID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         ORDENS {
           items {
@@ -6584,9 +7211,11 @@ export const dOCTORSByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdBy
         groups
@@ -6598,9 +7227,11 @@ export const dOCTORSByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -6653,6 +7284,7 @@ export const getPACIENTE = /* GraphQL */ `
           ORDENPRUEBAITEMS {
             nextToken
             startedAt
+            __typename
           }
           doctorID
           status
@@ -6672,6 +7304,7 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           pdfReceipt
           urlReceipt
@@ -6682,15 +7315,18 @@ export const getPACIENTE = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         nextToken
         startedAt
+        __typename
       }
       laboratorioID
       LABORATORIO {
@@ -6714,9 +7350,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GERENTES {
           items {
@@ -6735,9 +7373,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         DOCTORS {
           items {
@@ -6767,9 +7407,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PACIENTES {
           items {
@@ -6799,9 +7441,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         PRUEBAS {
           items {
@@ -6823,9 +7467,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         ORDENS {
           items {
@@ -6870,9 +7516,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         Cajas {
           items {
@@ -6884,9 +7532,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         GASTOS {
           items {
@@ -6901,9 +7551,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         direction
         cp
@@ -6923,9 +7575,11 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         CONFIGURACIONDOCUMENTOS {
           items {
@@ -6939,15 +7593,18 @@ export const getPACIENTE = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       createdBy
       groups
@@ -6959,6 +7616,7 @@ export const getPACIENTE = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -7028,9 +7686,11 @@ export const listPACIENTES = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         laboratorioID
         LABORATORIO {
@@ -7040,34 +7700,42 @@ export const listPACIENTES = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -7077,16 +7745,19 @@ export const listPACIENTES = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdBy
         groups
@@ -7098,9 +7769,11 @@ export const listPACIENTES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -7176,9 +7849,11 @@ export const syncPACIENTES = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         laboratorioID
         LABORATORIO {
@@ -7188,34 +7863,42 @@ export const syncPACIENTES = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -7225,16 +7908,19 @@ export const syncPACIENTES = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdBy
         groups
@@ -7246,9 +7932,11 @@ export const syncPACIENTES = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -7326,9 +8014,11 @@ export const pACIENTESByLaboratorioID = /* GraphQL */ `
             _version
             _deleted
             _lastChangedAt
+            __typename
           }
           nextToken
           startedAt
+          __typename
         }
         laboratorioID
         LABORATORIO {
@@ -7338,34 +8028,42 @@ export const pACIENTESByLaboratorioID = /* GraphQL */ `
           REPRESENTANTES {
             nextToken
             startedAt
+            __typename
           }
           GERENTES {
             nextToken
             startedAt
+            __typename
           }
           DOCTORS {
             nextToken
             startedAt
+            __typename
           }
           PACIENTES {
             nextToken
             startedAt
+            __typename
           }
           PRUEBAS {
             nextToken
             startedAt
+            __typename
           }
           ORDENS {
             nextToken
             startedAt
+            __typename
           }
           Cajas {
             nextToken
             startedAt
+            __typename
           }
           GASTOS {
             nextToken
             startedAt
+            __typename
           }
           direction
           cp
@@ -7375,16 +8073,19 @@ export const pACIENTESByLaboratorioID = /* GraphQL */ `
           DOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           CONFIGURACIONDOCUMENTOS {
             nextToken
             startedAt
+            __typename
           }
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          __typename
         }
         createdBy
         groups
@@ -7396,9 +8097,11 @@ export const pACIENTESByLaboratorioID = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -7425,6 +8128,7 @@ export const getBLOG = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      __typename
     }
   }
 `;
@@ -7456,9 +8160,11 @@ export const listBLOGS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;
@@ -7496,9 +8202,11 @@ export const syncBLOGS = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        __typename
       }
       nextToken
       startedAt
+      __typename
     }
   }
 `;

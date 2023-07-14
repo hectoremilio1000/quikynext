@@ -1,4 +1,35 @@
 {
+  "testing": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sanmateoadmin-testing-150607-authRole",
+      "UnauthRoleArn": "arn:aws:iam::648055517850:role/amplify-sanmateoadmin-testing-150607-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::648055517850:role/amplify-sanmateoadmin-testing-150607-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sanmateoadmin-testing-150607-deployment",
+      "UnauthRoleName": "amplify-sanmateoadmin-testing-150607-unauthRole",
+      "StackName": "amplify-sanmateoadmin-testing-150607",
+      "StackId": "arn:aws:cloudformation:us-east-1:648055517850:stack/amplify-sanmateoadmin-testing-150607/f5b73db0-2257-11ee-8f22-127b7b48c1e5",
+      "AmplifyAppId": "d35nfmh1qjaunj",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-sanmateoadmin-testing-150607-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "sanmateoadmina3eeaf4c": {}
+      },
+      "function": {
+        "sanmateoadmina3eeaf4cPostConfirmation": {
+          "deploymentBucketName": "amplify-sanmateoadmin-testing-150607-deployment",
+          "s3Key": "amplify-builds/sanmateoadmina3eeaf4cPostConfirmation-55546d63364f5179394f-build.zip"
+        }
+      },
+      "storage": {
+        "s3sanmateoadminstorage4b293137": {}
+      },
+      "api": {
+        "apidevsanmateo": {}
+      }
+    }
+  },
   "develop": {
     "awscloudformation": {
       "AuthRoleName": "amplify-sanmateoadmin-develop-140527-authRole",

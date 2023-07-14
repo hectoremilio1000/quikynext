@@ -4,10 +4,16 @@
     "apiName": "apidevsanmateo",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authsanmateoadmina3eeaf4c"
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2024-07-13T16:12:09.042Z",
+      "keyDescription": "blogdata"
     },
     "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authsanmateoadmina3eeaf4c"
+      },
       {
         "mode": "AWS_IAM"
       }
