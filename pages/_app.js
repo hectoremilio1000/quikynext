@@ -37,7 +37,7 @@ import { ToastContainer } from "react-toastify";
 //     process.env.NEXT_PUBLIC_AWS_USER_FILES_S3_BUCKET_REGION,
 // };
 
-Amplify.configure({ ...awsExports, ssr: true });
+Amplify.configure({ ...awsExports });
 
 export default function MyApp({ Component, pageProps }) {
   return (
