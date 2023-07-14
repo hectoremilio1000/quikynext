@@ -2772,7 +2772,7 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "allow": "private",
+                                "allow": "public",
                                 "operations": [
                                     "create",
                                     "update",
@@ -2826,6 +2826,6 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "codegenVersion": "3.4.2",
+    "codegenVersion": "3.4.4",
     "version": "bfc44a1b5c4a61dc709b7edb8feee35b"
 };
