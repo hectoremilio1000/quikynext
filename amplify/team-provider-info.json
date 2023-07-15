@@ -55,6 +55,9 @@
       },
       "storage": {
         "s3sanmateoadminstorage4b293137": {}
+      },
+      "api": {
+        "apidevsanmateo": {}
       }
     }
   }

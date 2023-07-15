@@ -5,6 +5,8 @@
  **************************************************************************/
 
 export { default as studioTheme } from "./studioTheme";
+export { default as PAQUETESCreateForm } from "./PAQUETESCreateForm";
+export { default as PAQUETESUpdateForm } from "./PAQUETESUpdateForm";
 export { default as LABORATORIOCreateForm } from "./LABORATORIOCreateForm";
 export { default as LABORATORIOUpdateForm } from "./LABORATORIOUpdateForm";
 export { default as EncuestaServicioCreateForm } from "./EncuestaServicioCreateForm";

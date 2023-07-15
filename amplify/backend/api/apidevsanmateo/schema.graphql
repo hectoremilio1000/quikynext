@@ -1,4 +1,17 @@
-type CONFIGURACIONDOCUMENTO @model @auth(rules: [{ allow: private }]) {
+type PAQUETESPRUEBAS @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  paquetesID: ID! @index(name: "byPAQUETES")
+  pruebaID: ID! @index(name: "byPRUEBA")
+}
+
+type PAQUETES @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  nombre: String
+  precioTotal: Float
+  PAQUETESPRUEBAS: [PAQUETESPRUEBAS] @hasMany(indexName: "byPAQUETES", fields: ["id"])
+}
+
+type CONFIGURACIONDOCUMENTO @model @auth(rules: [{allow: private}]) {
   id: ID!
   tipoDocumento: TIPODOCUMENTO
   serieActual: String
@@ -10,7 +23,7 @@ enum TIPODOCUMENTO {
   NOTADEVENTA
 }
 
-type DOCUMENTOS @model @auth(rules: [{ allow: private }]) {
+type DOCUMENTOS @model @auth(rules: [{allow: private}]) {
   id: ID!
   tipoDocumento: TIPODOCUMENTO
   serie: String
@@ -19,14 +32,14 @@ type DOCUMENTOS @model @auth(rules: [{ allow: private }]) {
   ordenID: ID! @index(name: "byORDEN")
 }
 
-type Caja @model @auth(rules: [{ allow: private }]) {
+type Caja @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombre: String
   laboratorioID: ID! @index(name: "byLABORATORIO")
   Turnos: [Turno] @hasMany(indexName: "byCaja", fields: ["id"])
 }
 
-type Turno @model @auth(rules: [{ allow: private }]) {
+type Turno @model @auth(rules: [{allow: private}]) {
   id: ID!
   montoInicial: Float
   fechaApertura: String
@@ -39,7 +52,7 @@ type Turno @model @auth(rules: [{ allow: private }]) {
   cajaID: ID! @index(name: "byCaja")
 }
 
-type GASTOS @model @auth(rules: [{ allow: private }]) {
+type GASTOS @model @auth(rules: [{allow: private}]) {
   id: ID!
   montoGasto: Float
   descripcion: String
@@ -48,7 +61,7 @@ type GASTOS @model @auth(rules: [{ allow: private }]) {
   laboratorioID: ID! @index(name: "byLABORATORIO")
 }
 
-type REFERENCE @model @auth(rules: [{ allow: private }]) {
+type REFERENCE @model @auth(rules: [{allow: private}]) {
   id: ID!
   minReferencia: String!
   maxReferencia: String
@@ -69,7 +82,7 @@ enum TYPEORDER {
   ORDER
 }
 
-type RESULTPARAMITEM @model @auth(rules: [{ allow: private }]) {
+type RESULTPARAMITEM @model @auth(rules: [{allow: private}]) {
   id: ID!
   parametrostestID: ID! @index(name: "byPARAMETROSTEST")
   PARAMETROSTEST: PARAMETROSTEST @belongsTo(fields: ["parametrostestID"])
@@ -78,17 +91,16 @@ type RESULTPARAMITEM @model @auth(rules: [{ allow: private }]) {
   selectedReference: ID
 }
 
-type ORDENPRUEBAITEM @model @auth(rules: [{ allow: private }]) {
+type ORDENPRUEBAITEM @model @auth(rules: [{allow: private}]) {
   id: ID!
   pruebaID: ID! @index(name: "byPRUEBA")
   ordenID: ID! @index(name: "byORDEN")
-  RESULTPARAMITEMS: [RESULTPARAMITEM]
-    @hasMany(indexName: "byORDENPRUEBAITEM", fields: ["id"])
+  RESULTPARAMITEMS: [RESULTPARAMITEM] @hasMany(indexName: "byORDENPRUEBAITEM", fields: ["id"])
   resultInsight: String
   costo: Float!
 }
 
-type REPRESENTANTE @model @auth(rules: [{ allow: private }]) {
+type REPRESENTANTE @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombres: String!
   userName: String!
@@ -102,7 +114,7 @@ type REPRESENTANTE @model @auth(rules: [{ allow: private }]) {
   groups: [String]
 }
 
-type GERENTE @model @auth(rules: [{ allow: private }]) {
+type GERENTE @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombres: String!
   userName: String!
@@ -116,12 +128,11 @@ type GERENTE @model @auth(rules: [{ allow: private }]) {
   groups: [String]
 }
 
-type LABORATORIO @model @auth(rules: [{ allow: private }]) {
+type LABORATORIO @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombre: String!
   createdBy: String!
-  REPRESENTANTES: [REPRESENTANTE]
-    @hasMany(indexName: "byLABORATORIO", fields: ["id"])
+  REPRESENTANTES: [REPRESENTANTE] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
   GERENTES: [GERENTE] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
   DOCTORS: [DOCTOR] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
   PACIENTES: [PACIENTE] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
@@ -135,20 +146,17 @@ type LABORATORIO @model @auth(rules: [{ allow: private }]) {
   contactPhone: String
   codSerial: String
   DOCUMENTOS: [DOCUMENTOS] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
-  CONFIGURACIONDOCUMENTOS: [CONFIGURACIONDOCUMENTO]
-    @hasMany(indexName: "byLABORATORIO", fields: ["id"])
+  CONFIGURACIONDOCUMENTOS: [CONFIGURACIONDOCUMENTO] @hasMany(indexName: "byLABORATORIO", fields: ["id"])
 }
 
-type PARAMETROSTEST @model @auth(rules: [{ allow: private }]) {
+type PARAMETROSTEST @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombre: String!
   unidad: String
   pruebaID: ID! @index(name: "byPRUEBA")
-  RESULTPARAMITEMS: [RESULTPARAMITEM]
-    @hasMany(indexName: "byPARAMETROSTEST", fields: ["id"])
+  RESULTPARAMITEMS: [RESULTPARAMITEM] @hasMany(indexName: "byPARAMETROSTEST", fields: ["id"])
   category: String
-  REFERENCES: [REFERENCE]
-    @hasMany(indexName: "byPARAMETROSTEST", fields: ["id"])
+  REFERENCES: [REFERENCE] @hasMany(indexName: "byPARAMETROSTEST", fields: ["id"])
 }
 
 enum SERVICIO {
@@ -157,13 +165,13 @@ enum SERVICIO {
   MALO
 }
 
-type EncuestaServicio @model @auth(rules: [{ allow: private }]) {
+type EncuestaServicio @model @auth(rules: [{allow: private}]) {
   id: ID!
   encuesta: SERVICIO
   usuario: String
 }
 
-type ORDEN @model @auth(rules: [{ allow: private }]) {
+type ORDEN @model @auth(rules: [{allow: private}]) {
   id: ID!
   type: TYPEORDER!
   fechaOrden: String!
@@ -190,8 +198,7 @@ type ORDEN @model @auth(rules: [{ allow: private }]) {
   pacienteID: ID! @index(name: "byPACIENTE")
   datePublishingResult: String
   hourPublishingResult: String
-  ORDENPRUEBAITEMS: [ORDENPRUEBAITEM]
-    @hasMany(indexName: "byORDEN", fields: ["id"])
+  ORDENPRUEBAITEMS: [ORDENPRUEBAITEM] @hasMany(indexName: "byORDEN", fields: ["id"])
   doctorID: ID! @index(name: "byDOCTOR")
   status: STATUSORDER!
   groups: [String]
@@ -204,9 +211,10 @@ type ORDEN @model @auth(rules: [{ allow: private }]) {
   presion: String
   turnoID: ID! @index(name: "byTurno")
   DOCUMENTOS: [DOCUMENTOS] @hasMany(indexName: "byORDEN", fields: ["id"])
+  isPaquete: Boolean
 }
 
-type PRUEBA @model @auth(rules: [{ allow: private }]) {
+type PRUEBA @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombre: String!
   categoria: String!
@@ -217,17 +225,16 @@ type PRUEBA @model @auth(rules: [{ allow: private }]) {
   indicaciones: String
   tipoMuestra: String
   tipoContenedor: String
-  PARAMETROSTESTS: [PARAMETROSTEST]
-    @hasMany(indexName: "byPRUEBA", fields: ["id"])
+  PARAMETROSTESTS: [PARAMETROSTEST] @hasMany(indexName: "byPRUEBA", fields: ["id"])
   laboratorioID: ID! @index(name: "byLABORATORIO")
   LABORATORIO: LABORATORIO @belongsTo(fields: ["laboratorioID"])
   groups: [String]
-  ORDENPRUEBAITEMS: [ORDENPRUEBAITEM]
-    @hasMany(indexName: "byPRUEBA", fields: ["id"])
+  ORDENPRUEBAITEMS: [ORDENPRUEBAITEM] @hasMany(indexName: "byPRUEBA", fields: ["id"])
   grupoPersona: String
+  PAQUETESPRUEBAS: [PAQUETESPRUEBAS] @hasMany(indexName: "byPRUEBA", fields: ["id"])
 }
 
-type DOCTOR @model @auth(rules: [{ allow: private }]) {
+type DOCTOR @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombres: String!
   apellidoPaterno: String
@@ -258,7 +265,7 @@ enum SEXOTIPO {
   FEMENINO
 }
 
-type PACIENTE @model @auth(rules: [{ allow: private }]) {
+type PACIENTE @model @auth(rules: [{allow: private}]) {
   id: ID!
   nombres: String!
   apellidoPaterno: String
@@ -284,7 +291,7 @@ type PACIENTE @model @auth(rules: [{ allow: private }]) {
   blocked: Boolean
 }
 
-type BLOG @model @auth(rules: [{ allow: public }]) {
+type BLOG @model @auth(rules: [{allow: public}]) {
   id: ID!
   titulo: String
   subtitulo: String
@@ -301,3 +308,4 @@ type BLOG @model @auth(rules: [{ allow: public }]) {
   autor: String
   slug: String
 }
+ 

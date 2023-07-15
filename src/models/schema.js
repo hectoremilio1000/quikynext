@@ -1,5 +1,171 @@
 export const schema = {
     "models": {
+        "PAQUETESPRUEBAS": {
+            "name": "PAQUETESPRUEBAS",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "paquetesID": {
+                    "name": "paquetesID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "pruebaID": {
+                    "name": "pruebaID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PAQUETESPRUEBAS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPAQUETES",
+                        "fields": [
+                            "paquetesID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPRUEBA",
+                        "fields": [
+                            "pruebaID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PAQUETES": {
+            "name": "PAQUETES",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "nombre": {
+                    "name": "nombre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "precioTotal": {
+                    "name": "precioTotal",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "PAQUETESPRUEBAS": {
+                    "name": "PAQUETESPRUEBAS",
+                    "isArray": true,
+                    "type": {
+                        "model": "PAQUETESPRUEBAS"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "paquetesID"
+                        ]
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PAQUETES",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "CONFIGURACIONDOCUMENTO": {
             "name": "CONFIGURACIONDOCUMENTO",
             "fields": {
@@ -1896,6 +2062,13 @@ export const schema = {
                         ]
                     }
                 },
+                "isPaquete": {
+                    "name": "isPaquete",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -2115,6 +2288,22 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "PAQUETESPRUEBAS": {
+                    "name": "PAQUETESPRUEBAS",
+                    "isArray": true,
+                    "type": {
+                        "model": "PAQUETESPRUEBAS"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "pruebaID"
+                        ]
+                    }
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -2826,6 +3015,6 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "codegenVersion": "3.4.4",
-    "version": "bfc44a1b5c4a61dc709b7edb8feee35b"
+    "codegenVersion": "3.4.2",
+    "version": "b4c277b5376f55b550b38d4282ffeb03"
 };

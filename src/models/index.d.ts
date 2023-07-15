@@ -31,6 +31,68 @@ export enum Sexotipo {
 
 
 
+type EagerPAQUETESPRUEBAS = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<PAQUETESPRUEBAS, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly paquetesID: string;
+  readonly pruebaID: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyPAQUETESPRUEBAS = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<PAQUETESPRUEBAS, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly paquetesID: string;
+  readonly pruebaID: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type PAQUETESPRUEBAS = LazyLoading extends LazyLoadingDisabled ? EagerPAQUETESPRUEBAS : LazyPAQUETESPRUEBAS
+
+export declare const PAQUETESPRUEBAS: (new (init: ModelInit<PAQUETESPRUEBAS>) => PAQUETESPRUEBAS) & {
+  copyOf(source: PAQUETESPRUEBAS, mutator: (draft: MutableModel<PAQUETESPRUEBAS>) => MutableModel<PAQUETESPRUEBAS> | void): PAQUETESPRUEBAS;
+}
+
+type EagerPAQUETES = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<PAQUETES, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly precioTotal?: number | null;
+  readonly PAQUETESPRUEBAS?: (PAQUETESPRUEBAS | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyPAQUETES = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<PAQUETES, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly precioTotal?: number | null;
+  readonly PAQUETESPRUEBAS: AsyncCollection<PAQUETESPRUEBAS>;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type PAQUETES = LazyLoading extends LazyLoadingDisabled ? EagerPAQUETES : LazyPAQUETES
+
+export declare const PAQUETES: (new (init: ModelInit<PAQUETES>) => PAQUETES) & {
+  copyOf(source: PAQUETES, mutator: (draft: MutableModel<PAQUETES>) => MutableModel<PAQUETES> | void): PAQUETES;
+}
+
 type EagerCONFIGURACIONDOCUMENTO = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<CONFIGURACIONDOCUMENTO, 'id'>;
@@ -585,6 +647,7 @@ type EagerORDEN = {
   readonly presion?: string | null;
   readonly turnoID: string;
   readonly DOCUMENTOS?: (DOCUMENTOS | null)[] | null;
+  readonly isPaquete?: boolean | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -633,6 +696,7 @@ type LazyORDEN = {
   readonly presion?: string | null;
   readonly turnoID: string;
   readonly DOCUMENTOS: AsyncCollection<DOCUMENTOS>;
+  readonly isPaquete?: boolean | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -664,6 +728,7 @@ type EagerPRUEBA = {
   readonly groups?: (string | null)[] | null;
   readonly ORDENPRUEBAITEMS?: (ORDENPRUEBAITEM | null)[] | null;
   readonly grupoPersona?: string | null;
+  readonly PAQUETESPRUEBAS?: (PAQUETESPRUEBAS | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -689,6 +754,7 @@ type LazyPRUEBA = {
   readonly groups?: (string | null)[] | null;
   readonly ORDENPRUEBAITEMS: AsyncCollection<ORDENPRUEBAITEM>;
   readonly grupoPersona?: string | null;
+  readonly PAQUETESPRUEBAS: AsyncCollection<PAQUETESPRUEBAS>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
