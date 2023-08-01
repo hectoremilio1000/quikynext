@@ -11,7 +11,8 @@ function Blog() {
   const [blog, setBlog] = useState([]);
 
   const fetchBlog = async () => {
-    const blogs = await API.graphql(graphqlOperation(listBLOGS));
+    const blogs = await API.graphql(graphqlOperation(listBLOGS, { filter: { _deleted: { ne: true } } }));
+    
     console.log(blogs);
     const listBlogs = blogs?.data?.listBLOGS?.items;
     setBlog(listBlogs);
