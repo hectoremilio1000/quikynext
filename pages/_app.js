@@ -43,7 +43,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <LayoutFinal>
-        <Component {...pageProps} />
+        <Component {...pageProps}/> 
         <ToastContainer 
           position="top-right"
           autoClose={2000}
