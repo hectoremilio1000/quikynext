@@ -76,11 +76,11 @@ function Blog() {
             .map((blogs) => {
               return (
                 <div
-                  className="blockElement"
+                  className="max-w-sm rounded overflow-hidden shadow-lg"
                   key={blogs.id}
                   style={{ paddingBottom: "20px" }}
                 >
-                  <Link href={`/blog/${blogs.slug}`}>
+                  <Link href={`/blog/${blogs.id}`}>
                     <img
                       style={{
                         width: "100%",
@@ -91,7 +91,7 @@ function Blog() {
                       src={
                         blogs.url1
                           ? blogs.url1
-                          : "https://us.123rf.com/450wm/lehui/lehui1505/lehui150500011/39732408-sin-fisuras-de-fondo-blanco-textura-de-papel-foto-de-gran-tama%C3%B1o.jpg"
+                          : "https://d3v0px0pttie1i.cloudfront.net/uploads/user/logo/11516574/baabcf66.jpg"
                       }
                       alt="blogs san mateo"
                     />{" "}

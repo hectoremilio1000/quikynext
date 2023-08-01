@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 
 // import awsExports from "../../src/aws-exports";
 import { Amplify } from "aws-amplify";
-import { listBLOGS } from "@/src/graphql/queries";
+import { getBLOG, listBLOGS } from "@/src/graphql/queries";
 // const awsConfig = {
 //   aws_project_region: process.env.NEXT_PUBLIC_AWS_PROJECT_REGION,
 //   aws_appsync_graphqlEndpoint:
@@ -38,36 +38,40 @@ import { listBLOGS } from "@/src/graphql/queries";
 // Amplify.configure(awsConfig);
 
 function Blog1() {
-  // const [blog, setBlog] = useState([]);
+  const [blog, setBlog] = useState([]);
 
-  // const fetchBlog = async () => {
-  //   const blogs = await API.graphql(graphqlOperation(listBLOGS));
-  //   const listBlogs = blogs?.data?.listBLOGS?.items;
-  //   setBlog(listBlogs);
-  // };
+  const router = useRouter();
+  const { id } = router.query
+  
 
-  // const router = useRouter();
-  // const slug = router.query.blog;
-  // useEffect(() => {
-  //   fetchBlog();
-  // }, []);
+  useEffect(() => {
 
-  // const blogsearch = blog.filter((obj) => {
-  //   return obj.slug === slug;
-  // });
-  // // const blogsearch = blog.find(obj => {
-  // //     return obj.slug === router.query.blog
-  // // })
-  // console.log(blogsearch);
+    if(id){
+      fetchBlog(id);
+    }
+    
+  }, [id]);
 
+  const fetchBlog = async (blogId) => {
+    try {
+      const blogData = await API.graphql((graphqlOperation(getBLOG, { id: blogId })));
+      setBlog(blogData.data.getBLOG);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (!blog) {
+    return <div>Loading...</div>;
+  }
+console.log(blog)
 
   return (
     <>
       <div style={{ padding: "120px 0px", background: "#f3f5f9" }}>
-        {/* <div className="rowQhBlog dFlex">
+      <div className="rowQhBlog dFlex">
           <div className="blockElement">
-            {blogsearch.map((blog) => {
-              return (
+           
                 <>
                   <h1
                     style={{
@@ -120,36 +124,35 @@ function Blog1() {
                   </div>{" "}
                   <br />
                   <img
-                    style={{ width: "100%", objectFit: "cover" }}
-                    src={blog.url1}
+                    style={{ width: "100%", objectFit: "contain", height:'400px'}}
+                src={blog.url1 ? blog.url1 : "https://imagenesrutalab.s3.amazonaws.com/sanmateo/logo+nuevo/SAN-MATEO.png"}
                     alt={blog.imagen1}
                   />{" "}
                   <br />
                   <p className="contentModel">{blog.texto1}</p> <br />
                   <img
-                    style={{ width: "100%", objectFit: "cover" }}
-                    src={blog.url2}
+                style={{ width: "100%", objectFit: "contain", height: '400px' }}
+                src={blog.url2 ? blog.url2 : "https://imagenesrutalab.s3.amazonaws.com/sanmateo/logo+nuevo/SAN-MATEO.png"}
                     alt={blog.imagen2}
                   />{" "}
                   <br />
                   <p className="contentModel">{blog.texto2}</p> <br />
                   <img
-                    style={{ width: "100%", objectFit: "cover" }}
-                    src={blog.url3}
+                style={{ width: "100%", objectFit: "contain", height: '400px' }}
+                src={blog.url3 ? blog.url3 : "https://imagenesrutalab.s3.amazonaws.com/sanmateo/logo+nuevo/SAN-MATEO.png"}
                     alt={blog.imagen3}
                   />{" "}
                   <br />
                   <p className="contentModel">{blog.texto3}</p>
                 </>
-              );
-            })}
+            
             <br />
             <br />
             <Link className="buttonModel" href="/blog">
               Regresar a Blogs
             </Link>
           </div>
-        </div> */}
+        </div> 
       </div>
     </>
   );

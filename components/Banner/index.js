@@ -15,8 +15,8 @@ function Banner() {
                         <h1 className="contentModel4">
                             ¿Laboratorio Urgente?
                         </h1>
-                        <p className='title3Model'>Nos encontramos en la Ciudad de Oaxaca y en CDMX</p>
-                        <p className='contentModel' style={{ padding: "15px 0 0" }}>Servicio a domicilio con un click o en sucursal</p>
+                        <p className='title3Model'>Nos encontramos en la Ciudad de Oaxaca en diferentes sucursales</p>
+                        <p className='contentModel' style={{ padding: "15px 0 0" }}>El primer laboratorio inteligente con banco de datos de por vida</p>
 
                         <Link href="/reserva">
                             <button type="button" className="buttonModel mt-6 mb-6">

@@ -237,16 +237,24 @@ button {
   overflow: hidden;
 }
 
+.amplify-tabs {
+  display: none;
+}
+
 .heroFloatImg {
   position: absolute;
   left: 54px;
   top: 20%;
 }
 
+.amplify-tabs.amplify-flex {
+  display: none;
+}
+
 .heroFloatImg2 {
   position: absolute;
   top: 71%;
-  right: -25%;
+  right: 0%;
 }
 
 .hero-single-shape1 {

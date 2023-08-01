@@ -1,3 +1,11 @@
+type EMPLEO @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  email: String
+  whatsappNumber: String
+  vacante: String
+}
+
 type PAQUETESPRUEBAS @model @auth(rules: [{allow: private}]) {
   id: ID!
   paquetesID: ID! @index(name: "byPAQUETES")
@@ -98,6 +106,7 @@ type ORDENPRUEBAITEM @model @auth(rules: [{allow: private}]) {
   RESULTPARAMITEMS: [RESULTPARAMITEM] @hasMany(indexName: "byORDENPRUEBAITEM", fields: ["id"])
   resultInsight: String
   costo: Float!
+  status: String
 }
 
 type REPRESENTANTE @model @auth(rules: [{allow: private}]) {

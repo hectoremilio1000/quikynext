@@ -5,239 +5,195 @@ import Image from "next/image";
 import jefe from "../public/iconos/jefe.png";
 import metas from "../public/iconos/metas.png";
 import dinero from "../public/iconos/dinero.png";
+import { DataStore } from '@aws-amplify/datastore';
+import { EMPLEO } from '../src/models'
+
+import { Button, Checkbox, Form, Input, Select, message } from 'antd';
+import { API, graphqlOperation } from "aws-amplify";
+
+import {createEMPLEO} from '../src/graphql/mutations'
+
+const { Option } = Select;
 function Bolsatrabajo() {
+
+  const onFinish = async (values) => {
+
+    const empleo = {
+'nombre':values.nombre,
+        'email':values.email,
+        'whatsappNumber':values.whatsappNumber,
+        'vacante':values.vacante
+    }
+
+    await API.graphql(graphqlOperation(createEMPLEO, {input:empleo }))
+      
+ 
+
+    console.log('Success:', values);
+    message.success('Datos Enviados correctamente')
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+    message.error('Por favor mándanos whats sobre el problema')
+  };
   return (
     <>
-      <div
-        className="bannerSanmateo posRelative ovHidden"
-        style={{
-          height: "70vh",
-          backgroundImage: `url("https://imagenesrutalab.s3.amazonaws.com/sanmateo/enfermera.jpg")`,
-          backgroundPosition: "top center",
-          backgroundRepeat: "repeat",
-          backgroundSize: "cover",
-        }}
-      >
+      <div className="bannerSanmateo posRelative ovHidden" style={{ height: "60vh", backgroundImage: `url("https://imagenesrutalab.s3.amazonaws.com/sanmateo/enfermera.jpg")`, backgroundPosition: "top center", backgroundSize: "cover" }}>
         {/* <video autoPlay muted loop src={videoPort} /> */}
 
         <div className="titlePortada rowQh dFlex" style={{ gap: "20px" }}>
-          <div className="blockElement">
-            <h1 className="contentModel4">¿Eres enfermera?</h1>
-            <p className="title3Model text-white">
-              Te garantizamos $4,000 en 7 días
-            </p>
+          <div className="blockElement" style={{width:'75%'}}>
 
-            <a href="#registrarme">
-              <button type="button" className="buttonModel mt-6 mb-6">
-                ¡Reserva ya!
-              </button>
-            </a>
-          </div>
-          <div className="blockElement posRelative ">
-            <div className="heroFloatImg rotateme">
-              <img
-                src="https://dreamthemebd.dreamitsolution.net/html/dreamhub/medical/assets/images/single-imgs3.png"
-                alt=""
-              />
-            </div>
+            <h1 className="text-xl md:text-4xl text-sky-500 pb-2">¿Empleo?</h1>
+            <p className="text-white md:text-3xl">
+              Te garantizamos salarios muy superiores al mercado
+            </p>
           </div>
         </div>
       </div>
-      <div className="contentInfo" style={{ backgroundColor: "#F8F8FF" }}>
+
+
+
+   
+     <div className="contentInfo" style={{ backgroundColor: "#F8F8FF" }}>
         <div className="rowQh">
-          <h1 className="title1Model text-center">
-            ¿Por qué registrarse con nosotros como Enfermera?
+          <h1 className="text-2xl font-bold text-center md:s">
+            ¿Por qué unirse a nuestro equipo?
           </h1>
-          <p className="contentModel text-center mt-6 mb-12">
-            Contamos con todas las pruebas que requieras con un CLICK o en
-            sucursal
-          </p>
         </div>
-        <div className="rowQh dFlex" style={{ gap: "20px" }}>
-          <div className="blockElement">
-            <Image style={{ width: "150px" }} src={jefe} />
-            <p className="contentModel2">Sé tu propio jefe</p>
+        <div className="flex flex-col md:flex-row justify-evenly" style={{ gap: "20px" }}>
+          <div className="flex items-center flex-col"
+          >
+          
+              <Image style={{ width: "150px" }} src={jefe} />
+           
+      
+            <p className="contentModel2">Buen ambiente laboral</p>
+  
           </div>
-          <div className="blockElement">
+          <div className="flex items-center flex-col">
             <Image style={{ width: "150px" }} src={dinero} />
             <p className="contentModel2">Gana el dinero que te mereces</p>
           </div>
-          <div className="blockElement">
+          <div className="flex items-center flex-col">
             <Image style={{ width: "150px" }} src={metas} />
             <p className="contentModel2">Logra tus sueños con tu trabajo</p>
           </div>
         </div>
       </div>
       <div className="contentInfo" style={{ backgroundColor: "#f3f5f9" }}>
-        <div className="rowQh">
-          <h1 className="title1Model text-center">
-            ¿Cansada de las agencias de enfermería?
+        <div >
+        <div style={{
+            
+          }} >
+
+          <h1 className="text-2xl font-bold  text-center">
+            Ingresa tus datos
           </h1>
-          <p className="contentModel text-center mt-6 mb-12">
+          <p className="text-base text-center ">
             Nuestro compromiso es con tu seguridad y reconocimiento profesional.
-            Nos comprometemos a crear un entorno seguro para nuestros usuarios
-            para conseguir pacientes y un pago justo.
-          </p>
-        </div>
+            </p>
+            </div>
+        
+            
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Form className="pt-4"
+              name="basic"
+              labelCol={{
+                span: 6,
+              }}
+              wrapperCol={{
+                span: 16,
+              }}
+              style={{ maxWidth: 600, width: '90%' }}
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+            >
+              <Form.Item
+                label="Nombre"
+                name="nombre"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Ingresa tu nombre',
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Por favor ingresa tu email',
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+
+         
+
+              <Form.Item
+                label="Whatsapp"
+                name="whatsappNumber"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Por favor ingresa tu número de WhatsApp!',
+                  },
+                  {
+                    pattern: /^\d+$/,
+                    message: 'Por favor ingresa solo números!'
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="Selecciona la vacante"
+                name="vacante"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Por favor ingresa la vacante',
+                  },
+
+                ]}
+              >
+                <Select
+                  allowClear
+                >
+                  <Option value="enfermera">Enfermera</Option>
+                  <Option value="quimicoFarmaceutico">Químico Farmaceútico</Option>
+                  <Option value="laboratoristaClinico">Laboratorista Clínico</Option>
+                  <Option value="optometrista">Optometrista</Option>
+                  <Option value="representanteMedico">Representante Médico</Option>
+
+                </Select>
+
+              </Form.Item>
+              <Form.Item
+              style={{ display: 'flex', justifyContent:'center'}}
+              >
+                <Button type="prymary" htmlType="submit" className="bg-sky-500 hover:bg-sky-600 text-white ">
+                  Enviar datos
+                </Button>
+              </Form.Item>
+            </Form>
+    
       </div>
-      <div className="contentInfo" style={{ backgroundColor: "#fff" }}>
-        <div className="rowQh">
-          <h1 className="title1Model text-center">
-            Es muy rápido, sólo ingresa tus datos
-          </h1>
-          <p className="contentModel text-center">
-            Todos los campos son requeridos para enviar tus datos
-          </p>
-          <div className="formSan mt-12">
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="nombre" className="splaceItem">
-                  Nombre Completo
-                </label>
-                <input
-                  name="nombre"
-                  type="text"
-                  placeholder="Ingresa tus Nombres"
-                />
-              </div>
-              <div className="groupItem">
-                <label htmlFor="" className="splaceItem">
-                  Email
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Ingresa tu email"
-                />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="whatsapp" className="splaceItem">
-                  WhatsApp
-                </label>
-                <input
-                  name="whatsapp"
-                  type="text"
-                  placeholder="Ingresa tu numero de whatsapp"
-                />
-              </div>
-              <div className="groupItem">
-                <label htmlFor="direction" className="splaceItem">
-                  Direccion
-                </label>
-                <input
-                  name="direction"
-                  type="text"
-                  placeholder="Ingresa tu direccion"
-                />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="" className="splaceItem">
-                  Núm. Ext.
-                </label>
-                <input
-                  name="numExterno"
-                  type="text"
-                  placeholder="Ingresa tu numero Ext."
-                />
-              </div>
-              <div className="groupItem">
-                <label className="splaceItem">Núm. Int.</label>
-                <input
-                  name="numInterno"
-                  type="text"
-                  placeholder="Ingresa tu numero Int."
-                />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="" className="splaceItem">
-                  C.P
-                </label>
-                <input
-                  name="cp"
-                  type="text"
-                  placeholder="Ingresa tu codigo postal"
-                />
-              </div>
-              <div className="groupItem">
-                <label className="splaceItem">Colonia</label>
-                <input
-                  name="colonia"
-                  type="text"
-                  placeholder="Ingresa tu colonia"
-                />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="" className="splaceItem">
-                  Estado
-                </label>
-                <input
-                  name="estado"
-                  type="text"
-                  placeholder="Ingresa tu estado"
-                />
-              </div>
-              <div className="groupItem">
-                <label className="splaceItem">Edad</label>
-                <input name="edad" type="text" placeholder="Ingresa tu edad" />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="" className="splaceItem">
-                  Cedula Profesional
-                </label>
-                <input
-                  name="estado"
-                  type="text"
-                  placeholder="Ingresa tu numero de Cedula Profesional"
-                />
-              </div>
-              <div className="groupItem">
-                <label className="splaceItem">Antigüedad</label>
-                <input
-                  name="edad"
-                  type="text"
-                  placeholder="Ingresa tu tiempo trabajando"
-                />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <label htmlFor="" className="splaceItem">
-                  Especialidad
-                </label>
-                <input
-                  name="especialidad"
-                  type="text"
-                  placeholder="Ingresa tu especialidad"
-                />
-              </div>
-              <div className="groupItem">
-                <label className="splaceItem">Curso Especializado</label>
-                <input
-                  name="curso"
-                  type="text"
-                  placeholder="Ingresa en que curso te haz especializado"
-                />
-              </div>
-            </div>
-            <div className="duoGroupItem">
-              <div className="groupItem">
-                <input type="submit" className="submitForm" value="Enviar" />
-              </div>
-              <div className="groupItem"></div>
-            </div>
-          </div>
         </div>
-      </div>
+      </div> 
+     
     </>
   );
 }

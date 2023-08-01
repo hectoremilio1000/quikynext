@@ -31,6 +31,40 @@ export enum Sexotipo {
 
 
 
+type EagerEMPLEO = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<EMPLEO, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly email?: string | null;
+  readonly whatsappNumber?: string | null;
+  readonly vacante?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyEMPLEO = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<EMPLEO, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly email?: string | null;
+  readonly whatsappNumber?: string | null;
+  readonly vacante?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type EMPLEO = LazyLoading extends LazyLoadingDisabled ? EagerEMPLEO : LazyEMPLEO
+
+export declare const EMPLEO: (new (init: ModelInit<EMPLEO>) => EMPLEO) & {
+  copyOf(source: EMPLEO, mutator: (draft: MutableModel<EMPLEO>) => MutableModel<EMPLEO> | void): EMPLEO;
+}
+
 type EagerPAQUETESPRUEBAS = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<PAQUETESPRUEBAS, 'id'>;
@@ -358,6 +392,7 @@ type EagerORDENPRUEBAITEM = {
   readonly RESULTPARAMITEMS?: (RESULTPARAMITEM | null)[] | null;
   readonly resultInsight?: string | null;
   readonly costo: number;
+  readonly status?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -373,6 +408,7 @@ type LazyORDENPRUEBAITEM = {
   readonly RESULTPARAMITEMS: AsyncCollection<RESULTPARAMITEM>;
   readonly resultInsight?: string | null;
   readonly costo: number;
+  readonly status?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

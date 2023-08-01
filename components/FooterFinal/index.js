@@ -8,29 +8,30 @@ function FooterFinal() {
   return (
     <footer className="footerSanmateo py-4">
       <div
-        className="rowQh"
+        className="rowQh flex flex-wrap md:flex-nowrap"
         style={{ display: "flex", alignItems: "flex-start !important" }}
       >
         <div className="blockElement">
+        <div className="flex justify-center md:justify-left">
           <Image style={{ width: "200px" }} src={logo} />
+          </div>
           <p
             style={{ fontSize: "18px", color: "#fff" }}
-            className="mt-8 text-white"
+            className="mt-8 text-white text-center "
           >
-            Somos la primer empresa de Laboratorios Clínicos en México <br />{" "}
-            Enfocada al servicio de Pruebas de Laboratorio a Domicilio
+            Somos una empresa enfocada en brindar confianza a través de la tecnología en análisis clínicos
           </p>
         </div>
-        <div className="blockElement">
-          <h2 className="text-white">
+        <div className="blockElement pt-3 md:pt-0">
+          <h2 className="text-white text-center">
             <b style={{ textDecoration: "underline", paddingBottom: "5px" }}>
-              Menu
+              Menú
             </b>
           </h2>
           <nav className="mt-4" style={{ width: "100%" }}>
             <div className="py-2">
               <Link href="/">
-                <p className="text-white hover:text-green-200">Inicio</p>
+                <p className="text-white hover:text-green-200 text-center">Inicio</p>
               </Link>
             </div>
             {/* <div className="py-2">
@@ -45,19 +46,19 @@ function FooterFinal() {
             </div> */}
             <div className="py-2">
               <Link href="/blog">
-                <p className="text-white hover:text-green-200">Blog</p>
+                <p className="text-white hover:text-green-200 text-center">Blog</p>
               </Link>
             </div>
             <div className="py-2">
               <Link href="/bolsatrabajo">
-                <p className="text-white hover:text-green-200">
+                <p className="text-white hover:text-green-200 text-center">
                   Bolsa de Trabajo
                 </p>
               </Link>
             </div>
             <div className="py-2">
               <Link href="/results">
-                <p className="text-white hover:text-green-200">Resultados</p>
+                <p className="text-white hover:text-green-200 text-center ">Resultados</p>
               </Link>
             </div>
           </nav>
