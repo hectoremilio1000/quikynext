@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLoadScript, GoogleMap, MarkerF, LoadScript } from '@react-google-maps/api';
 
+import * as googleMap from '../../lib/googleMap'
+
 const Sucursales = () => {
 
   const cdmxCoords = { lat: 19.4326, lng: -99.1332 };
@@ -11,7 +13,7 @@ const Sucursales = () => {
 
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyAs5yNiT4d2CJWVSVlRhP1kok7zJeOf_2g',
+    googleMapsApiKey: googleMap.GOOGLE_PIXEL_ID,
     libraries: libraries,
   });
 
