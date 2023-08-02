@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 
 // import awsExports from "../../src/aws-exports";
 import { API, Amplify, graphqlOperation } from "aws-amplify";
+
+import { GRAPHQL_AUTH_MODE } from "@aws-amplify/api";
 import { listBLOGS } from "@/src/graphql/queries";
 
 // Amplify.configure(awsConfig);
@@ -11,8 +13,12 @@ function Blog() {
   const [blog, setBlog] = useState([]);
 
   const fetchBlog = async () => {
-    const blogs = await API.graphql(graphqlOperation(listBLOGS, { filter: { _deleted: { ne: true } } }));
-    
+    const blogs = await API.graphql({
+      query: listBLOGS,
+      authMode: GRAPHQL_AUTH_MODE.API_KEY,
+      filter: { _deleted: { ne: true } },
+    });
+
     console.log(blogs);
     const listBlogs = blogs?.data?.listBLOGS?.items;
     setBlog(listBlogs);
