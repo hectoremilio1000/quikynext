@@ -14,34 +14,34 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Laboratorios San Mateo</title>
+        <title>Quiky Software</title>
         <meta
           name="description"
-          content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios"
+          content="Somos una empresa 100% mexicana dedicada a la creación de software"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="of:title" content="San Mateo" />
         <meta
           name="of:description"
-          content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios"
+          content="Quiky empresa cuidamos a tu empresa con el mejor software"
         />
         <meta
           name="og:description"
-          content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios"
+          content="Quiky empresa cuidamos a tu empresa con el mejor software"
         />
-        <meta property="og:url" content="https://laboratoriossanmateo.com/" />
+        <meta property="og:url" content="https://quikyempresa.com/" />
         <meta
           name="og:title"
-          content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios"
+          content="Quiky Software"
         />
         <meta
           property="og:type"
-          content="Laboratorios San Mateo la mayor calidad en estudios de laboratorios"
+          content="Quiky empresa cuidamos a tu empresa con el mejor software"
         />
         <meta
           property="og:image"
-          content="https://imagenesrutalab.s3.amazonaws.com/sanmateo/logo+nuevo/SAN-MATEO.png"
+          content="https://imagenesrutalab.s3.amazonaws.com/quikyempresa/logoQuikyempresa3.png"
         />
         {/* <link rel="apple-touch-icon" href="../logo192.png" />
         <link rel="manifest" href="../manifest.json" /> */}

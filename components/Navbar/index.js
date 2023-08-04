@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../public/SAN-MATEO.png";
+import logo from "../../public/logoQuiky.png";
 
 // css navbar
 
@@ -50,7 +50,7 @@ function NavBar() {
       </Link> */}
         <div className="header-logo">
           <Link href="/" className="logo">
-            <Image src={logo} width={150} alt="llorona" priority />
+            <Image src={logo} width={150} alt="software" priority />
           </Link>
           <FaAlignRight
             className="toggle-icon"
@@ -72,15 +72,15 @@ function NavBar() {
           </li>
           <li key="1">
             <Link href="/blog" className="nav-link hover:text-blue-600">
-              Blog
+              Cotiza tu proyecto
             </Link>
           </li>
           {/* <li key="2">
             <Link href="/reserva" className="nav-link hover:text-blue-600">
               Reserva
             </Link>
-          </li> */}
-          <li key="5">
+          </li> 
+           <li key="5">
             <Link href="/bolsatrabajo" className="nav-link hover:text-blue-600">
               Bolsa de Trabajo
             </Link>
@@ -89,12 +89,13 @@ function NavBar() {
             <Link href="/results" className="nav-link hover:text-blue-600">
               Resultados
             </Link>
-          </li>
-        </div>
+          </li>*/}
+        
+        </div> 
         <div className="header-icons">
           <a
             key="0"
-            href="https://www.facebook.com/people/Laboratorios-San-Mateo/100071824794370/"
+            href="https://www.facebook.com/profile.php?id=100063756481740"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -102,7 +103,7 @@ function NavBar() {
           </a>
           <a
             key="1"
-            href="https://instagram.com/laboratoriossanmateo?igshid=YmMyMTA2M2Y="
+            href="https://www.instagram.com/quikyservicios/"
             target="_blank"
             rel="noopener noreferrer"
           >
