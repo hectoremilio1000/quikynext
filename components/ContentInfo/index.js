@@ -8,24 +8,35 @@ function ContentInfo() {
         <div className='contentInfo'>
             <div className="rowQh dFlex" style={{ gap: "40px" }}>
                 <div className="blockElement">
-                    <Image width="100%" src={info1} />
-                </div>
-                <div className="blockElement">
-                    <h1 className="text-xl md:text-3xl text-sky-500">
-                        ¿Quiénes somos?
+                    <h1 className="text-2xl md:text-4xl text-sky-300 text-center uppercase">
+                        ¿Quienes confían en nosotros?
                     </h1>
-                    <p className='text-xl md:text-2xl font-bold'>Somos calidad en análisis clínicos</p>
-                    <p className='contentModel2 mb-12'>Con la tecnología de punta ofrecemos altos estándares para los pacientes</p>
-                    {/* <h1 className="title1Model text-start">
-                        ¿Quiénes somos?
-                    </h1>
-                    <p className='contentModel text-start mt-6 mb-12'>Somos la primer empresa de Laboratorios Clínicos en México <br /> enfocada al servicio de Pruebas de Laboratorio a Domicilio</p> */}
-                    <p className='contentModel2' style={{ color: "#079ec6" }}>Los reconocimientos que tenemos nos avalan</p>
-                    <p className="contentModel3">Nuestra misión es cuidar del paciente ofreciéndole los estándares más altos en Calidad, con reconocimiento por parte de INDRE, EMA, PACAL, CDC y RIQAS.</p>
-                    <br />
-                    <p className='contentModel2' style={{ color: "#079ec6" }}>Único Laboratorio en México con Banco de Datos de por Vida</p>
-                    <p className="contentModel3">Doctores y pacientes: garantizamos banco de datos de por vida, confíen en nosotros.</p>
+                    <div class="mt-2 grid grid-cols-3 gap-8 md:grid-cols-6 xl:grid-cols-6 py-6">
+
+                
+                   
+                        <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+                            <img class="w-1/2" src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg" alt="Best Buy" />
+                        </div>
+                        <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+                            <img class="w-1/2" src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg" alt="Best Buy" />
+                        </div>
+                       
+                        <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+                            <img class="w-1/2" src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg" alt="Best Buy" />
+                            </div>
+                            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+                            <img class="w-1/2" src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg" alt="Best Buy" />
+                            </div>
+                        <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+                            <img class="w-1/2" src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg" alt="Best Buy" />
+                        </div><div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+                            <img class="w-1/2" src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg" alt="Best Buy" />
+                        </div>
+                    </div>
+                   
                 </div>
+               
 
             </div>
         </div>

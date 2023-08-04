@@ -12,26 +12,32 @@ function Banner() {
                 <div className="titlePortada rowQh dFlex" style={{ gap: "20px" }}>
                     <div className="blockElement">
 
-                        <h1 className="contentModel4">
-                            ¿Laboratorio Urgente?
+                        <h1 className="text-3xl md:text-5xl text-sky-600 font-bold">
+                            Desarrollo de Software entendiendo tus necesidades
                         </h1>
-                        <p className='title3Model'>Nos encontramos en la Ciudad de Oaxaca en diferentes sucursales</p>
-                        <p className='contentModel' style={{ padding: "15px 0 0" }}>El primer laboratorio inteligente con banco de datos de por vida</p>
+                        
+                        <p className='text-gray-500 text-xl md:text-2xl' style={{ padding: "15px 0 0" }}>En la era de la tecnología, la individualidad y la comprensión de las necesidades únicas de cada cliente son a menudo lo que separa a una empresa del resto.</p>
 
-                        <Link href="/reserva">
+                        
                             <button type="button" className="buttonModel mt-6 mb-6">
-                                ¡Reserva ya!
+                            <a href={`https://wa.me/525633485223?text=convierte tu empresa en éxito`}>Cotizar ya</a>
                             </button>
-                        </Link>
+                      
                     </div>
                     <div className="blockElement posRelative ">
-                        <Image className='thumbImg' style={{ marginLeft: "73px", marginTop: "77px" }} src={portadaimg} alt="" />
-                        <div className="heroFloatImg rotateme">
+                        <div class="floating-effect w-[278] mt-[32px] mb-[26px] lg:w-[400px] md:mt-0 md:mb-0 m-auto">
+                            <img
+                                src="https://www.alluxi.com/static/media/alluxi-devices-cropped.c2dcbb14aafe3d5514c7751df4c502c0.svg"
+                                alt="devices"
+                                className="animate-float"
+                            />
+                            </div>
+                        {/* <div className="heroFloatImg rotateme">
                             <img src="https://dreamthemebd.dreamitsolution.net/html/dreamhub/medical/assets/images/single-imgs3.png" alt="" />
                         </div>
                         <div className="heroFloatImg2 rotateme">
                             <img src="https://dreamthemebd.dreamitsolution.net/html/dreamhub/medical/assets/images/single-imgs4.png" alt="" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="hero-single-shape1 dance">

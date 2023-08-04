@@ -21,7 +21,18 @@ module.exports = {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        float: {
+          '0%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+          '100%': { transform: 'translateY(0px)' },
+        },
+      },
+      animation: {
+        float: 'float 2s ease-in-out infinite',
+      },
+    },
   },
   plugins: [require('@tailwindcss/aspect-ratio')
   ],
