@@ -4,74 +4,60 @@ function ContentPruebas() {
   return (
     <div className="contentInfo" style={{ backgroundColor: "#F8F8FF" }}>
       <div className="rowQh">
-        <h1 className="title1Model text-center">
-          ¿Qué pruebas tienen disponibles?
-        </h1>
-        <p className="contentModel text-center mt-6 mb-12">
-          Contamos con todas las pruebas que requieras con un CLICK o en
-          nuestras sucursales
-        </p>
-      </div>
-
-      <div className="flex flex-wrap justify-center">
-        <div className="max-w-xs rounded overflow-hidden shadow-lg m-6">
-          <img className="w-full" src="https://quikyempresanuevo-storage-03418b58110747-dev.s3.amazonaws.com/public/images/home/quimicasanguinea+copy.jpg"/>
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Química sanguínea</div>
-              <p className="text-gray-700 text-base">
-              Resultados en la app en <b>30 minutos</b>
-              </p>
-
-              <p className="text-gray-400 text-base">
-            Es una serie de pruebas de sangre que analizan diversos elementos
-              en el suero sanguíneo.
-              </p>
-            <a href="https://wa.me/+5219511028474">
-              <button type="button" className="buttonModel mt-6 mb-6">
-                ¡Reserva ya!
-              </button>
-            </a>
+        
+        <div class="mt-0">
+          
+          <div class="md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-4">
+            <div class="md:col-start-1"><div><span class="text-md tracking-widest  text-ablue-600 f uppercase">Metodología única</span><h2 class="text-3xl text-blue-900 font-bold">Para desarrollar software a tu medida</h2>
+        
+          <p class="font-light mt-4  text-lg text-gray-700  m-auto ">Le guiaremos a través de nuestra metodología probada y confiable que hemos testeado y pulido a lo largo de años de experiencia. El proceso comienza comprendiendo sus necesidades específicas, para que una vez analizada por nuestro equipo extenso y especializado, le propongamos una solución confiable</p></div></div><div class="mx-auto my-8 md:my-auto">
+        
+            <img class="react-reveal w-full" src="https://dreamthemebd.dreamitsolution.net/html/dreamhub/it-solution/assets/images/image1.png" />
+            <div class="single-about">
+              <div class="flex flex-wrap mr-[-15px] ml-[-15px]">
+                <div class="flex-none w-1/2 max-w-1/2">
+                  <div class="mb-12">
+                    <h3 class="text-xl text-[#7AEDCF] bg-[#E5FEF8] h-[50px] w-[50px] leading-[51px] text-center rounded-full float-left m-0 mr-[15px]">01</h3>
+                    <span class="text-sm text-[#010E22] relative top-2.5">Reunión con el cliente</span>
+                  </div>
+                </div>
+                <div class="flex-none w-1/2 max-w-1/2">
+                  <div class="mb-12">
+                    <h3 class="text-lg text-[#FD5B6A] bg-[#FFECEE] h-[50px] w-[50px] leading-[51px] text-center rounded-full float-left m-0 mr-[15px]">02</h3>
+                    <span class="text-sm text-[#010E22] relative top-2.5">Analizamos</span>
+                  </div>
+                </div>
+                <div class="flex-none w-1/2 max-w-1/2">
+                  <div class="mb-12">
+                    <h3 class="text-lg text-[#FDA329] bg-[#FFF5EB] h-[50px] w-[50px] leading-[51px] text-center rounded-full float-left m-0 mr-[15px]">03</h3>
+                    <span class="text-sm text-[#010E22] relative top-2.5">Proponemos</span>
+                  </div>
+                </div>
+                <div class="flex-none w-1/2 max-w-1/2">
+                  <div class="mb-12">
+                    <h3 class="text-lg text-[#7AEDCF] bg-[#E5FEF8] h-[50px] w-[50px] leading-[51px] text-center rounded-full float-left m-0 mr-[15px]">04</h3>
+                    <span class="text-sm text-[#010E22] relative top-2.5">El cliente disfruta del éxito!</span>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+        </div></div></div>
 
-        <div className="max-w-xs rounded overflow-hidden shadow-lg m-6">
-          <img className="w-full" src="https://quikyempresanuevo-storage-03418b58110747-dev.s3.amazonaws.com/public/images/home/antigeno.jpg"/>
-            <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">Prueba de Antígeno (prueba rápida)</div>
-            <p className="text-gray-700 text-base">
-              Resultados en la app en <b>25 minutos</b>
-            </p>
+        <div class="it-solution-about-area">
+          <div class="container">
+            <div class="row">
+              
 
-            <p className="text-gray-400 text-base">
-              Prueba rápida para detectar la presencia de COVID-19 en tu cuerpo.
-            </p>
-            <a href="https://wa.me/+5219511028474">
-              <button type="button" className="buttonModel mt-6 mb-6">
-                ¡Reserva ya!
-              </button>
-            </a>
-          </div>
-        </div>
 
-        <div className="max-w-xs rounded overflow-hidden shadow-lg m-6">
-          <img className="w-full" src="https://quikyempresanuevo-storage-03418b58110747-dev.s3.amazonaws.com/public/images/home/orina.jpg"/>
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">EGO</div>
-            <p className="text-gray-700 text-base">
-              Resultados en la app en <b>1 hora</b>
-            </p>
-
-            <p className="text-gray-400 text-base">
-              El Examen General de Orina es un examen que se utiliza para revisar padecimientos.
-            </p>
-            <a href="https://wa.me/+5219511028474">
-              <button type="button" className="buttonModel mt-6 mb-6">
-                ¡Reserva ya!
-              </button>
-            </a>
+         
+                
+          
+            </div>
           </div>
         </div>
       </div>
+
+      
 
 
 

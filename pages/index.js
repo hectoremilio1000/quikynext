@@ -9,6 +9,8 @@ import ReservaCalendario from "@/components/ReservaCalendario";
 import PasosCitas from "@/components/PasosCitas";
 import ContentTrabajo from "@/components/ContentTrabajo/ContentTrabajo";
 import Sucursales from "@/components/Sucursales/Sucursales";
+import ContentPruebas2 from '../components/ContentPruebas2/index';
+import ContentPruebas3 from '../components/ContentPruebas3/index';
 
 export default function Home() {
   return (
@@ -50,6 +52,9 @@ export default function Home() {
       <ContentInfo />
       <ContentPruebas />
       <ReservaCalendario />
+      <ContentPruebas2 />
+    
+    
       <PasosCitas />
       <Sucursales />
       <ContentTrabajo />

@@ -9,11 +9,11 @@ function ReservaCalendario() {
                 <h1 className="title1Model text-center">
                     ¿Quieres agendar una cita con nosotros?
                 </h1>
-                <p className='contentModel text-center mt-6'>En caso de que quieras ir a nuestra sucursal agenda tu cita</p>
+               
             </div>
             <div className="rowQh dFlex" style={{ gap: "20px" }}>
                 <div className="blockElement">
-                    <InlineWidget url="https://calendly.com/laboratoriossanmateo/sanmateo" />
+                    <InlineWidget url="https://calendly.com/softwarequiky/30min" />
                 </div>
             </div>
         </div>
