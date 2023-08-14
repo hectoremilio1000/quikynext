@@ -50,6 +50,7 @@ export default function Home() {
       </Head>
       <Banner />
       <ContentInfo />
+      <ContentPruebas3 />
       <ContentPruebas />
       <ReservaCalendario />
       <ContentPruebas2 />
