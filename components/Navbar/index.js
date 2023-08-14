@@ -42,7 +42,7 @@ function NavBar() {
 
   return (
     <div className={navbar ? "header-container sticky" : "header-container"}>
-      <div className="rowQh px-4">
+      <div className="rowQh px-4 items-center">
         {/* <Link href="/">
         <Image src={logo} width={100}
           alt="llorona" priority />
@@ -50,7 +50,7 @@ function NavBar() {
       </Link> */}
         <div className="header-logo">
           <Link href="/" className="logo">
-            <Image src={logo} width={150} alt="software" priority />
+            <Image src={logo} width={110} alt="software" priority />
           </Link>
           <FaAlignRight
             className="toggle-icon"
@@ -75,23 +75,13 @@ function NavBar() {
               Cotiza tu proyecto
             </Link>
           </li>
-          {/* <li key="2">
-            <Link href="/reserva" className="nav-link hover:text-blue-600">
-              Reserva
-            </Link>
-          </li> 
-           <li key="5">
-            <Link href="/bolsatrabajo" className="nav-link hover:text-blue-600">
-              Bolsa de Trabajo
+
+          <li key="2">
+            <Link href="/proyectos" className="nav-link hover:text-blue-600">
+              Proyectos
             </Link>
           </li>
-          <li key="3">
-            <Link href="/results" className="nav-link hover:text-blue-600">
-              Resultados
-            </Link>
-          </li>*/}
-        
-        </div> 
+        </div>
         <div className="header-icons">
           <a
             key="0"
@@ -109,6 +99,13 @@ function NavBar() {
           >
             <FaInstagram className="icon instagram-icon hover:text-blue-800 " />
           </a>
+          <button type="button" className="buttonModel">
+            <a
+              href={`https://wa.me/525633485223?text=convierte tu empresa en éxito`}
+            >
+              Cotizar ya
+            </a>
+          </button>
         </div>
       </div>
     </div>

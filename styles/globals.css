@@ -141,8 +141,8 @@ button {
 .buttonModel {
   padding: 10px 12px;
   text-align: center;
-  border-radius: 10px 20px;
-  background-color: #02a4d0;
+  border-radius: 10px;
+  background-color: #2129ff;
   color: #fff;
 }
 
@@ -177,7 +177,9 @@ button {
 /* footer sanmateo */
 .footerSanmateo {
   /* background-color: #0286aa; */
-  background-color: #001c38;
+  /* box-shadow: 4px -5px 10px 5px #ececec; */
+  /* border-top: 1px solid #5b5b5b; */
+  background-color: #f8f8ff;
 }
 
 /* css formulario enferemera */

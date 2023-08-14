@@ -9,8 +9,8 @@ import ReservaCalendario from "@/components/ReservaCalendario";
 import PasosCitas from "@/components/PasosCitas";
 import ContentTrabajo from "@/components/ContentTrabajo/ContentTrabajo";
 import Sucursales from "@/components/Sucursales/Sucursales";
-import ContentPruebas2 from '../components/ContentPruebas2/index';
-import ContentPruebas3 from '../components/ContentPruebas3/index';
+import ContentPruebas2 from "../components/ContentPruebas2/index";
+import ContentPruebas3 from "../components/ContentPruebas3/index";
 
 export default function Home() {
   return (
@@ -33,10 +33,7 @@ export default function Home() {
           content="Quiky empresa cuidamos a tu empresa con el mejor software"
         />
         <meta property="og:url" content="https://quikyempresa.com/" />
-        <meta
-          name="og:title"
-          content="Quiky Software"
-        />
+        <meta name="og:title" content="Quiky Software" />
         <meta
           property="og:type"
           content="Quiky empresa cuidamos a tu empresa con el mejor software"
@@ -50,15 +47,14 @@ export default function Home() {
       </Head>
       <Banner />
       <ContentInfo />
-      <ContentPruebas3 />
+      {/* <ContentPruebas3 /> */}
       <ContentPruebas />
-      <ReservaCalendario />
       <ContentPruebas2 />
-    
-    
-      <PasosCitas />
-      <Sucursales />
-      <ContentTrabajo />
+      <ReservaCalendario />
+
+      {/* <PasosCitas /> */}
+      {/* <Sucursales />
+      <ContentTrabajo /> */}
     </>
   );
 }
