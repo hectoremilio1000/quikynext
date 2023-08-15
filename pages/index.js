@@ -11,6 +11,8 @@ import ContentTrabajo from "@/components/ContentTrabajo/ContentTrabajo";
 import Sucursales from "@/components/Sucursales/Sucursales";
 import ContentPruebas2 from "../components/ContentPruebas2/index";
 import ContentPruebas3 from "../components/ContentPruebas3/index";
+import Portafolio from "@/components/Portafolio/Portafolio";
+import Team from "@/components/Team/Team";
 
 export default function Home() {
   return (
@@ -46,9 +48,11 @@ export default function Home() {
         <link rel="manifest" href="../manifest.json" /> */}
       </Head>
       <Banner />
+      <ContentPruebas />
+      <Portafolio />
+      <Team />
       <ContentInfo />
       {/* <ContentPruebas3 /> */}
-      <ContentPruebas />
       <ContentPruebas2 />
       <ReservaCalendario />
 

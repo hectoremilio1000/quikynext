@@ -10,7 +10,7 @@ function Banner() {
         className="bannerSanmateo posRelative ovHidden"
         style={{
           height: "100vh",
-          background: "#fff",
+          background: "#F7FAFF",
           //   backgroundImage: `url("https://dreamthemebd.dreamitsolution.net/html/dreamhub/medical/assets/images/hero-bg.jpg")`,
           //   backgroundPosition: "center",
           //   backgroundRepeat: "repeat",
@@ -25,13 +25,15 @@ function Banner() {
               style={{ color: "#2228ff" }}
               className="text-2xl md:text-5xl font-bold"
             >
-              Desarrollo de Software
+              {/* Desarrollo de Software */}
+              Transformando Negocios
             </h1>
             <h2
               style={{ color: "#101010" }}
               className="text-xl md:text-3xl font-bold"
             >
-              entendiendo tus <b style={{ color: "#00747c" }}>necesidades</b>
+              a la velocidad de la{" "}
+              <b style={{ color: "#00747c" }}>tecnologia</b>
             </h2>
 
             <p
