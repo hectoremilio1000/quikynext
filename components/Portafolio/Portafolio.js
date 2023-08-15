@@ -9,18 +9,11 @@ const Portafolio = () => {
   return (
     <div className="p-6">
       <div className="rowQh" style={{ gap: "40px" }}>
-        {/* <h1
-          style={{ color: "#000" }}
-          className="text-2xl md:text-4xl font-bold flex items-center gap-2 mb-6"
-        >
-          <span className="w-[20px] h-[20px] rounded-full block bg-[#2228ff] p-2"></span>{" "}
-          Proyectos
-        </h1> */}
-        <h1 className="text-center text-5xl mb-6" style={{ color: "#b8b5b5" }}>
+        <h1 className="text-center text-4xl mb-6" style={{ color: "#00747c" }}>
           <b>
             {" "}
             <span className="text-[#2228ff]">-</span>{" "}
-            <span className="text-[#2228ff]">Pro</span>yectos -{" "}
+            <span className="text-[#2228ff]">Nuestros </span>Proyectos-{" "}
           </b>
         </h1>
         <div className="flex flex-wrap md:flex-nowrap items-center gap-4">

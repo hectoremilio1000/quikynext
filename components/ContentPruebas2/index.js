@@ -2,7 +2,7 @@ import React from "react";
 
 function ContentPruebas2() {
   return (
-    <div className="contentInfo" style={{ backgroundColor: "#F8F8FF" }}>
+    <div className="contentInfo" style={{ backgroundColor: "#fff" }}>
       <div className="rowQh">
         <div class="mt-0">
           <div class="md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-4">

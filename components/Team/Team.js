@@ -17,8 +17,12 @@ const Team = () => {
   return (
     <div>
       <div className="rowQh border-t-2">
-        <h1 className="text-center text-5xl" style={{ color: "#b8b5b5" }}>
-          <b> Our Team </b>
+        <h1 className="text-center text-4xl mb-6" style={{ color: "#00747c" }}>
+          <b>
+            {" "}
+            <span className="text-[#2228ff]">-</span>{" "}
+            <span className="text-[#2228ff]">Nuestro </span>Equipo-{" "}
+          </b>
         </h1>
       </div>
       <div className="rowQh border-b-2">
