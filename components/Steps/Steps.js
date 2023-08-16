@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Steps = ({
@@ -6,6 +7,8 @@ const Steps = ({
   currentCategory,
   selectedOptions,
   onPreviousStep,
+  handleNextStep,
+  allOptionsSelected,
 }) => {
   const currentOptions = options[currentCategory];
 
@@ -32,25 +35,40 @@ const Steps = ({
           currentOptions.map((option, index) => (
             <button
               key={index}
-              className={`p-4 inline-block rounded hover:bg-blue-600 ${
+              className={`p-4 flex flex-col items-center justiy-center rounded hover:bg-blue-600 ${
                 selectedOptions[currentCategory]?.price === option.price
                   ? "bg-blue-600 text-white"
                   : "bg-white text-[#2129ff]    "
               }`}
               onClick={() => handleOptionSelect(option.price)}
             >
+              {option.imgUrl !== "" ? (
+                <Image width={80} src={option.imgUrl} alt={option.label} />
+              ) : null}
               {option.label}
             </button>
           ))}
       </div>
-      {onPreviousStep && (
-        <button
-          className="bg-white px-4 py-2 rounded hover:bg-gray-400 mt-2"
-          onClick={onPreviousStep}
-        >
-          Regresar
-        </button>
-      )}
+      <div className="flex gap-4">
+        {onPreviousStep && (
+          <button
+            className="bg-white px-4 py-2 rounded hover:bg-gray-400"
+            onClick={onPreviousStep}
+          >
+            Regresar
+          </button>
+        )}
+        {!allOptionsSelected && (
+          <div>
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              onClick={handleNextStep}
+            >
+              Siguiente
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

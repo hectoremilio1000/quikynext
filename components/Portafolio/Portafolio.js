@@ -1,7 +1,7 @@
 import React from "react";
-import portafolio1 from "../../public/portafolio/qhawana.png";
-import portafolio2 from "../../public/portafolio/amazoncargo.png";
-import portafolio3 from "../../public/portafolio/hotelemperador.png";
+import portafolio1 from "../../public/portafolio/qhawana/qhawana.png";
+import portafolio2 from "../../public/portafolio/amazon-cargo/amazoncargo.png";
+import portafolio3 from "../../public/portafolio/hotel-emperador/hotelemperador.png";
 import Image from "next/image";
 import Link from "next/link";
 // import "../../styles/portafolio.css";
