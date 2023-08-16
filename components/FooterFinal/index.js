@@ -46,18 +46,18 @@ function FooterFinal() {
               </Link>
             </div> */}
             <div className="py-2">
-              <Link href="/blog">
-                <p className="text-black text-center">Blog</p>
+              <Link href="/cotizaproyecto">
+                <p className="text-black text-center">Cotiza tu proyecto</p>
               </Link>
             </div>
             <div className="py-2">
-              <Link href="/bolsatrabajo">
-                <p className="text-black text-center">Bolsa de Trabajo</p>
+              <Link href="/proyectos">
+                <p className="text-black text-center">Proyectos</p>
               </Link>
             </div>
             <div className="py-2">
-              <Link href="/results">
-                <p className=" text-black text-center ">Resultados</p>
+              <Link href="/contacto">
+                <p className="text-black text-center">Contacto</p>
               </Link>
             </div>
           </nav>

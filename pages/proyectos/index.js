@@ -19,7 +19,7 @@ const Proyectos = () => {
       </div>
       <div className="rowQh flex gap-12 items-center flex-wrap md:flex-nowrap">
         <div className="w-full md:w-1/2">
-          <Image src={proyecto1} />
+          <Image src={proyecto1} alt="proyecto1" />
         </div>
         <div className="w-full md:w-1/2">
           <h1 className="pt-8 text-4xl text-left text-[#2225a1] font-bold">
@@ -41,7 +41,7 @@ const Proyectos = () => {
       </div>
       <div className="rowQh flex flex-row-reverse gap-12 items-center flex-wrap md:flex-nowrap">
         <div className="w-full md:w-1/2">
-          <Image src={proyecto1} />
+          <Image src={proyecto1} alt="proyeecto2" />
         </div>
         <div className="w-full md:w-1/2">
           <h1 className="pt-8 text-4xl text-left text-[#2225a1] font-bold">

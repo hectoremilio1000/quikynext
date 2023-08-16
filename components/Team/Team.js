@@ -57,7 +57,7 @@ const Team = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="card-equipo-crea">
-            <Image className="img-crea-equipo" src={team2} alt="equipo" />
+            <Image className="img-crea-equipo" src={team2} alt="equipo2" />
             <div className="agent-title-crea">
               <p className="bold-text-card">
                 <b> Maicol Bohorquez</b>
@@ -66,7 +66,7 @@ const Team = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="card-equipo-crea">
-            <Image className="img-crea-equipo" src={team3} alt="equipo" />
+            <Image className="img-crea-equipo" src={team3} alt="equipo3" />
             <div className="agent-title-crea">
               <p className="bold-text-card">
                 <b> Jampier Vasquez</b>

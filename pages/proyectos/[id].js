@@ -12,7 +12,7 @@ const MeProyecto = () => {
           </h3>
           <h1 className="text-4xl mb-6" stye={{ color: "#0074c" }}>
             <b>
-              <span className="text-[#2228ff]">Filmor </span>Optica
+              <span className="text-[#2228ff]">Name </span>proyecto
             </b>
           </h1>
           <div>
@@ -41,7 +41,7 @@ const MeProyecto = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <Image src={proyecto1} />
+          <Image src={""} alt="meproyecto" />
         </div>
       </div>
       <div className="py-[100px] bg-gray-100">
@@ -97,7 +97,7 @@ const MeProyecto = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <Image src={proyecto1} />
+            <Image src={proyecto1} alt="meproyecto" />
           </div>
         </div>
         <div className="rowQh bg-gray-100 flex flex-row-reverse gap-12 items-center flex-wrap md:flex-nowrap">
@@ -143,7 +143,7 @@ const MeProyecto = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <Image src={proyecto1} />
+            <Image src={proyecto1} alt="meproyecto" />
           </div>
         </div>
       </div>

@@ -20,46 +20,46 @@ function ContentInfo() {
             <span className="w-[20px] h-[20px] rounded-full block bg-[#2228ff] p-2"></span>{" "}
             Nuestros Clientes
           </h1>
-          <div class="mt-2 grid grid-cols-3 gap-8 md:grid-cols-6 xl:grid-cols-6 py-6">
-            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+          <div className="mt-2 grid grid-cols-3 gap-8 md:grid-cols-6 xl:grid-cols-6 py-6">
+            <div className="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
               <img
-                class="w-1/2"
+                className="w-1/2"
                 src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg"
                 alt="Best Buy"
               />
             </div>
-            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+            <div className="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
               <img
-                class="w-1/2"
+                className="w-1/2"
                 src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg"
                 alt="Best Buy"
               />
             </div>
 
-            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+            <div className="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
               <img
-                class="w-1/2"
+                className="w-1/2"
                 src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg"
                 alt="Best Buy"
               />
             </div>
-            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+            <div className="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
               <img
-                class="w-1/2"
+                className="w-1/2"
                 src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg"
                 alt="Best Buy"
               />
             </div>
-            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+            <div className="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
               <img
-                class="w-1/2"
+                className="w-1/2"
                 src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg"
                 alt="Best Buy"
               />
             </div>
-            <div class="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
+            <div className="col-span-1 flex justify-center md:col-span-1 xl:col-span-1 w-5/6">
               <img
-                class="w-1/2"
+                className="w-1/2"
                 src="https://www.alluxi.com/static/media/client-best.ada3d91ed80f01d30713b2d6487f0487.svg"
                 alt="Best Buy"
               />

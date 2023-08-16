@@ -46,15 +46,11 @@ function Banner() {
             </p>
 
             <button type="button" className="buttonModel mt-6 mb-6">
-              <a
-                href={`https://wa.me/525633485223?text=convierte tu empresa en éxito`}
-              >
-                Cotizar ya
-              </a>
+              <Link href={"/cotizarproyecto"}>Cotizar ya</Link>
             </button>
           </div>
           <div className="blockElement posRelative ">
-            <div class="floating-effect w-full mt-[32px] mb-[26px] md:mt-0 md:mb-0 m-auto">
+            <div className="floating-effect w-full mt-[32px] mb-[26px] md:mt-0 md:mb-0 m-auto">
               <img
                 // style={{ boxShadow: "0px 0px 10px 2px #ececec" }}
                 src="https://www.alluxi.com/static/media/alluxi-devices-cropped.c2dcbb14aafe3d5514c7751df4c502c0.svg"

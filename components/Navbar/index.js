@@ -71,7 +71,10 @@ function NavBar() {
             </Link>
           </li>
           <li key="1">
-            <Link href="/blog" className="nav-link hover:text-blue-600">
+            <Link
+              href="/cotizarproyecto"
+              className="nav-link hover:text-blue-600"
+            >
               Cotiza tu proyecto
             </Link>
           </li>
@@ -79,6 +82,11 @@ function NavBar() {
           <li key="2">
             <Link href="/proyectos" className="nav-link hover:text-blue-600">
               Proyectos
+            </Link>
+          </li>
+          <li key="3">
+            <Link href="/contacto" className="nav-link hover:text-blue-600">
+              Contacto
             </Link>
           </li>
         </div>
@@ -99,11 +107,14 @@ function NavBar() {
           >
             <FaInstagram className="icon instagram-icon hover:text-blue-800 " />
           </a>
-          <button type="button" className="buttonModel">
+          <button
+            type="button"
+            className="bg-green-500 text-white p-2 rounded-md"
+          >
             <a
               href={`https://wa.me/525633485223?text=convierte tu empresa en éxito`}
             >
-              Cotizar ya
+              Whatsapp
             </a>
           </button>
         </div>

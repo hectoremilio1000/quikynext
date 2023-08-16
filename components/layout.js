@@ -1,13 +1,13 @@
 import NavBar from "./Navbar";
-import FooterFinal from './FooterFinal';
+import FooterFinal from "./FooterFinal";
 
 export default function Layout({ children }) {
-    return (
-        <>
-            <NavBar />
+  return (
+    <>
+      <NavBar />
 
-            <main>{children}</main>
-            <FooterFinal />
-        </>
-    )
+      <main>{children}</main>
+      <FooterFinal />
+    </>
+  );
 }
