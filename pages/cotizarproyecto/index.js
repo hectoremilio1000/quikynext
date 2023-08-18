@@ -10,7 +10,7 @@ import icons4 from "../../public/iconos/desingwebmovil.png";
 import icons5 from "../../public/iconos/desingbasico.png";
 import icons6 from "../../public/iconos/desingpersonalizado.png";
 
-const index = () => {
+const Index = () => {
   const options = {
     Plataforma: [
       { label: "Web", price: 100, imgUrl: icons1 },
@@ -122,4 +122,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
