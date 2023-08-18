@@ -13,7 +13,7 @@ import ContentPruebas3 from "../components/ContentPruebas3/index";
 import Portafolio from "@/components/Portafolio/Portafolio";
 import Team from "@/components/Team/Team";
 import { useEffect } from "react";
-import Script from "next/script";
+import Script from "next/script"; 
 
 export default function Home() {
   // useEffect(() => {
