@@ -114,7 +114,7 @@ function NavBar() {
             <a
               href={`https://wa.me/525633485223?text=convierte tu empresa en éxito`}
             >
-              Whatsapp
+              Whatsapp 
             </a>
           </button>
         </div>
